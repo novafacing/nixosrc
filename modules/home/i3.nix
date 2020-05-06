@@ -6,20 +6,6 @@ let
 in
 with pkgs.lib; {
 
-  ## NixOS X/Libinput Configs (required!)
-  services.xserver = {
-    enable = true;
-    windowManager.i3.enable = true;
-    autorun = false;
-    displayManager.defaultSession = "none+i3";
-    libinput = {
-      enable = true;
-      disableWhileTyping = true;
-      naturalScrolling = true;
-      tapping = false;
-    };
-  };
-
   # These are the home-manager configs for X
   xsession.enable = true;
   xsession.windowManager.i3 = {

@@ -5,5 +5,6 @@
     ./desktop
     ./system
     ./packages
+    ./settings
   ];
 }

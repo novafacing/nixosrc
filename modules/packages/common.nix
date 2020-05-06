@@ -12,8 +12,6 @@
     brave
     wget
     curl
-    git
-    
 
     # Packages with configuration
     kitty

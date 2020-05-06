@@ -2,15 +2,12 @@
 
 {
   imports = [
-    <home-manager/nixos>
     ./hardware-configuration.nix
+    "${builtins.fetchTarball https://github.com/rycee/home-manager/archive/master.tar.gz}/nixos"
     ./modules
   ];
 
-  # Install packages to /etc/profiles
-  home-manager.useUserPackages = true;
-  # Use the global pkgs 
-  home-manager.useGlobalPkgs = true;
+  nixpkgs.config = import ./config/nixpkgs.nix;
 
   # Enable systemd + settings
   boot.loader.systemd-boot.enable = true;
@@ -25,11 +22,29 @@
   ];
 
   # Hardware options
-
   sound.enable = true;
   hardware.pulseaudio.enable = true;
 
-  system.stateVersion = "20.09"; # Did you read the comment?
+  users.users.${config.settings.username} = {
+    isNormalUser = true;
+    createHome = true;
+    home = "/home/${config.settings.username}";
+    extraGroups = [ 
+      "wheel" 
+      "networkmanager"
+    ];
+  };
 
+  home-manager.users.${config.settings.username} = import ./modules/home;
+
+  services.xserver.enable = true;
+  #services.xserver.desktopManager = {
+  #  default = "none";
+  #};
+  services.xserver.windowManager.i3.enable = true;
+  services.xserver.autorun = false;
+  services.xserver.displayManager.defaultSession = "none+i3";
+
+  system.stateVersion = "20.09"; # Did you read the comment?
 }
 

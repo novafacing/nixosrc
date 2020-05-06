@@ -21,6 +21,10 @@
       userName = "novafacing";
       userEmail = "rowanbhart@gmail.com";
     };
+    home.packages = [
+      pkgs.i3-gaps
+    ];
+    programs.zsh.enable = true;
   };
 }
 

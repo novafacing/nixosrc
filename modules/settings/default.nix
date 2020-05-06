@@ -2,8 +2,6 @@
 
 {
   imports = [
-    ./networking.nix
-    #./users.nix
-    #./git.nix
+    ./settings.nix
   ];
 }

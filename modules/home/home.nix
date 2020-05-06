@@ -6,15 +6,11 @@ in
 with pkgs.lib; {
   imports = [
     ../settings
+    ./i3.nix
   ];
 
   nixpkgs.config = {
     allowUnfree = true;
-  };
-
-  xsession.enable = true;
-  xsession.windowManager.i3 = {
-    enable = true;
   };
 
   programs.git = {

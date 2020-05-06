@@ -37,14 +37,6 @@
 
   home-manager.users.${config.settings.username} = import ./modules/home;
 
-  services.xserver.enable = true;
-  #services.xserver.desktopManager = {
-  #  default = "none";
-  #};
-  services.xserver.windowManager.i3.enable = true;
-  services.xserver.autorun = false;
-  services.xserver.displayManager.defaultSession = "none+i3";
-
   system.stateVersion = "20.09"; # Did you read the comment?
 }
 

@@ -3,5 +3,6 @@
 {
   imports = [
     ./common.nix
+    ./custom.nix
   ];
 }

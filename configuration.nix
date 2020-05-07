@@ -33,6 +33,7 @@
       "wheel" 
       "networkmanager"
     ];
+    shell = pkgs.zsh;
   };
 
   home-manager.users.${config.settings.username} = import ./modules/home;

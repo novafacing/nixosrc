@@ -3,16 +3,38 @@
 let
   mod = "Mod1";
   sup = "Mod4";
+  colors = {
+    focused = "$green $green $darkgray $purple $darkgray";
+    focused_inactive = "$darkgray $darkgray $yellow $purple $darkgray";
+    unfocused = "$darkgray $darkgray $yellow $purple $darkgray";
+    urgent = "$red $red $white $red $red";
+  };
+  gaps = {
+    outer = 5;
+    inner = 20;
+  };
 in
 with pkgs.lib; {
-
   # These are the home-manager configs for X
   xsession.enable = true;
   xsession.windowManager.i3 = {
+    package = pkgs.i3-gaps;
     enable = true;
     config = {
       modifier = mod;
       bars = [];
+      window = {
+        titlebar = false;
+	border = 0;
+	hideEdgeBorders = "none";
+      };
+      floating = {
+        modifier = "${mod}";
+      };
+      focus = {
+        forceWrapping = true;
+	followMouse = true;
+      };
       keybindings = mkOptionDefault (
         {
           "${mod}+Return" = "exec kitty -o allow_remote_control=yes";
@@ -95,6 +117,10 @@ with pkgs.lib; {
       };
     };
     extraConfig = ''
+      font pango:Fira Code Retina 9
+      new_window none
+      new_float none
+      for_window [class="^(?|feh$)"] border pixel 0
     '';
   };
 }

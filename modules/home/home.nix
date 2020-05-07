@@ -7,6 +7,9 @@ with pkgs.lib; {
   imports = [
     ../settings
     ./i3.nix
+    ./zsh.nix
+    ./nvim.nix
+    ./kitty.nix
   ];
 
   nixpkgs.config = {

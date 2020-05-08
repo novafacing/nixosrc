@@ -1,5 +1,7 @@
 { config, pkgs, ... }:
-
+let
+  settings = import ./config/settings.nix;
+in
 {
   imports = [
     # hardware-configuration.nix will be different per system, 
@@ -27,6 +29,7 @@
   environment.systemPackages = with pkgs; [
     neovim
     git
+    acpi
   ];
 
   # Hardware options
@@ -34,10 +37,10 @@
   hardware.pulseaudio.enable = true;
 
   # Use the config file to create a username with the correct settings
-  users.users.${config.settings.username} = {
+  users.users.${settings.username} = {
     isNormalUser = true;
     createHome = true;
-    home = "/home/${config.settings.username}";
+    home = "/home/${settings.username}";
     extraGroups = [ 
       "wheel" 
       "networkmanager"
@@ -48,7 +51,7 @@
   # Add ourselves to the home-manager config and use home manager to set up 
   # whatever we want to use home-manager for. Sometimes home-manager is helpful and
   # makes things easier, sometimes it makes them harder. Depends ;)
-  home-manager.users.${config.settings.username} = import ./modules/home;
+  home-manager.users.${settings.username} = import ./modules/home;
 
   # The nixos version :)
   system.stateVersion = "20.09";

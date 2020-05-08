@@ -29,12 +29,12 @@
             \ }
       let g:lightline.inactive = {
             \ 'left': [ [ 'filename' , 'modified', 'fileformat', 'devicons_filetype' ]],
-            \ 'right': [ [ 'artify_lineinfo' ] ]
+            \ 'right': [ [ 'artify_lineinfo', 'gitversion' ] ]
             \ }
       let g:lightline.tabline = {
             \ 'left': [ [ 'vim_logo', 'tabs', 'buffers'] ],
             \ 'right': [ [ 'artify_gitbranch', 'close'],
-            \ [ 'gitstatus' ] ]
+            \ [ 'gitdiff' ] ]
             \ }
       let g:lightline.tab = {
             \ 'active': [ 'artify_activetabnum', 'artify_filename', 'modified' ],
@@ -54,7 +54,7 @@
       let g:lightline.tabline = {
             \ 'left': [ [ 'vim_logo', 'tabs' ] ],
             \ 'right': [ [ 'gitbranch' ],
-            \ [ 'gitstatus' ] ]
+            \ [ 'gitdiff' ] ]
             \ }
       let g:lightline.tab = {
             \ 'active': [ 'tabnum', 'filename', 'modified' ],
@@ -75,7 +75,6 @@
           \ 'artify_gitbranch' : '%{Artify_gitbranch()}',
           \ 'artify_mode': '%{Artify_lightline_mode()}',
           \ 'artify_lineinfo': "%2{Artify_line_percent()}\uf295 %3{Artify_line_num()}:%-2{Artify_col_num()}",
-          \ 'gitstatus' : '%{lightline_gitdiff#get_status()}',
           \ 'bufinfo': '%{bufname("%")}:%{bufnr("%")}',
           \ 'vim_logo': "\ue7c5",
           \ 'pomodoro': '%{PomodoroStatus()}',
@@ -115,15 +114,14 @@
           \ 'linter_errors': 'lightline#ale#errors',
           \ 'linter_ok': 'lightline#ale#ok',
           \ 'asyncrun_status': 'lightline#asyncrun#status',
-          \ 'buffers': 'lightline#bufferline#buffers'
+          \ 'buffers': 'lightline#bufferline#buffers',
+          \ 'gitdiff': 'lightline#gitdiff#get',
           \ }
     let g:lightline.component_type = {
           \ 'linter_warnings': 'warning',
           \ 'linter_errors': 'error',
-          \ 'buffers': 'tabsel'
-          \ }
-    let g:lightline.component_visible_condition = {
-          \ 'gitstatus': 'lightline_gitdiff#get_status() !=# ""'
+          \ 'buffers': 'tabsel',
+          \ 'gitdiff': 'middle',
           \ }
 " Productivity & Enhancement
     let g:SuperTabDefaultCompletionType = '<C-n>'

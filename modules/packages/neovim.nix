@@ -32,27 +32,36 @@ let
       name = "lightline-asyncrun";
       src = pkgs.fetchFromGitHub {
         owner = "novafacing";
-	repo = "lightline-asyncrun";
-	rev = "08b3756bb5a31011a4a415c224db9acb2edb22db";
-	sha256 = "1n07sf3flpspcbr15s3afwij745j6fdngbq0ani3d3vf7rl3g3h9";
+        repo = "lightline-asyncrun";
+        rev = "08b3756bb5a31011a4a415c224db9acb2edb22db";
+        sha256 = "1n07sf3flpspcbr15s3afwij745j6fdngbq0ani3d3vf7rl3g3h9";
       };
     };
     lightline-bufferline = pkgs.vimUtils.buildVimPlugin {
       name = "lightline-bufferline";
       src = pkgs.fetchFromGitHub {
         owner = "novafacing";
-	repo = "lightline-bufferline";
-	rev = "17683bc5802de7f295f2583a15461e2bc662f98b";
-	sha256 = "1rlamxwk2gm9pyxl9vym9w6rhgimzqa2hjghy3qdqwvif6w8ir6l";
+        repo = "lightline-bufferline";
+        rev = "17683bc5802de7f295f2583a15461e2bc662f98b";
+        sha256 = "1rlamxwk2gm9pyxl9vym9w6rhgimzqa2hjghy3qdqwvif6w8ir6l";
       };
     };
     vim-pomodoro = pkgs.vimUtils.buildVimPlugin {
       name = "vim-pomodoro";
       src = pkgs.fetchFromGitHub {
         owner = "novafacing";
-	repo = "vim-pomodoro";
-	rev = "c2b90dfa17fd92252b5776778cb785988ecd5883";
-	sha256 = "10c6x0yjwn0fsbp9h5bd8i0wqgp450jgvq8h617v1wnb25l4fhk8";
+        repo = "vim-pomodoro";
+        rev = "c2b90dfa17fd92252b5776778cb785988ecd5883";
+        sha256 = "10c6x0yjwn0fsbp9h5bd8i0wqgp450jgvq8h617v1wnb25l4fhk8";
+      };
+    };
+    lightline-gitdiff = pkgs.vimUtils.buildVimPlugin {
+      name = "lightline-gitdiff";
+      src = pkgs.fetchFromGitHub {
+        owner = "novafacing";
+        repo = "lightline-gitdiff";
+        rev = "06792315b9bf529d5777d8dd7e3798603649fe5e";
+        sha256 = "04iw544axzpgmpn23xmlr1z34zrks905nbk5m1pn82b2xzg2l3gs";
       };
     };
   };
@@ -96,6 +105,7 @@ in
             "lightline-vim"
             "lightline-bufferline"
             "lightline-ale"
+        "lightline-gitdiff"
 	    "lightline-asyncrun"
 	    "vim-pomodoro"
 	    "artify"

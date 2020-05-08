@@ -243,7 +243,7 @@
       "Lightline autos
       augroup lightlineCustom
         autocmd!
-        autocmd BufWritePost * call lightline_gitdiff#query_git() | call lightline#update()
+        autocmd BufWritePost * call lightline#gitdiff#get() | call lightline#update()
       augroup END
     ''
   ]);

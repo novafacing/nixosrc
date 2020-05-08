@@ -1,8 +1,7 @@
 { lib, config, pkgs, nixpkgs ? import <nixpkgs> {}, ... }:
 let 
-  conf = {
-    vam.knownPlugins = pkgs.vimPlugins;
-    pluginDictionaries = nixpkgs.neovim.extraPluginDictionaries ++ [
+    extraVamDictionaries = [
+      /*
       {
         name = "vim-hexokinase"; 
 	"do" = "make hexokinase";
@@ -52,64 +51,66 @@ let
         names = [
 	  "LanguageClient-neovim"
 	  "lightline.vim"
-          "lightline-gitdiff"
+          # "lightline-gitdiff"
           "lightline-bufferline"
           "lightline-ale"
-          "lightline-asyncrun"
+          # "lightline-asyncrun"
           "nerdtree"
-          "pomodoro.vim"
-          "golden-ratio"
-          "artify.vim"
-          "comfortable-motion.vim"
+          # "pomodoro.vim"
+          # "golden-ratio"
+          # "artify.vim"
+          # "comfortable-motion.vim"
           "vim-easymotion"
           "supertab"
           "indentLine"
           "vim-easy-align"
           "nerdcommenter"
-          "vim-matchup"
+          # "vim-matchup"
           "vim-surround"
-          "vim-repeats"
+          "vim-repeat"
           "UltiSnips"
           "vim-snippets"
           "tabular"
           "coc-zsh"
-          "inline_edit.vim"
+          # "inline_edit.vim"
           "vim-devicons"
           "typescript-vim"
-          "vim-jsx-typescript"
+          # "vim-jsx-typescript"
           "vim-nix"
           "vim-vue"
-          "vim-jison"
+          # "vim-jison"
           "undotree"
           "vim-manpager"
           "vCoolor.vim"
           "vim-gitbranch"
           "vim-fugitive"
           "vim-rhubarb"
-          "vim-twiggy"
-          "agit.vim"
+          "vim-twig"
+          "vimagit"
           "vim-mergetool"
           "ale"
           "vim-flake8"
-          "black"
+          # "black"
 	];
       }
+      {
+        name = "matchmaker";
+      }
+      */
     ];
-    customRC = (import ./vimrc.nix { inherit lib; }).customRc;
-  };
 in 
-with pkgs.lib; {
-  neovim.customize {
-    vimrcConfig.vam.knownPlugins = pkgs.vimPlugins;
-    vimrcConfig.vam.pluginDictionaries = conf.pluginDictionaries;
+{
+  nixpkgs.config.packageOverrides = old: {
+    old.neovim.override {
+      vimAlias = true;
+      configure = {
+        pathogen = {
+          pluginNames = with pkgs.vimPlugins; [
+	    deoplete-nvim
+	  ];
+        };
+      };
+    };
   };
-  programs.neovim = {
-    enable = true;
-    viAlias = true;
-    vimAlias = true;
-    withNodeJs = true;
-    withPython = true;
-    withPython3 = true;
-    # configure = config;
-  };
+}
 }

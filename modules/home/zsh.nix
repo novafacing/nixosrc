@@ -16,9 +16,9 @@ with pkgs.lib; {
       enable = true;
       plugins = [
         "git"
-	"nix-shell"
-	"zsh-syntax-highlighting"
-	"fzf"
+	    "nix-shell"
+	    "zsh-syntax-highlighting"
+	    "fzf"
       ];
     };
     localVariables = {
@@ -28,7 +28,7 @@ with pkgs.lib; {
       POWERLEVEL9K_LEFT_PROMPT_ELEMENTS = ["os_icon" "context" "root_indicator" "dir" "dir_writable_joined" "vcs" "virtualenv"];
       POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS = ["status" "history" "time"];
       POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX = "╭──";
-      POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX = "╰─> ";
+      POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX = "╰-> ";
       POWERLEVEL9K_TIME_BACKGROUND = "yellow";
       POWERLEVEL9K_HISTORY_BACKGROUND = "green";
     };
@@ -88,8 +88,12 @@ with pkgs.lib; {
         typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
           # =========================[ Line #1 ]=========================
           os_icon                 # os identifier
+	  context
+	  root_indicator
           dir                     # current directory
+	  dir_writable_joined
           vcs                     # git status
+	  virtualenv
           # =========================[ Line #2 ]=========================
           newline                 # \n
           # prompt_char           # prompt symbol
@@ -242,11 +246,11 @@ with pkgs.lib; {
         # Transparent background.
         typeset -g POWERLEVEL9K_PROMPT_CHAR_BACKGROUND=
         # Green prompt symbol if the last command succeeded.
-        typeset -g POWERLEVEL9K_PROMPT_CHAR_OK_{VIINS,VICMD,VIVIS,VIOWR}_FOREGROUND=76
+        typeset -g POWERLEVEL9K_PROMPT_CHAR_OK_{VIINS,VICMD,VIVIS,VIOWR}_FOREGROUND=209
         # Red prompt symbol if the last command failed.
         typeset -g POWERLEVEL9K_PROMPT_CHAR_ERROR_{VIINS,VICMD,VIVIS,VIOWR}_FOREGROUND=196
         # Default prompt symbol.
-        typeset -g POWERLEVEL9K_PROMPT_CHAR_{OK,ERROR}_VIINS_CONTENT_EXPANSION='❯'
+        typeset -g POWERLEVEL9K_PROMPT_CHAR_{OK,ERROR}_VIINS_CONTENT_EXPANSION='|>'
         # Prompt symbol in command vi mode.
         typeset -g POWERLEVEL9K_PROMPT_CHAR_{OK,ERROR}_VICMD_CONTENT_EXPANSION='❮'
         # Prompt symbol in visual vi mode.

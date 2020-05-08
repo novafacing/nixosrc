@@ -8,7 +8,7 @@ with pkgs.lib; {
     ../settings
     ./i3.nix
     ./zsh.nix
-    ./nvim.nix
+    #./nvim.nix
     ./kitty.nix
   ];
 

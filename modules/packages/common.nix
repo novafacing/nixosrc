@@ -2,7 +2,7 @@
 
 {
   imports = [
-    #./neovim.nix
+    ./neovim.nix
     #./kitty.nix
     #./rofi.nix
     #./i3blocks.nix
@@ -11,10 +11,12 @@
 
   environment.systemPackages = with pkgs; [
     # One and done
-    brave
+    chromium
     wget
     curl
     exa
+    htop
+    gotop
     bat
 
     # Packages with configuration

@@ -18,11 +18,16 @@
     htop
     gotop
     bat
+    discord
+    spotify
+    zip
 
     # Packages with configuration
     kitty
     rofi
     neovim
+    texlive.combined.scheme-medium
+    zathura
   ];
 }
 

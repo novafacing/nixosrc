@@ -14,7 +14,7 @@ let
     inner = 20;
   };
 in
-with pkgs.lib; {
+  with pkgs.lib; {
   # These are the home-manager configs for X
   xsession.enable = true;
   xsession.windowManager.i3 = {
@@ -25,15 +25,15 @@ with pkgs.lib; {
       bars = [];
       window = {
         titlebar = false;
-	border = 0;
-	hideEdgeBorders = "none";
+        border = 0;
+        hideEdgeBorders = "none";
       };
       floating = {
         modifier = "${mod}";
       };
       focus = {
         forceWrapping = true;
-	followMouse = true;
+        followMouse = true;
       };
       keybindings = mkOptionDefault (
         {
@@ -106,21 +106,23 @@ with pkgs.lib; {
           "${mod}+Shift+r" = "restart";
           "${mod}+Shift+e" = "exit";
         }
-      );
-      modes.resize = {
-        "h" = "resize shrink width 10 px or 10 ppt";
-        "j" = "resize shrink height 10 px or 10 ppt";
-        "k" = "resize grow height 10 px or 10 ppt";
-        "l" = "resize grow width 10 px or 10 ppt";
-        "Escape" = "mode default";
-        "Return" = "mode default";
+        );
+        modes.resize = {
+          "h" = "resize shrink width 10 px or 10 ppt";
+          "j" = "resize shrink height 10 px or 10 ppt";
+          "k" = "resize grow height 10 px or 10 ppt";
+          "l" = "resize grow width 10 px or 10 ppt";
+          "Escape" = "mode default";
+          "Return" = "mode default";
+        };
       };
+      extraConfig = ''
+        font pango:Fira Code Retina 9
+        new_window none
+        new_float none
+        for_window [class="^(?|feh$)"] border pixel 0
+        gaps inner 5
+        gaps outer 20
+      '';
     };
-    extraConfig = ''
-      font pango:Fira Code Retina 9
-      new_window none
-      new_float none
-      for_window [class="^(?|feh$)"] border pixel 0
-    '';
-  };
-}
+  }

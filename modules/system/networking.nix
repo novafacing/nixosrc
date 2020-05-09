@@ -1,6 +1,8 @@
 { config, pkgs, ... }:
 
 {
+  # TODO: Make this read from a file in config
+  # Define networking
   networking.hostName = "chaos";
   networking.useDHCP = false;
   networking.interfaces.enp0s31f6.useDHCP = true;

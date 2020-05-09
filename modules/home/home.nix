@@ -8,6 +8,9 @@ let
   settings = import ../../config/settings.nix;
 in
 with pkgs.lib; {
+  # These define everything I use that is managed by 
+  # home-manager. This choice is usually because home-manager has a better
+  # configuration for it (so NOT neovim)
   imports = [
     ./i3.nix
     ./zsh.nix
@@ -30,7 +33,7 @@ with pkgs.lib; {
     # Global git aliases
     aliases = {
       co = "checkout";
-      s = "status --sort --branch";
+      status = "status --sort --branch";
       # Tack newly staged files to the last commit
       commend = "commit --amend --no-edit";
       it = "!git init && git commit -m “root” --allow-empty";

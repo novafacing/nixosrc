@@ -2,10 +2,10 @@
 
 let
   mod = "Mod1";
+  settings = import ../../config/settings.nix;
 in
 with pkgs.lib; {
   imports = [
-    ../settings
     ./i3.nix
     ./zsh.nix
     #./nvim.nix
@@ -13,13 +13,13 @@ with pkgs.lib; {
   ];
 
   nixpkgs.config = {
-    allowUnfree = true;
+    allowUnfree = settings.allowUnfree;
   };
 
   programs.git = {
     enable = true;
-    userName = "novafacing";
-    userEmail = "rowanbhart@gmail.com";
+    userName = settings.name;
+    userEmail = settings.email;
   };
 }
 

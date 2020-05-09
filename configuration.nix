@@ -16,7 +16,9 @@ in
 
   # Allows configuration of the nixpkgs (basically if you want free only or also nonfree)
   # Like above, the import just runs that nix file
-  nixpkgs.config = import ./config/nixpkgs.nix;
+  nixpkgs.config = {
+    allowUnfree = settings.allowUnfree;
+  };
 
   # Enable systemd + settings
   boot.loader.systemd-boot.enable = true;
@@ -37,6 +39,7 @@ in
   hardware.pulseaudio.enable = true;
 
   # Use the config file to create a username with the correct settings
+  # 
   users.users.${settings.username} = {
     isNormalUser = true;
     createHome = true;

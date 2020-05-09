@@ -3,19 +3,9 @@
 let
   mod = "Mod1";
   sup = "Mod4";
-  colors = {
-    focused = "$green $green $darkgray $purple $darkgray";
-    focused_inactive = "$darkgray $darkgray $yellow $purple $darkgray";
-    unfocused = "$darkgray $darkgray $yellow $purple $darkgray";
-    urgent = "$red $red $white $red $red";
-  };
-  gaps = {
-    outer = 5;
-    inner = 20;
-  };
 in
   with pkgs.lib; {
-  # These are the home-manager configs for X
+  # These are the home-manager configs for X/i3
   xsession.enable = true;
   xsession.windowManager.i3 = {
     package = pkgs.i3-gaps;

@@ -21,6 +21,10 @@
     discord
     spotify
     zip
+    ncdu
+    xclip
+    gnupg
+    pinentry-curses
 
     # Packages with configuration
     kitty
@@ -29,5 +33,7 @@
     texlive.combined.scheme-medium
     zathura
   ];
+
+  programs.gnupg.agent.enable = true;
 }
 

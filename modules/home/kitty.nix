@@ -1,11 +1,13 @@
 { config, pkgs, ... }:
-
+let 
+  settings = import ../../config/settings.nix;
+in
 with pkgs.lib; {
   programs.kitty = {
     enable = true;
     settings = {
       scrollback_lines = 100000;
-      font_size = "11.0";
+      font_size = toString settings.fontSize;
       window_border_width = "0.0";
       draw_minimal_borders = false;
       background_opacity = "1.0";
@@ -15,8 +17,8 @@ with pkgs.lib; {
     extraConfig = ''
       font_family      Fira Code Retina
       bold_font        Fira Code Bold
-      italic_font      Fira Code iCursive S12 Italic
-      bold_italic_font Fira Code iCursive S12 Italic
+      italic_font      Fira Code iCursive S12 Italic Nerd Font Complete Mono Windows Compatible
+      bold_italic_font Fira Code iCursive S12 Italic Nerd Font Complete Mono Windows Compatible
 
       # Colorscheme
       background  #32302f

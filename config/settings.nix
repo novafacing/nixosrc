@@ -1,3 +1,4 @@
+# This is just a set of settings I use in a few different places.
 {
   allowUnfree = true; # Sorry stallman senpai sama uwu
   name = "Rowan Hart";

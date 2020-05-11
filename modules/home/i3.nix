@@ -1,18 +1,23 @@
-{ config, pkgs, ... }:
+{ config, pkgs, fetchurl, ... }:
 
 let
   mod = "Mod1";
   sup = "Mod4";
 in
-  with pkgs.lib; {
+  with pkgs; {
   # These are the home-manager configs for X/i3
   xsession.enable = true;
   xsession.windowManager.i3 = {
-    package = pkgs.i3-gaps;
     enable = true;
+    package = pkgs.i3-gaps; ## (callPackage ./i3-round.nix {}); for rounded
     config = {
       modifier = mod;
-      bars = [];
+      bars = [
+        {
+          position = "top";
+          statusCommand = "bumblebee-status -t gruvbox-powerline -m rss battery cpu memory disk:root disk:home disk:swap traffic datetime -p interval=10 root.path=/ home.path=/home rss.feeds='https://news.ycombinator.com/rss'";
+        }
+      ];
       window = {
         titlebar = false;
         border = 0;
@@ -25,7 +30,7 @@ in
         forceWrapping = true;
         followMouse = true;
       };
-      keybindings = mkOptionDefault (
+      keybindings = lib.mkOptionDefault (
         {
           "${mod}+Return" = "exec kitty -o allow_remote_control=yes";
           "${mod}+Shift+q" = "kill";
@@ -98,10 +103,10 @@ in
         }
         );
         modes.resize = {
-          "h" = "resize shrink width 10 px or 10 ppt";
+          "l" = "resize shrink width 10 px or 10 ppt";
           "j" = "resize shrink height 10 px or 10 ppt";
           "k" = "resize grow height 10 px or 10 ppt";
-          "l" = "resize grow width 10 px or 10 ppt";
+          "h" = "resize grow width 10 px or 10 ppt";
           "Escape" = "mode default";
           "Return" = "mode default";
         };
@@ -111,8 +116,10 @@ in
         new_window none
         new_float none
         for_window [class="^(?|feh$)"] border pixel 0
-        gaps inner 5
+        gaps inner 20
         gaps outer 20
+        # border_radius 10
+        exec_always --no-startup-id feh --bg-scale /etc/nixos/theme/wallpaper
       '';
     };
   }

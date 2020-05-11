@@ -11,8 +11,6 @@
     # Autorun off, we run `sudo systemctl start display-manager` to start GUI
     autorun = false;
     displayManager.defaultSession = "none+i3";
-    desktopManager.wallpaper = {
-    };
     # Swap caps lock with escape
     xkbOptions = "caps:escape";
     # Enable my trackpad settings

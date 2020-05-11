@@ -1,0 +1,3 @@
+[submodule "modules/packages/custom/bumblebee-status"]
+    path = modules/packages/custom/bumblebee-status
+    url = git@github.com:novafacing/bumblebee-status.git

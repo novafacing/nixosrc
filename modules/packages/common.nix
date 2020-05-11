@@ -7,31 +7,42 @@
     #./rofi.nix
     #./i3blocks.nix
     ./fonts.nix
+    ./python
   ];
 
   environment.systemPackages = with pkgs; [
-    # One and done
+    # GUI Apps
     chromium
-    wget
-    curl
-    exa
-    htop
-    gotop
-    bat
     discord
     spotify
-    zip
-    ncdu
-    xclip
+    zathura
+    my.bumblebee-status
+
+    # Console Utilities
+    bat
+    curl
+    exa
+    feh
     gnupg
+    gotop
+    htop
+    ncdu
     pinentry-curses
+    pypi2nix
+    texlive.combined.scheme-medium
+    wget
+    xclip
+    zip
+    unzip
 
     # Packages with configuration
     kitty
     rofi
     neovim
-    texlive.combined.scheme-medium
-    zathura
+    # my.i3-round
+
+    # Libraries
+    libgit2
   ];
 
   programs.gnupg.agent.enable = true;

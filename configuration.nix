@@ -16,9 +16,6 @@ in
 
   # Allows configuration of the nixpkgs (basically if you want free only or also nonfree)
   # Like above, the import just runs that nix file
-  nixpkgs.config = {
-    allowUnfree = settings.allowUnfree;
-  };
 
   # Enable systemd + settings
   boot.loader.systemd-boot.enable = true;
@@ -26,13 +23,6 @@ in
 
   # Configure timezone
   time.timeZone = "America/Indiana/Indianapolis";
-
-  # Add any MUST-have packages (for example when something breaks)
-  environment.systemPackages = with pkgs; [
-    neovim
-    git
-    acpi
-  ];
 
   # Hardware options
   sound.enable = true;

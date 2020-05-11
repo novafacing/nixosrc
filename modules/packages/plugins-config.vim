@@ -1,7 +1,7 @@
 " Themes & Appearance
 " Plugin 'morhetz/gruvbox'
     set termguicolors
-    set background=soft
+    set background=dark
     let g:gruvbox_material_background = 'soft'
     let g:lightline.colorscheme = 'gruvbox_material'
     let g:gruvbox_material_enable_italic = 1

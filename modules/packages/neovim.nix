@@ -15,7 +15,7 @@ let
       src = pkgs.fetchFromGitHub {
         owner = "novafacing";
         repo = "gruvbox-material";
-        rev = "5444d67258eb4d1aa4c71ccdebc907b176fc2f76";
+        rev = "2da7b962eb4027e603ed30882c29013b896f3ddb";
         sha256 = "0rmns1w5krmpf24kaj8rvrad1r8iqi8i6nvgr61dgqc7xbdk7i3w";
       };
     };

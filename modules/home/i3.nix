@@ -1,8 +1,10 @@
-{ config, pkgs, fetchurl, ... }:
+{ config, lib, pkgs, fetchurl, ... }:
 
 let
   mod = "Mod1";
   sup = "Mod4";
+  github_token = lib.removeSuffix "\n" (builtins.readFile ../../nixos-private/github_token_bumblebee_status);
+  settings = import ../../config/settings.nix;
 in
   with pkgs; {
   # These are the home-manager configs for X/i3
@@ -11,13 +13,38 @@ in
     enable = true;
     package = pkgs.i3-gaps; ## (callPackage ./i3-round.nix {}); for rounded
     config = {
+      fonts = [
+         "Fira Code Medium 12" 
+      ];
       modifier = mod;
       bars = [
         {
           position = "top";
-          statusCommand = "bumblebee-status -t gruvbox-powerline -m rss battery cpu memory disk:root disk:home disk:swap traffic datetime -p interval=10 root.path=/ home.path=/home rss.feeds='https://news.ycombinator.com/rss'";
+          statusCommand = ''bumblebee-status -t gruvbox-powerline -m spacer spacer spacer spacer spacer spacer spacer spacer spacer spacer rss git github pomodoro cpu memory disk:root disk:home traffic weather battery datetime -p interval=10 root.path=/ home.path=/home battery.showpowerconsumption=true battery.showremaining=true github.token=${github_token} weather.location=Cincinnati weather.showminmax=true pulseaudio.autostart=true pulseaudio.percent_change=5 pulseaudio.showbars=1 spacer.theme.bg=#504945 spacer.text="        "''; # rss.feeds='https://news.ycombinator.com/rss rss.length=120'";
         }
       ];
+      gaps = {
+        inner = 20;
+        outer = 10;
+        smartGaps = true;
+      };
+      colors = {
+        background = "#504945";
+        focused = {
+          border = "#504945";
+          background = "#504945";
+          text = "#504945";
+          indicator = "#504945";
+          childBorder = "#504945";
+        };
+        unfocused = {
+          border = "#504945";
+          background = "#504945";
+          text = "#504945";
+          indicator = "#504945";
+          childBorder = "#504945";
+        };
+      };
       window = {
         titlebar = false;
         border = 0;
@@ -25,6 +52,9 @@ in
       };
       floating = {
         modifier = "${mod}";
+        criteria = [
+          { "title" = "gcolor3"; }
+        ];
       };
       focus = {
         forceWrapping = true;
@@ -35,6 +65,8 @@ in
           "${mod}+Return" = "exec kitty -o allow_remote_control=yes";
           "${mod}+Shift+q" = "kill";
           "${mod}+d" = ''exec rofi -show run -run-command "zsh -i -c '{cmd}'"'';
+          "${sup}+c" = ''CM_ONESHOT=1 clipmenud'';
+          "${sup}+v" = ''exec clipmenu'';
           "${mod}+h" = "focus left";
           "${mod}+j" = "focus down";
           "${mod}+k" = "focus up";
@@ -100,6 +132,11 @@ in
           "${mod}+Shift+c" = "reload";
           "${mod}+Shift+r" = "restart";
           "${mod}+Shift+e" = "exit";
+          "XF86AudioRaiseVolume" =  "exec pactl set-sink-volume @DEFAULT_SINK@ +10%";
+          "XF86AudioLowerVolume" =  "exec pactl set-sink-volume @DEFAULT_SINK@ -10%";
+          "XF86AudioMute" =  "exec pactl set-sink-mute @DEFAULT_SINK@ toggle";
+          "XF86MonBrightnessUp" = ''exec brightnessctl set "+5%"''; # increase screen brightness
+          "XF86MonBrightnessDown" = ''exec brightnessctl set "5%-"''; # decrease screen brightness
         }
         );
         modes.resize = {
@@ -110,16 +147,19 @@ in
           "Escape" = "mode default";
           "Return" = "mode default";
         };
+        startup = [
+          {
+            command = "feh --bg-scale /etc/nixos/theme/wallpaper";
+            always = true;
+            notification = false;
+          }
+        ];
       };
       extraConfig = ''
-        font pango:Fira Code Retina 9
         new_window none
         new_float none
         for_window [class="^(?|feh$)"] border pixel 0
-        gaps inner 20
-        gaps outer 20
-        # border_radius 10
-        exec_always --no-startup-id feh --bg-scale /etc/nixos/theme/wallpaper
+        bindsym --release ${mod}+g exec "maim -s | tee ~/hub/screenshots/$(date '+%Y-%m-%d_%H-%M-%S')_screenshot.png | xclip -selection clipboard -t image/png -i"
       '';
     };
   }

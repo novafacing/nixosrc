@@ -8,7 +8,7 @@
   vm = false;
   terminal = "kitty";
   fontName = "Fira Code";
-  fontSize = 10;
+  fontSize = 12;
 
   # Network config
   networking = {

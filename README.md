@@ -89,3 +89,9 @@ sudo nixos-rebuild switch --upgrade
 ```
 
 - And we should (theoretically) be done! 
+
+
+A couple things. For node packages, you'll need the node2nix dependency, which is installed by default in `modules/packages/common.nix`. 
+
+To add a _global_ node dependency, just add it to `modules/packages/node/node-packages.json` and run `node2nix -i node-packages.json` in `modules/packages/node`.
+

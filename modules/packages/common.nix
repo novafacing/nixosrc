@@ -5,9 +5,6 @@ in
 {
   imports = [
     ./neovim.nix
-    #./kitty.nix
-    #./rofi.nix
-    #./i3blocks.nix
     ./fonts.nix
     ./python
   ];
@@ -48,6 +45,8 @@ in
     # Development
     nodejs
     nodePackages.node2nix
+
+    # Node packages (see readme!)
     jsonlint
     eslint
 

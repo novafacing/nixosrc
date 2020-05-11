@@ -95,3 +95,4 @@ A couple things. For node packages, you'll need the node2nix dependency, which i
 
 To add a _global_ node dependency, just add it to `modules/packages/node/node-packages.json` and run `node2nix -i node-packages.json` in `modules/packages/node`.
 
+A token for github with only notifications permission is expected at `nixos/nixos-personal/github_...etc` You can just remove that expectation from the config for i3 at `modules/home/i3.nix` in the status command option.

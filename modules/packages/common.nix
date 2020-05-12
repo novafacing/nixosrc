@@ -1,6 +1,10 @@
 { config, pkgs, ... }:
 let
   myNodePackages = (pkgs.callPackage ./node {});
+  # Yes, I paid for this. DO support the developer if you have not at https://www.aseprite.org/
+  aseprite-unfree = pkgs.aseprite.overrideAttrs (old: rec {
+    unfree = true;
+  });
 in
 {
   imports = [
@@ -8,7 +12,6 @@ in
     ./fonts.nix
     ./python
   ];
-
 
   environment.systemPackages = with pkgs // myNodePackages; [
     # GUI Apps
@@ -18,6 +21,11 @@ in
     zathura
     my.bumblebee-status
     gcolor3
+    arandr
+    twmn
+    blender
+    inkscape
+    aseprite-unfree
 
     # Console Utilities
     bat
@@ -54,7 +62,6 @@ in
     kitty
     rofi
     neovim
-    # my.i3-round
 
     # Libraries
     libgit2

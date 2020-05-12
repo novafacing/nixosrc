@@ -17,6 +17,7 @@ with pkgs.lib; {
       enable = true;
       plugins = [
         "git"
+        "z"
       ];
     };
     localVariables = {

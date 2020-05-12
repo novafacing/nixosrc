@@ -1,7 +1,14 @@
 { pkgs, ... }:
-{
+with (import <nixpkgs> {}); {
+  nixpkgs.config.packageOverrides = pkgs: {
+    nur = import (builtins.fetchTarball "https://github.com/nix-community/NUR/archive/master.tar.gz") {
+      inherit pkgs;
+    };
+  };
+
   environment.systemPackages = with pkgs; [
     (python38Full.withPackages(ps: with ps; [
+      nur.repos.angr.python3Packages.angr
       numpy
       pip
       pygit2
@@ -13,6 +20,7 @@
       psutil
       netifaces
       setuptools
+      pwntools
       # (callPackage ./bumblebee-status { inherit pkgs; })
     ]))
   ];

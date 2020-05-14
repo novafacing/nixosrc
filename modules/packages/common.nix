@@ -1,11 +1,10 @@
 { config, pkgs, ... }:
 let
   myNodePackages = (pkgs.callPackage ./node {});
-  # Yes, I paid for this. DO support the developer if you have not at https://www.aseprite.org/
 in
 {
   imports = [
-    ./neovim.nix
+    ./neovim
     ./fonts.nix
     ./python
   ];

@@ -139,7 +139,14 @@ Only modules really needs an explanation. If you don't know, importing a directo
 .
 +-- home
 +-> Configuration for home-manager controlled stuff. Most but not all of
-  > my GUI programs are managed by home-manager.
+| > my GUI programs are managed by home-manager.
+|
+| +-- i3.nix
+| +-> My i3 config, including startup entries for when i3 starts (not the same as system startup)
+| +-- kitty.nix
+| +-> My terminal config, mostly colorscheme and font really.
+| +-- zsh.nix
+| +-> My zsh config. This file is huge because I have my whole powerlevel10k config in there. It could be smaller. I don't care.
 |
 +-- packages
 +-> Packages that I need to install for various things. System, CLI, GUI, etc.

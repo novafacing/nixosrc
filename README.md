@@ -155,6 +155,7 @@ Only modules really needs an explanation. If you don't know, importing a directo
 +-> System configs not managed by home-manager. Networking, services, etc.
 ```
 
+The packages directory is divided into common.nix and custom.nix, which do the obvious things. Most things are organized, like all my neovim config goes in modules/packages/neovim, all python things go in python, node in node, etc.
 
 
 ## Notes <a name="notes" />

@@ -7,7 +7,7 @@ with (import <nixpkgs> {}); {
   };
 
   environment.systemPackages = with pkgs; [
-    (python38Full.withPackages(ps: with ps; [
+    (python37Full.withPackages(ps: with ps; [
       nur.repos.angr.python3Packages.angr
       numpy
       pip
@@ -21,6 +21,9 @@ with (import <nixpkgs> {}); {
       netifaces
       setuptools
       pwntools
+      ipython
+      aiohttp
+      python-socketio
       # (callPackage ./bumblebee-status { inherit pkgs; })
     ]))
   ];

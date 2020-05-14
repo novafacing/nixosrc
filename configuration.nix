@@ -28,8 +28,13 @@ in
   sound.enable = true;
   hardware.pulseaudio.enable = true;
 
+  # Enable docker
+  virtualisation.docker.enable = true;
+
+  # This is needed for steam
+  hardware.opengl.driSupport32Bit = true;
+
   # Use the config file to create a username with the correct settings
-  # 
   users.users.${settings.username} = {
     isNormalUser = true;
     createHome = true;
@@ -37,6 +42,9 @@ in
     extraGroups = [ 
       "wheel" 
       "networkmanager"
+      "docker"
+      "audio"
+      "video"
     ];
     shell = pkgs.zsh;
   };

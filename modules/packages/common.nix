@@ -2,9 +2,6 @@
 let
   myNodePackages = (pkgs.callPackage ./node {});
   # Yes, I paid for this. DO support the developer if you have not at https://www.aseprite.org/
-  aseprite-unfree = pkgs.aseprite.overrideAttrs (old: rec {
-    unfree = true;
-  });
 in
 {
   imports = [
@@ -25,7 +22,7 @@ in
     twmn
     blender
     inkscape
-    aseprite-unfree
+    steam
 
     # Console Utilities
     bat
@@ -53,6 +50,7 @@ in
     # Development
     nodejs
     nodePackages.node2nix
+    docker-compose
 
     # Node packages (see readme!)
     jsonlint

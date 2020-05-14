@@ -40,6 +40,7 @@ in
     xclip
     zip
     unzip
+    parted
 
     # i3 Hotkey Commands
     clipmenu

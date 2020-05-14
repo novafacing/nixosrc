@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./x.nix
     ./networking.nix
   ];
 }

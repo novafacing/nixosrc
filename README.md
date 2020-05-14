@@ -138,13 +138,15 @@ Only modules really needs an explanation. If you don't know, importing a directo
 ```
 .
 +-- home
-+->
++-> Configuration for home-manager controlled stuff. Most but not all of
+  > my GUI programs are managed by home-manager.
 |
 +-- packages
-+->
++-> Packages that I need to install for various things. System, CLI, GUI, etc.
 |
 +-- system
-+->
++-> System configs not managed by home-manager. Networking, services, etc.
+```
 
 
 

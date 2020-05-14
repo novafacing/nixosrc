@@ -2,7 +2,7 @@
 
 This is my entire NixOS System configuration. Install instructions are below:
 
-First, make a NixOS bootable drive using the minimal CD (we won't be using xfce). This assumes 20.03 (until further notice) but should work on others.
+First, make a NixOS bootable drive using the minimal CD (we won't be using xfce). This assumes 20.03 (until further notice) but should work on others. You can obtain that from [here](https://nixos.org/download.html). I recommend [etcher](https://www.balena.io/etcher/) for imaging an installer flash drive.
 
 Boot into the NixOS installer and go through the following:
 
@@ -16,6 +16,8 @@ wpa_supplicant -B -i <WIRELESS_INTERFACE> \
 - Partition disks and mount them with something like:
 
 ```sh
+# I assume an install drive called nvme0. You can find your current parts with ""sudo parted -l" and list drives with "sudo fdisk -l"
+
 sudo parted /dev/nvme0n1 -- mklabel gpt
 sudo parted /dev/nvme0n1 -- mkpart ESP fat32 1MiB 512MiB
 sudo parted /dev/nvme0n1 -- set 1 boot on
@@ -25,15 +27,16 @@ sudo swapon /dev/nvme0n1p2
 sudo parted /dev/nvme0n1 -- mkpart primary 8512MiB 100%
 sudo pvcreate /dev/nvme0n1p3
 sudo vgcreate pool /dev/nvme0n1p3
-sudo lvcreate -L 96G -n root pool
-sudo lvcreate -L 133G -n home pool
-sudo mkfs.ext4 -L root /dev/pool/root
+sudo lvcreate -L 96G -n root pool # 96G should just be however big you want your root partition
+sudo lvcreate -L 133G -n home pool # 133G should just be however big you want your home partition
+sudo mkfs.ext4 -L root /dev/pool/root # You can choose another FS if you hate yourself...
 sudo mkfs.ext4 -L home /dev/pool/home
 sudo mount /dev/disk/by-label/root /mnt
 sudo mkdir -p /mnt/home /mnt/boot
 sudo mount /dev/disk/by-label/home /mnt/home
 sudo mount /dev/disk/by-label/boot /mnt/boot
-# Note the above WILL vary based on your drive configuration
+
+# Note the above will probably vary based on your drive configuration
 ```
 
 - Generate a base config:

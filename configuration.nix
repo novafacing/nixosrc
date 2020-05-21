@@ -49,6 +49,14 @@ in
     shell = pkgs.zsh;
   };
 
+  #services.fprintd.enable = true;
+  #security.pam.services.login.fprintAuth = true;
+  #security.pam.services.sudo.fprintAuth = true;
+  security.sudo.enable = true;
+  security.sudo.extraConfig = ''
+    %wheel ALL=(ALL) NOPASSWD: ALL
+  '';
+
   # Add ourselves to the home-manager config and use home manager to set up 
   # whatever we want to use home-manager for. Sometimes home-manager is helpful and
   # makes things easier, sometimes it makes them harder. Depends ;)

@@ -4,3 +4,6 @@
 [submodule "nixos-private"]
 	path = nixos-private
 	url = ssh://git@github.com/novafacing/nixos-private.git
+[submodule "modules/packages/nur"]
+	path = modules/packages/nur
+	url = ssh://git@github.com/novafacing/nur-packages.git

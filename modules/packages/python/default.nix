@@ -26,5 +26,6 @@ with (import <nixpkgs> {}); {
       python-socketio
       # (callPackage ./bumblebee-status { inherit pkgs; })
     ]))
+    jython
   ];
 }

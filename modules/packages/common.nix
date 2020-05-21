@@ -2,12 +2,18 @@
 let
   myNodePackages = (pkgs.callPackage ./node {});
 in
-{
+with (import <nixpkgs> {}); {
   imports = [
     ./neovim
     ./fonts.nix
     ./python
   ];
+
+  nixpkgs.config.packageOverrides = pkgs: {
+    nur = import (builtins.fetchTarball "https://github.com/nix-community/NUR/archive/master.tar.gz") {
+      inherit pkgs;
+    };
+  };
 
   environment.systemPackages = with pkgs // myNodePackages; [
     # GUI Apps
@@ -22,8 +28,23 @@ in
     blender
     inkscape
     steam
+    etcher
+    gparted
+    unetbootin
+    skypeforlinux
+
+    # Reversing tools
+    afl
+    ghidra-bin
+    wireshark
+    radare2
+    #my.binaryninja
+    #my.gdb
+    
 
     # Console Utilities
+    coreutils
+    file
     bat
     curl
     exa
@@ -40,6 +61,8 @@ in
     zip
     unzip
     parted
+    my.wally-cli
+    wineWowPackages.staging
 
     # i3 Hotkey Commands
     clipmenu
@@ -51,6 +74,16 @@ in
     nodejs
     nodePackages.node2nix
     docker-compose
+    cmake
+    gcc
+    clang
+    bison
+    flex
+    pkg-config
+    valgrind
+    patchelf
+    my.autopatchelf
+    binutils
 
     # Node packages (see readme!)
     jsonlint
@@ -63,6 +96,9 @@ in
 
     # Libraries
     libgit2
+    libusb
+    libbfd
+    glibc
   ];
   programs.nm-applet.enable = true;
   programs.gnupg.agent.enable = true;

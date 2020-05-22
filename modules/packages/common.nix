@@ -30,6 +30,7 @@ with (import <nixpkgs> {}); {
     steam
     etcher
     gparted
+    woeusb
     unetbootin
     skypeforlinux
 

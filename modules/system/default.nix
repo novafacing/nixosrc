@@ -6,5 +6,6 @@
     ./networking.nix
     # For ergodox EZ
     ./udev.nix
+    ./fs.nix
   ];
 }

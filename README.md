@@ -168,3 +168,5 @@ To add a _global_ node dependency, just add it to `modules/packages/node/node-pa
 A token for github with only notifications permission is expected at `nixos/nixos-personal/github_...etc` You can just remove that expectation from the config for i3 at `modules/home/i3.nix` in the status command option.
 
 To make a windows installer disk, use gparted to format the USB and create a GPT partition scheme. Then, create a single partition formatted as NTFS. Run `sudo woeusb` and click File->Show All Drives. Click NTFS in WoeUSB and a windows ISO. and click install. Done :) This isn't really a nixos thing but since this is my main OS notes why not ;)
+
+To find a package that provides a file, install `nix-index` with configuration or with `nix-env -iA nixos.nix-index` and run `sudo nix-index`. Then to find a provider, run `nix-locate -w libz.so.1`.

@@ -33,6 +33,9 @@ with (import <nixpkgs> {}); {
     woeusb
     unetbootin
     skypeforlinux
+    googleearth
+    gimp
+    signal-desktop
 
     # Reversing tools
     afl
@@ -85,6 +88,9 @@ with (import <nixpkgs> {}); {
     patchelf
     my.autopatchelf
     binutils
+    meson
+    ninja
+    my.buildShellShim
 
     # Node packages (see readme!)
     jsonlint
@@ -100,7 +106,11 @@ with (import <nixpkgs> {}); {
     libusb
     libbfd
     glibc
+    zlib
+    gcc-unwrapped
+    openssl
   ];
+
   programs.nm-applet.enable = true;
   programs.gnupg.agent.enable = true;
 }

@@ -14,7 +14,6 @@ with pkgs.lib; {
   imports = [
     ./i3.nix
     ./zsh.nix
-    #./nvim.nix
     ./kitty.nix
   ];
 
@@ -46,6 +45,7 @@ with pkgs.lib; {
     ignores = [
       "*.o"
       "*.so"
+      "*.a"
     ];
   };
 }

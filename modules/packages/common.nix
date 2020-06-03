@@ -100,15 +100,6 @@ with (import <nixpkgs> {}); {
     kitty
     rofi
     neovim
-
-    # Libraries
-    libgit2
-    libusb
-    libbfd
-    glibc
-    zlib
-    gcc-unwrapped
-    openssl
   ];
 
   programs.nm-applet.enable = true;

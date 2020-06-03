@@ -170,3 +170,6 @@ A token for github with only notifications permission is expected at `nixos/nixo
 To make a windows installer disk, use gparted to format the USB and create a GPT partition scheme. Then, create a single partition formatted as NTFS. Run `sudo woeusb` and click File->Show All Drives. Click NTFS in WoeUSB and a windows ISO. and click install. Done :) This isn't really a nixos thing but since this is my main OS notes why not ;)
 
 To find a package that provides a file, install `nix-index` with configuration or with `nix-env -iA nixos.nix-index` and run `sudo nix-index`. Then to find a provider, run `nix-locate -w libz.so.1`.
+
+Really important: do NOT install things like `libgit2` globally in common.nix! This is a really easy way to screw up impure nix-shell build environments! And we don't like that!
+

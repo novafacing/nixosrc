@@ -20,7 +20,7 @@ in
       bars = [
         {
           position = "top";
-          statusCommand = ''bumblebee-status -t gruvbox-powerline -m space space space git github pomodoro cpu memory disk:root disk:home traffic weather battery datetime -p interval=10 root.path=/ home.path=/home battery.showpowerconsumption=true battery.showremaining=true github.token=${github_token} weather.location=Cincinnati weather.showminmax=true pulseaudio.autostart=true pulseaudio.percent_change=5 pulseaudio.showbars=1 spacer.theme.bg=#504945 spacer.text="                                                                                                                                                                "'';
+          statusCommand = ''bumblebee-status -t gruvbox-powerline -m spacer spacer spacer git github pomodoro cpu memory disk:root disk:home traffic weather battery datetime -p interval=10 root.path=/ home.path=/home battery.showpowerconsumption=true battery.showremaining=true github.token=${github_token} weather.location=Cincinnati weather.showminmax=true pulseaudio.autostart=true pulseaudio.percent_change=5 pulseaudio.showbars=1 spacer.theme.bg=#504945 spacer.text="                                                                                                                                                                "'';
         }
       ];
       gaps = {
@@ -149,7 +149,7 @@ in
         };
         startup = [
           {
-            command = "feh --bg-scale /etc/nixos/theme/wallpaper";
+            command = "feh --bg-scale /etc/nixos/theme/wallpaper.png";
             always = true;
             notification = false;
           }

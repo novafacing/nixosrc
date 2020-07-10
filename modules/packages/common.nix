@@ -36,6 +36,7 @@ with (import <nixpkgs> {}); {
     unetbootin
     woeusb
     zathura
+    virtualbox
 
     # Reversing tools
     #my.binaryninja

@@ -1,4 +1,7 @@
 [
-    eslint,
-    "jsonlint"
+    "eslint",
+    "jsonlint",
+    "json",
+    "tldr",
+    "fkill"
 ]

@@ -17,91 +17,105 @@ with (import <nixpkgs> {}); {
 
   environment.systemPackages = with pkgs // myNodePackages; [
     # GUI Apps
+    arandr
+    blender
     chromium
     discord
-    spotify
-    zathura
-    my.bumblebee-status
-    gcolor3
-    arandr
-    twmn
-    blender
-    inkscape
-    steam
     etcher
-    gparted
-    woeusb
-    unetbootin
-    skypeforlinux
-    googleearth
+    gcolor3
     gimp
+    googleearth
+    gparted
+    inkscape
+    my.bumblebee-status
     signal-desktop
+    skypeforlinux
+    spotify
+    steam
+    twmn
+    unetbootin
+    woeusb
+    zathura
 
     # Reversing tools
-    afl
-    ghidra-bin
-    wireshark
-    radare2
     #my.binaryninja
-    #my.gdb
+    afl
+    gdb
+    ghidra-bin
+    radare2
+    wireshark
     
 
     # Console Utilities
-    coreutils
-    file
+    appimage-run
     bat
+    coreutils
     curl
     exa
     feh
+    file
     gnupg
     gotop
     htop
+    my.wally-cli
     ncdu
+    nox
+    parted
     pinentry-curses
     pypi2nix
-    texlive.combined.scheme-medium
-    wget
-    xclip
-    zip
+    sageWithDoc
+    texlive.combined.scheme-full
     unzip
-    parted
-    my.wally-cli
-    wineWowPackages.staging
+    wget
+    # wineWowPackages.staging
+    wine
+    winetricks
+    xclip
+    xxd
+    zip
 
     # i3 Hotkey Commands
+    brightnessctl
     clipmenu
     maim
     pavucontrol
-    brightnessctl
 
     # Development
-    nodejs
-    nodePackages.node2nix
-    docker-compose
-    cmake
-    gcc
-    clang
-    bison
-    flex
-    pkg-config
-    valgrind
-    patchelf
-    my.autopatchelf
     binutils
+    bison
+    cabal-install
+    clang
+    cmake
+    docker-compose
+    doxygen
+    flex
+    gcc
+    manpages
     meson
-    ninja
+    mgba
+    my.autopatchelf
     my.buildShellShim
+    ninja
+    nodePackages.node2nix
+    nodejs
+    patchelf
+    pkg-config
+    postman
+    rgbds
+    valgrind
 
     # Node packages (see readme!)
-    jsonlint
     eslint
+    jsonlint
 
     # Packages with configuration
     kitty
-    rofi
     neovim
+    rofi
   ];
 
+  # Dev manpages
+  documentation.dev.enable = true;
   programs.nm-applet.enable = true;
   programs.gnupg.agent.enable = true;
 }

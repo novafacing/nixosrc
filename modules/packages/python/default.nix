@@ -8,22 +8,31 @@ with (import <nixpkgs> {}); {
 
   environment.systemPackages = with pkgs; [
     (python37Full.withPackages(ps: with ps; [
-      nur.repos.angr.python3Packages.angr
+      # nur.repos.angr.python3Packages.angr
+      aiohttp
+      cryptography
+      feedparser
+      gmpy
+      gmpy2
+      i3ipc
+      ipython
+      netifaces
       numpy
       pip
-      pygit2
-      requests
-      feedparser
       power
-      tkinter
-      i3ipc
       psutil
-      netifaces
-      setuptools
       pwntools
-      ipython
-      aiohttp
+      pycrypto
+      pycryptodome
+      pygit2
       python-socketio
+      requests
+      sagemath
+      setuptools
+      six
+      sympy
+      tkinter
+      urllib3
       # (callPackage ./bumblebee-status { inherit pkgs; })
     ]))
     jython

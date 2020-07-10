@@ -209,14 +209,23 @@
               return "\ue61b"
           endif
       endfunction
+      function! NERDTreeStart()
+        if !argc() && !exists("s:std_in")
+          NERDTree
+        end
+        if argc() && isdirectory(argv()[0]) && !exists("s:std_in")
+          exe 'NERDTree' argv() [0]
+          wincmd p
+          ene
+        end
+      endfunction
     ''
 
     ''
       " AUTO COMMANDS
       "Set highlight after 80 for C/C++ & 120 for python
-      autocmd BufRead,BufNewFile *.c,*.h set colorcolumn=80
-      autocmd BufRead,BufNewFile *.py set colorcolumn=120
-      autocmd BufRead,BufNewFile *.c,*.h,*.py highlight ColorColumn ctermbg=lightgrey
+      autocmd BufRead,BufNewFile * set colorcolumn=120
+      autocmd BufRead,BufNewFile * highlight ColorColumn ctermbg=lightgrey
       " vim hex editing any file with .bin extension
       " vim -b: edit binary using xxd-format!
       augroup Binary
@@ -245,6 +254,10 @@
         autocmd!
         autocmd BufWritePost * call lightline#gitdiff#get() | call lightline#update()
       augroup END
+      " Start nerdtree on vim with no file or vim directory
+      autocmd StdinReadPre * let s:std_in=1
+      autocmd VimEnter * call NERDTreeStart()
+
     ''
   ]);
 }

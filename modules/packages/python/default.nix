@@ -33,6 +33,9 @@ with (import <nixpkgs> {}); {
       sympy
       tkinter
       urllib3
+      pwntools
+      ROPGadget
+      z3
       # (callPackage ./bumblebee-status { inherit pkgs; })
     ]))
     jython

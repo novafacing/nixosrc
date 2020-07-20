@@ -30,6 +30,9 @@ in
 
   # Enable docker
   virtualisation.docker.enable = true;
+  virtualisation.virtualbox.host.enable = true;
+  virtualisation.virtualbox.guest.enable = true;
+  virtualisation.virtualbox.host.enableExtensionPack = true;
 
   # This is needed for steam
   hardware.opengl.driSupport32Bit = true;
@@ -45,6 +48,7 @@ in
       "docker"
       "audio"
       "video"
+      "vboxusers"
     ];
     shell = pkgs.zsh;
   };

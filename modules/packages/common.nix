@@ -18,6 +18,7 @@ with (import <nixpkgs> {}); {
   environment.systemPackages = with pkgs // myNodePackages; [
     # GUI Apps
     arandr
+    audacity
     blender
     chromium
     discord
@@ -36,7 +37,7 @@ with (import <nixpkgs> {}); {
     unetbootin
     woeusb
     zathura
-    virtualbox
+    vlc
 
     # Reversing tools
     #my.binaryninja
@@ -74,6 +75,10 @@ with (import <nixpkgs> {}); {
     xclip
     xxd
     zip
+    nix-du
+    graphviz
+    whois
+    nmap
 
     # i3 Hotkey Commands
     brightnessctl
@@ -86,11 +91,13 @@ with (import <nixpkgs> {}); {
     bison
     cabal-install
     clang
+    clangMultiStdenv
     cmake
     docker-compose
     doxygen
     flex
     gcc
+    gcc_multi
     manpages
     meson
     mgba
@@ -104,6 +111,7 @@ with (import <nixpkgs> {}); {
     postman
     rgbds
     valgrind
+    sloccount
 
     # Node packages (see readme!)
     eslint

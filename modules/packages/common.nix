@@ -29,6 +29,7 @@ with (import <nixpkgs> {}); {
     gparted
     inkscape
     my.bumblebee-status
+    my.aseprite
     signal-desktop
     skypeforlinux
     spotify
@@ -112,6 +113,7 @@ with (import <nixpkgs> {}); {
     rgbds
     valgrind
     sloccount
+    love
 
     # Node packages (see readme!)
     eslint

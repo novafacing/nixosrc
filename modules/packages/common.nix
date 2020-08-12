@@ -39,6 +39,10 @@ with (import <nixpkgs> {}); {
     woeusb
     zathura
     vlc
+    dfilemanager
+    rawtherapee
+    obs-studio
+    firefox
 
     # Reversing tools
     #my.binaryninja
@@ -80,6 +84,7 @@ with (import <nixpkgs> {}); {
     graphviz
     whois
     nmap
+    bind
 
     # i3 Hotkey Commands
     brightnessctl
@@ -114,6 +119,7 @@ with (import <nixpkgs> {}); {
     valgrind
     sloccount
     love
+    lua
 
     # Node packages (see readme!)
     eslint

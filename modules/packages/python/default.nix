@@ -9,7 +9,10 @@ with (import <nixpkgs> {}); {
   environment.systemPackages = with pkgs; [
     (python37Full.withPackages(ps: with ps; [
       # nur.repos.angr.python3Packages.angr
+      ROPGadget
+      beautifulsoup4
       aiohttp
+      pygments
       cryptography
       feedparser
       gmpy
@@ -18,9 +21,11 @@ with (import <nixpkgs> {}); {
       ipython
       netifaces
       numpy
+      pillow
       pip
       power
       psutil
+      pwntools
       pwntools
       pycrypto
       pycryptodome
@@ -33,11 +38,10 @@ with (import <nixpkgs> {}); {
       sympy
       tkinter
       urllib3
-      pwntools
-      ROPGadget
       z3
       # (callPackage ./bumblebee-status { inherit pkgs; })
     ]))
     jython
+    python36
   ];
 }

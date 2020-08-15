@@ -173,3 +173,10 @@ To find a package that provides a file, install `nix-index` with configuration o
 
 Really important: do NOT install things like `libgit2` globally in common.nix! This is a really easy way to screw up impure nix-shell build environments! And we don't like that!
 
+To install OBS browser plugin:
+
+1. Install obs-studio and obs-linuxbrowser
+
+2. `mkdir -p ~/.config/obs-studio/plugins`
+
+3. `ln -s /nix/store/hrqm3r1ihlc26wpbnhcmzl6l0cbk6c8r-obs-linuxbrowser-0.6.1-6-gf86dba6/share/obs/obs-plugins/obs-linuxbrowser ~/.config/obs-studio/plugins/` (or whatever your path to that dir is).

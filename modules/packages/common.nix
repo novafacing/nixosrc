@@ -42,6 +42,7 @@ with (import <nixpkgs> {}); {
     dfilemanager
     rawtherapee
     obs-studio
+    obs-linuxbrowser
     firefox
 
     # Reversing tools

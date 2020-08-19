@@ -23,6 +23,8 @@
             fi
       '';
       aseprite = (callPackage ./aseprite.nix {});
+      ndi = (callPackage ./ndi.nix {});
+      # myobs-ndi = (callPackage ./obs-ndi.nix {});
     };
   })
 ]

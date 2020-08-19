@@ -180,3 +180,11 @@ To install OBS browser plugin:
 2. `mkdir -p ~/.config/obs-studio/plugins`
 
 3. `ln -s /nix/store/hrqm3r1ihlc26wpbnhcmzl6l0cbk6c8r-obs-linuxbrowser-0.6.1-6-gf86dba6/share/obs/obs-plugins/obs-linuxbrowser ~/.config/obs-studio/plugins/` (or whatever your path to that dir is).
+
+To install OBS-NDI Plugin:
+
+1. Just install this repo...
+
+2. mkdir -p ~/.config/obs-studio/plugins/obs-ndi/bin/64bit/
+
+3. ln -s /nix/store/rdy508cg2x95xnflxk3jbqhmw5f0q382-obs-ndi-4.7.1/lib/obs-plugins/obs-ndi.so ~/.config/obs-studio/plugins/obs-ndi/bin/64bit/obs-ndi.so

@@ -43,6 +43,9 @@ with (import <nixpkgs> {}); {
     rawtherapee
     obs-studio
     obs-linuxbrowser
+    my.ndi
+    obsndi
+    # my.myobs-ndi
     firefox
 
     # Reversing tools

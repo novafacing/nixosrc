@@ -2,6 +2,6 @@
 {
   imports = [
   ];
-  nixpkgs.overlays = import ./custom;
+  nixpkgs.overlays = import ./custom ++ import ./obs-ndi;
   nixpkgs.config.allowUnfree = true;
 }

@@ -47,9 +47,10 @@ with (import <nixpkgs> {}); {
     obsndi
     # my.myobs-ndi
     firefox
+    inkscape
 
     # Reversing tools
-    #my.binaryninja
+    my.binaryninja
     afl
     gdb
     ghidra-bin
@@ -85,6 +86,8 @@ with (import <nixpkgs> {}); {
     xxd
     zip
     nix-du
+    lz4
+    ltrace
     graphviz
     whois
     nmap

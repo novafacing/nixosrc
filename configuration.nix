@@ -34,6 +34,13 @@ in
   virtualisation.virtualbox.guest.enable = true;
   virtualisation.virtualbox.host.enableExtensionPack = true;
 
+  networking.firewall.allowedTCPPortRanges = [
+    { 
+      from = 5960;
+      to = 5970;
+    }
+  ];
+
   # This is needed for steam
   hardware.opengl.driSupport32Bit = true;
 

@@ -2,6 +2,7 @@
 
 # This is a bit of a hot mess but uhhhhh eso si que es
 with pkgs.lib; {
+  programs.command-not-found.enable = false;
   programs.zsh = {
     enable = true;
     enableAutosuggestions = true;
@@ -1762,6 +1763,7 @@ with pkgs.lib; {
       DEVKITPRO=/opt/devkitpro/
       DEVKITARM=/opt/devkitpro/devkitARM
       export PATH=/opt/devkitpro/devkitARM/bin:$PATH
+      source ${pkgs.nix-index}/etc/profile.d/command-not-found.sh
     '';
   };
 }

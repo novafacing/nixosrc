@@ -15,6 +15,7 @@ with pkgs.lib; {
     ./i3.nix
     ./zsh.nix
     ./kitty.nix
+    ./binaryninja.nix
   ];
 
   # Make sure we obey the nixpkgs free/nonfree rules

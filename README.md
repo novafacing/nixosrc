@@ -188,3 +188,11 @@ To install OBS-NDI Plugin:
 2. mkdir -p ~/.config/obs-studio/plugins/obs-ndi/bin/64bit/
 
 3. ln -s /nix/store/rdy508cg2x95xnflxk3jbqhmw5f0q382-obs-ndi-4.7.1/lib/obs-plugins/obs-ndi.so ~/.config/obs-studio/plugins/obs-ndi/bin/64bit/obs-ndi.so
+
+## How to clean up
+
+NixOS is amazing but it blows up your hard drive a lot if you `--update` too much. To reduce the size:
+
+1. `nix-env --delete-generations old`
+2. `nix-collect-garbage -d`
+2. `nix-store --optimize`

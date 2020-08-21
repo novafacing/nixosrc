@@ -75,5 +75,11 @@ in
 
   # The nixos version :)
   system.stateVersion = "20.09";
+
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 7d";
+  };
 }
 

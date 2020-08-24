@@ -31,12 +31,12 @@ let
       "ui": {
         "debugMode": true,
         "font": {
-          "name": "Fira Code iCursive S12 [CTDB]",
+          "name": "Fira Code iCursive S12",
           "size": 10,
           "spacing": 0
         },
         "graph": {
-          "carousel": ['Disassembly', 'HighLevelIL', 'LowLevelIL']
+          "carousel": ["Disassembly", "HighLevelIL", "LowLevelIL"],
           "preferred": true
         },
         "theme": "gruvbox"

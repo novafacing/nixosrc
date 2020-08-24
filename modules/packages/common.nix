@@ -18,6 +18,7 @@ with (import <nixpkgs> {}); {
   environment.systemPackages = with pkgs // myNodePackages; [
     # GUI Apps
     arandr
+    adobe-reader
     audacity
     blender
     chromium
@@ -31,7 +32,9 @@ with (import <nixpkgs> {}); {
     my.bumblebee-status
     my.aseprite
     signal-desktop
+    hexchat
     skypeforlinux
+    thunderbird
     spotify
     steam
     twmn

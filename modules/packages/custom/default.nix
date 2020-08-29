@@ -24,6 +24,7 @@
       '';
       aseprite = (callPackage ./aseprite.nix {});
       ndi = (callPackage ./ndi.nix {});
+      ocra = (callPackage ./ocra.nix {});
       # myobs-ndi = (callPackage ./obs-ndi.nix {});
     };
   })

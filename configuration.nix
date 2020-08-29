@@ -63,6 +63,8 @@ in
   #services.fprintd.enable = true;
   #security.pam.services.login.fprintAuth = true;
   #security.pam.services.sudo.fprintAuth = true;
+  services.spotifyd.enable = true;
+  services.spotifyd.config = builtins.readFile /etc/nixos/nixos-private/spotifyd.config;
   security.sudo.enable = true;
   security.sudo.extraConfig = ''
     %wheel ALL=(ALL) NOPASSWD: ALL

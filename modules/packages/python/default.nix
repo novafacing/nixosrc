@@ -8,7 +8,7 @@ with (import <nixpkgs> {}); {
 
   environment.systemPackages = with pkgs; [
     (python37Full.withPackages(ps: with ps; [
-      # nur.repos.angr.python3Packages.angr
+      nur.repos.angr.python3Packages.angr
       ROPGadget
       beautifulsoup4
       aiohttp
@@ -17,6 +17,7 @@ with (import <nixpkgs> {}); {
       feedparser
       gmpy
       gmpy2
+      flask
       i3ipc
       ipython
       netifaces

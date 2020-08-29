@@ -73,14 +73,17 @@ with (import <nixpkgs> {}); {
     gotop
     htop
     my.wally-cli
+    my.ocra
     ncdu
     nox
+    spotifyd
     parted
     pinentry-curses
     pypi2nix
     sageWithDoc
     texlive.combined.scheme-full
     unzip
+    openvpn
     wget
     # wineWowPackages.staging
     wine
@@ -88,6 +91,7 @@ with (import <nixpkgs> {}); {
     xclip
     xxd
     zip
+    spotify-tui
     nix-du
     lz4
     ltrace

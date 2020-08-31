@@ -22,8 +22,10 @@ with (import <nixpkgs> {}); {
     audacity
     blender
     chromium
+    slack
     discord
     etcher
+    bitwarden
     gcolor3
     gimp
     googleearth
@@ -70,17 +72,19 @@ with (import <nixpkgs> {}); {
     feh
     file
     gnupg
+    nix-index
+    silver-searcher
     gotop
     htop
     my.wally-cli
     my.ocra
     ncdu
     nox
-    spotifyd
     parted
     pinentry-curses
     pypi2nix
-    sageWithDoc
+    openjdk
+    # sageWithDoc
     texlive.combined.scheme-full
     unzip
     openvpn
@@ -91,7 +95,8 @@ with (import <nixpkgs> {}); {
     xclip
     xxd
     zip
-    spotify-tui
+    ncspot
+    my.nix-doc
     nix-du
     lz4
     ltrace
@@ -117,6 +122,7 @@ with (import <nixpkgs> {}); {
     doxygen
     flex
     gcc
+    gnumake
     gcc_multi
     manpages
     meson

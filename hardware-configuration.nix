@@ -14,24 +14,23 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/1293156b-eae9-4300-a500-b20cfb490cb8";
+    { device = "/dev/disk/by-uuid/e9014a44-4e5f-452e-8231-6b96987ac78a";
+      fsType = "ext4";
+    };
+
+  fileSystems."/home" =
+    { device = "/dev/disk/by-uuid/fcaa5097-8816-4b3a-838e-0a0c4646a7a3";
       fsType = "ext4";
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/5BAC-43CB";
+    { device = "/dev/disk/by-uuid/2018-0AD1";
       fsType = "vfat";
     };
 
-  fileSystems."/home" =
-    { device = "/dev/disk/by-uuid/f8ac5e2a-84ac-4a66-b632-670a697c9d9e";
-      fsType = "ext4";
-    };
+  swapDevices = [ ];
 
-  swapDevices =
-    [ { device = "/dev/disk/by-uuid/b6f3f82d-1a49-4220-aadd-d24511ddd0e0"; }
-    ];
-
+  nix.maxJobs = lib.mkDefault 8;
   powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
   # High-DPI console
   console.font = lib.mkDefault "${pkgs.terminus_font}/share/consolefonts/ter-u28n.psf.gz";

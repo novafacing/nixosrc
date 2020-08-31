@@ -24,8 +24,8 @@ in
         }
       ];
       gaps = {
-        inner = 20;
-        outer = 10;
+        inner = 5;
+        outer = 5;
         smartGaps = true;
       };
       colors = {

@@ -11,5 +11,6 @@
   networking.firewall.allowedTCPPorts = [ ];
   networking.firewall.allowedUDPPorts = [ ];
   networking.firewall.enable = true;
+  programs.nm-applet.enable = true;
 }
 

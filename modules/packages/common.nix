@@ -17,93 +17,98 @@ with (import <nixpkgs> {}); {
 
   environment.systemPackages = with pkgs // myNodePackages; [
     # GUI Apps
-    arandr
+    # my.myobs-ndi
     adobe-reader
+    arandr
     audacity
+    bitwarden
     blender
     chromium
-    slack
+    dfilemanager
     discord
     etcher
-    bitwarden
+    firefox
     gcolor3
     gimp
     googleearth
     gparted
-    inkscape
-    my.bumblebee-status
-    my.aseprite
-    signal-desktop
     hexchat
+    inkscape
+    inkscape
+    my.aseprite
+    my.bumblebee-status
+    my.ndi
+    obs-linuxbrowser
+    obs-studio
+    obsndi
+    rawtherapee
+    signal-desktop
     skypeforlinux
-    thunderbird
+    slack
+    my.smartgit
     spotify
     steam
+    thunderbird
     twmn
     unetbootin
+    vlc
     woeusb
     zathura
-    vlc
-    dfilemanager
-    rawtherapee
-    obs-studio
-    obs-linuxbrowser
-    my.ndi
-    obsndi
-    # my.myobs-ndi
-    firefox
-    inkscape
+    zoom
 
     # Reversing tools
-    my.binaryninja
     afl
     gdb
     ghidra-bin
+    my.binaryninja
     radare2
     wireshark
     
 
     # Console Utilities
+    # sageWithDoc
+    # wineWowPackages.staging
     appimage-run
     bat
+    bind
     coreutils
     curl
     exa
     feh
+    ffmpeg
     file
     gnupg
-    nix-index
-    silver-searcher
     gotop
+    graphviz
     htop
-    my.wally-cli
+    ltrace
+    lz4
+    my.nix-doc
     my.ocra
+    my.wally-cli
+    nasm
     ncdu
+    ncspot
+    nix-du
+    nix-index
+    nmap
+    nmap_graphical
     nox
+    openjdk
+    openvpn
     parted
     pinentry-curses
     pypi2nix
-    openjdk
-    # sageWithDoc
+    silver-searcher
     texlive.combined.scheme-full
     unzip
-    openvpn
     wget
-    # wineWowPackages.staging
+    whois
     wine
     winetricks
     xclip
     xxd
     zip
-    ncspot
-    my.nix-doc
-    nix-du
-    lz4
-    ltrace
-    graphviz
-    whois
-    nmap
-    bind
 
     # i3 Hotkey Commands
     brightnessctl
@@ -122,8 +127,10 @@ with (import <nixpkgs> {}); {
     doxygen
     flex
     gcc
-    gnumake
     gcc_multi
+    gnumake
+    love
+    lua
     manpages
     meson
     mgba
@@ -136,10 +143,8 @@ with (import <nixpkgs> {}); {
     pkg-config
     postman
     rgbds
-    valgrind
     sloccount
-    love
-    lua
+    valgrind
 
     # Node packages (see readme!)
     eslint

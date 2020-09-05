@@ -34,13 +34,6 @@ in
   virtualisation.virtualbox.guest.enable = true;
   virtualisation.virtualbox.host.enableExtensionPack = true;
 
-  networking.firewall.allowedTCPPortRanges = [
-    { 
-      from = 5960;
-      to = 5970;
-    }
-  ];
-
   # This is needed for steam
   hardware.opengl.driSupport32Bit = true;
 
@@ -63,8 +56,9 @@ in
   #services.fprintd.enable = true;
   #security.pam.services.login.fprintAuth = true;
   #security.pam.services.sudo.fprintAuth = true;
-  services.spotifyd.enable = true;
-  services.spotifyd.config = builtins.readFile /etc/nixos/nixos-private/spotifyd.config;
+  # services.spotifyd.enable = true;
+  # services.spotifyd.config = builtins.readFile /etc/nixos/nixos-private/spotifyd.config;
+  services.logind.lidSwitch = "ignore";
   security.sudo.enable = true;
   security.sudo.extraConfig = ''
     %wheel ALL=(ALL) NOPASSWD: ALL

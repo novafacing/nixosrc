@@ -16,6 +16,7 @@ with pkgs.lib; {
     ./zsh.nix
     ./kitty.nix
     ./binaryninja.nix
+    ./gdb.nix
   ];
 
   # Make sure we obey the nixpkgs free/nonfree rules

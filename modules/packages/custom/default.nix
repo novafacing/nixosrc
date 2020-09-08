@@ -28,6 +28,7 @@
       nix-doc = (callPackage ./nix-doc.nix {});
       # myobs-ndi = (callPackage ./obs-ndi.nix {});
       smartgit = (callPackage ./smartgit.nix {});
+      sage = (callPackage ./sage/default.nix {});
     };
   })
 ]

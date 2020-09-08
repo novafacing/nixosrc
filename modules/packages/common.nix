@@ -24,6 +24,7 @@ with (import <nixpkgs> {}); {
     bitwarden
     blender
     chromium
+    coq
     dfilemanager
     discord
     etcher
@@ -39,6 +40,7 @@ with (import <nixpkgs> {}); {
     my.bumblebee-status
     my.ndi
     obs-linuxbrowser
+    obs-v4l2sink
     obs-studio
     obsndi
     rawtherapee
@@ -49,6 +51,7 @@ with (import <nixpkgs> {}); {
     spotify
     steam
     thunderbird
+    tikzit
     twmn
     unetbootin
     vlc
@@ -58,10 +61,13 @@ with (import <nixpkgs> {}); {
 
     # Reversing tools
     afl
+    appimagekit
     gdb
     ghidra-bin
     my.binaryninja
     radare2
+    squashfsTools
+    my.sage
     wireshark
     
 

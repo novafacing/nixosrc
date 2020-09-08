@@ -20,6 +20,21 @@ in
   # Enable systemd + settings
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.extraModulePackages = [
+    (pkgs.linuxPackages_latest.v4l2loopback.overrideAttrs({ ... }: {
+      src = pkgs.fetchFromGitHub {
+        owner = "umlaeute";
+        repo = "v4l2loopback";
+        # master 2020-04-17
+        rev = "10b1c7e6bda4255fdfaa187ce2b3be13433416d2";
+        sha256 = "0xsn4yzj7lwdg0n7q3rnqpz07i9i011k2pwn06hasd45313zf8j2";
+      };
+    }))
+  ];
+  boot.extraModprobeConfig = ''
+    options v4l2loopback exclusive_caps=1 video_nr=9 card_label="obs"
+  '';
 
   # Configure timezone
   time.timeZone = "America/Indiana/Indianapolis";

@@ -185,9 +185,15 @@ To install OBS-NDI Plugin:
 
 1. Just install this repo...
 
-2. mkdir -p ~/.config/obs-studio/plugins/obs-ndi/bin/64bit/
+2. `mkdir -p ~/.config/obs-studio/plugins/obs-ndi/bin/64bit/`
 
-3. ln -s /nix/store/rdy508cg2x95xnflxk3jbqhmw5f0q382-obs-ndi-4.7.1/lib/obs-plugins/obs-ndi.so ~/.config/obs-studio/plugins/obs-ndi/bin/64bit/obs-ndi.so
+3. `ln -s /nix/store/rdy508cg2x95xnflxk3jbqhmw5f0q382-obs-ndi-4.7.1/lib/obs-plugins/obs-ndi.so ~/.config/obs-studio/plugins/obs-ndi/bin/64bit/obs-ndi.so`
+
+To install obs-v4l2loopback:
+
+1. Install this repo, follow the above except `ln -s /nix/store/path-to-v4l2loopback-plugin/share/obs-plugins/v4l2sink/ ~/.config/obs-studio/plugins/v4l2sink`
+2. Run `sudo modprobe v4l2loopback exclusive_caps=1 video_nr=9 card_label="obs"`
+
 
 ## How to clean up
 

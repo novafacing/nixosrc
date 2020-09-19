@@ -4,5 +4,6 @@
   # Called automatically
   imports = [
     ./home.nix
+    ./neovim.nix
   ];
 }

@@ -41,13 +41,16 @@ in
 
   # Hardware options
   sound.enable = true;
-  hardware.pulseaudio.enable = true;
+  hardware.pulseaudio = {
+    enable = true;
+    package = pkgs.pulseaudioFull;
+  };
 
   # Enable docker
   virtualisation.docker.enable = true;
-  virtualisation.virtualbox.host.enable = true;
-  virtualisation.virtualbox.guest.enable = true;
-  virtualisation.virtualbox.host.enableExtensionPack = true;
+  #virtualisation.virtualbox.host.enable = true;
+  #virtualisation.virtualbox.guest.enable = true;
+  #virtualisation.virtualbox.host.enableExtensionPack = true;
 
   # This is needed for steam
   hardware.opengl.driSupport32Bit = true;

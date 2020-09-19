@@ -12,7 +12,7 @@
     ''
       " KEY MAPPINGS
       " Strip whitespace
-      nnoremap <Leader>sw :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
+      nnoremap <leader>sw :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
       let g:which_key_map.s = {'name': 'Sed/Format Utilities'}
       let g:which_key_map.s.w = 'Strip Whitespace'
       " set leader
@@ -58,7 +58,6 @@
 
     ''
       " GENERAL SETTINGS
-      colorscheme gruvbox-material
       syntax on
       set hidden
       set wildmenu
@@ -219,6 +218,8 @@
           ene
         end
       endfunction
+      tnoremap <ESC> <C-\><C-n>
+      nnoremap <Leader>c :call :term<CR>
     ''
 
     ''
@@ -256,8 +257,7 @@
       augroup END
       " Start nerdtree on vim with no file or vim directory
       autocmd StdinReadPre * let s:std_in=1
-      autocmd VimEnter * call NERDTreeStart()
-
+      autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
     ''
   ]);
 }

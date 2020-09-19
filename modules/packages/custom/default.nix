@@ -29,6 +29,7 @@
       # myobs-ndi = (callPackage ./obs-ndi.nix {});
       smartgit = (callPackage ./smartgit.nix {});
       sage = (callPackage ./sage/default.nix {});
+      jflap = (callPackage ./jflap.nix {});
     };
   })
 ]

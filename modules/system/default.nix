@@ -8,4 +8,6 @@
     ./udev.nix
     ./fs.nix
   ];
+  hardware.bluetooth.enable = true;
+  services.blueman.enable = true;
 }

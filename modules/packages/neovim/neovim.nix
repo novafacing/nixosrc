@@ -23,9 +23,9 @@ let
       name = "artify";
       src = pkgs.fetchFromGitHub {
         owner = "novafacing";
-	repo = "artify.vim";
-	rev = "57b0999f141cd6e57b57a0b22ab44d9affb298ba";
-	sha256 = "0pcynjh8s288fmdfhn8i2afkfs4gjdrvfgi95l2sxia85hqqbm1i";
+        repo = "artify.vim";
+        rev = "57b0999f141cd6e57b57a0b22ab44d9affb298ba";
+        sha256 = "0pcynjh8s288fmdfhn8i2afkfs4gjdrvfgi95l2sxia85hqqbm1i";
       };
     };
     lightline-asyncrun = pkgs.vimUtils.buildVimPlugin {
@@ -64,59 +64,83 @@ let
         sha256 = "04iw544axzpgmpn23xmlr1z34zrks905nbk5m1pn82b2xzg2l3gs";
       };
     };
-  };
-in
-{
-  nixpkgs.config.packageOverrides = pkgs: {
-    neovim = pkgs.neovim.override {
-      vimAlias = true;
-      configure = {
-        pathogen = {
-	  knownPlugins = pkgs.vimPlugins // customPlugins;
-          pluginNames = with pkgs.vimPlugins // customPlugins; [
-	    "LanguageClient-neovim"
-	    "nerdtree"
-	    "vim-easymotion"
-	    "supertab"
-	    "indentLine"
-	    "vim-easy-align"
-	    "nerdcommenter"
-	    "vim-surround"
-	    "vim-repeat"
-	    "UltiSnips"
-	    "vim-snippets"
-	    "tabular"
-	    "vim-devicons"
-	    "typescript-vim"
-	    "vim-nix"
-	    "vim-vue"
-	    "undotree"
-	    "vim-manpager"
-	    "vCoolor-vim"
-	    "vim-gitbranch"
-	    "vim-fugitive"
-	    "vim-rhubarb"
-	    "vim-twig"
-	    "vimagit"
-	    "vim-mergetool"
-	    "ale"
-	    "vim-flake8"
-            "gruvbox-material"
-            "lightline-vim"
-            "lightline-bufferline"
-            "lightline-ale"
-        "lightline-gitdiff"
-	    "lightline-asyncrun"
-	    "vim-pomodoro"
-	    "artify"
-	  ];
-        };
-        customRC = (import ./vimrc.nix { inherit lib; }).customRC;
-        packages.myPlugins = with pkgs.vimPlugins // customPlugins; {
-          start = [
-          ];
-        };
+    moonscript-vim = pkgs.vimUtils.buildVimPlugin {
+      name = "moonscript-vim";
+      src = pkgs.fetchFromGitHub {
+        owner = "novafacing";
+        repo = "moonscript-vim";
+        rev = "715c96c7c3b02adc507f84bf5754985460afc426";
+        sha256 = "1m4yz2xnazqagmkcli2xvwidsgssy9p650ykgdybk7wwlrq2vvqi";
+      };
+    };
+    vim-terminal = pkgs.vimUtils.buildVimPlugin {
+      name = "vim-terminal";
+      src = pkgs.fetchFromGitHub {
+        owner = "tc50cal";
+        repo = "vim-terminal";
+        rev = "977a60d1fb50fdcd87e2618eaad3e2e487ee3f44";
+        sha256 = "1m4yz2xnazqagmkcli2xvwidsgssy9p650ykgdybk7wwlrq2vvqi";
       };
     };
   };
-}
+in
+  {
+    nixpkgs.config.packageOverrides = pkgs: {
+      neovim = pkgs.neovim.override {
+        vimAlias = true;
+        configure = {
+          pathogen = {
+            knownPlugins = pkgs.vimPlugins // customPlugins;
+            pluginNames = with pkgs.vimPlugins // customPlugins; [
+              "LanguageClient-neovim"
+              "UltiSnips"
+              "ale"
+              "artify"
+              "gruvbox-material"
+              "indentLine"
+              "lightline-ale"
+              "lightline-asyncrun"
+              "lightline-bufferline"
+              "lightline-gitdiff"
+              "lightline-vim"
+              "moonscript-vim"
+              "nerdcommenter"
+              "nerdtree"
+              "supertab"
+              "tabular"
+              "tagbar"
+              "typescript-vim"
+              "undotree"
+              "vCoolor-vim"
+              "vim-devicons"
+              "vim-easy-align"
+              "vim-easymotion"
+              "vim-flake8"
+              "vim-fugitive"
+              "vim-gitbranch"
+              "vim-gutentags"
+              "vim-manpager"
+              "vim-mergetool"
+              "vim-nix"
+              "vim-pomodoro"
+              "rainbow"
+              "vim-repeat"
+              "vim-rhubarb"
+              "vim-snippets"
+              "vim-surround"
+              "vim-terminal"
+              "vim-twig"
+              "vim-vue"
+              "vimagit"
+              "vista-vim"
+            ];
+          };
+          customRC = (import ./vimrc.nix { inherit lib; }).customRC;
+          packages.myPlugins = with pkgs.vimPlugins // customPlugins; {
+            start = [
+            ];
+          };
+        };
+      };
+    };
+  }

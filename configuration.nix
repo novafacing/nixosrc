@@ -81,6 +81,12 @@ in
   security.sudo.extraConfig = ''
     %wheel ALL=(ALL) NOPASSWD: ALL
   '';
+  services.printing.enable = true;
+  services.printing.drivers = [
+    pkgs.gutenprint
+    pkgs.gutenprintBin
+    pkgs.canon-cups-ufr2
+  ];
 
   # Add ourselves to the home-manager config and use home manager to set up 
   # whatever we want to use home-manager for. Sometimes home-manager is helpful and

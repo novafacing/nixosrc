@@ -141,10 +141,10 @@ in
         }
         );
         modes.resize = {
-          "l" = "resize shrink width 10 px or 10 ppt";
-          "j" = "resize shrink height 10 px or 10 ppt";
-          "k" = "resize grow height 10 px or 10 ppt";
-          "h" = "resize grow width 10 px or 10 ppt";
+          "h" = "resize shrink width 10 px or 10 ppt";
+          "k" = "resize shrink height 10 px or 10 ppt";
+          "j" = "resize grow height 10 px or 10 ppt";
+          "l" = "resize grow width 10 px or 10 ppt";
           "Escape" = "mode default";
           "Return" = "mode default";
         };

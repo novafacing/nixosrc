@@ -2,6 +2,11 @@
 let
   myNodePackages = (pkgs.callPackage ./node {});
   luaPkgs = (pkgs.callPackage ./lua {});
+  #gnuradio = (pkgs.callPackage ./gnuradio {
+  #  inherit (pkgs.python27Full // pkgs.python27Packages) numpy# scipy matplotlib Mako cheetah pygtk pyqt4 wxPython lxml Cor#eAudio pyopengl requiredPythonModules setuptools;
+  #  fftw = pkgs.fftwFloat;
+  #  uhd = null;
+  #});
 in
 let
   luaWithPackages = (pkgs.lua5_2_compat.withPackages(ps: with ps // luaPkgs; [
@@ -12,6 +17,7 @@ let
     luasocket
     luafilesystem
     moonscript
+    lpeg
   ])).override(args: { 
     ignoreCollisions = true; 
   });
@@ -58,17 +64,19 @@ in
     inkscape
     my.aseprite
     my.bumblebee-status
-    my.ndi
+    #my.ndi
     my.jflap
     obs-linuxbrowser
     obs-v4l2sink
     obs-studio
-    obsndi
+    #obsndi
     #rawtherapee
     signal-desktop
     skypeforlinux
     slack
     my.smartgit
+    #my.avrgcc-wrapper
+    qpaeq
     spotify
     steam
     thunderbird
@@ -79,7 +87,7 @@ in
     woeusb
     zathura
     gnome3.zenity
-    zoom
+    zoom-us
 
     # Reversing tools
     afl
@@ -89,7 +97,7 @@ in
     my.binaryninja
     radare2
     squashfsTools
-    my.sage
+    #my.sage
     wireshark
 
 
@@ -100,7 +108,7 @@ in
     bat
     bind
     coreutils
-    ctags
+    universal-ctags
     curl
     exa
     feh
@@ -110,6 +118,7 @@ in
     gotop
     graphviz
     htop
+    llvm
     ltrace
     lz4
     my.nix-doc
@@ -126,9 +135,12 @@ in
     openjdk
     openvpn
     parted
+    pdfgrep
     pinentry-curses
     pypi2nix
     silver-searcher
+    sshfs
+    sshuttle
     texlive.combined.scheme-full
     unzip
     wget
@@ -146,6 +158,9 @@ in
     pavucontrol
 
     # Development
+    arduino
+    ascii
+    avrdude
     binutils
     bison
     cabal-install
@@ -158,6 +173,7 @@ in
     gcc
     gcc_multi
     gnumake
+    #gnuradio
     manpages
     meson
     mgba
@@ -172,6 +188,11 @@ in
     rgbds
     sloccount
     valgrind
+
+    # Gnuradio needs
+    gsl
+    qt4
+    qwt
 
     # Lua
     luaWithPackages

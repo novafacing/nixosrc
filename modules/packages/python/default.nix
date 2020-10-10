@@ -22,6 +22,9 @@ let
 in
   with (import <nixpkgs> {}); {
     environment.systemPackages = with pkgs; [
+      (python27.withPackages(ps: with ps; [
+        pygtk
+      ]))
       (python37.withPackages(ps: with ps; [
         # angrPackages.ailment
         # angrPackages.angr
@@ -38,18 +41,18 @@ in
         # angrPackages.PySMT
         # angrPackages.unicorn
         # angrPackages.z3
-        binwalk
         ROPGadget
-        beautifulsoup4
         aiohttp
-        pygments
+        beautifulsoup4
+        binwalk
         cryptography
         feedparser
+        flask
         gmpy
         gmpy2
-        flask
         i3ipc
         ipython
+        libiio
         netifaces
         numpy
         pillow
@@ -61,14 +64,17 @@ in
         pycrypto
         pycryptodome
         pygit2
+        pygments
         python-socketio
         requests
         sagemath
+        scipy
         setuptools
         six
         sympy
         tkinter
         urllib3
+        websockets
       ]))
       jython
     ];

@@ -2,16 +2,9 @@
 let
   myNodePackages = (pkgs.callPackage ./node {});
   luaPkgs = (pkgs.callPackage ./lua {});
-  #gnuradio = (pkgs.callPackage ./gnuradio {
-  #  inherit (pkgs.python27Full // pkgs.python27Packages) numpy# scipy matplotlib Mako cheetah pygtk pyqt4 wxPython lxml Cor#eAudio pyopengl requiredPythonModules setuptools;
-  #  fftw = pkgs.fftwFloat;
-  #  uhd = null;
-  #});
 in
-let
-  luaWithPackages = (pkgs.lua5_2_compat.withPackages(ps: with ps // luaPkgs; [
-    # Custom Lua Packages
-    lapis
+  let
+    luaWithPackages = (pkgs.lua5_2_compat.withPackages(ps: with ps // luaPkgs; [
 
     # Builtin Lua Packages
     luasocket
@@ -21,7 +14,7 @@ let
   ])).override(args: { 
     ignoreCollisions = true; 
   });
-in
+  in
   with (import <nixpkgs> {}); {
     imports = [
       ./neovim
@@ -29,217 +22,187 @@ in
       ./python
     ];
 
-    nixpkgs.config.packageOverrides = pkgs: {
-      nur = import (builtins.fetchTarball "https://github.com/nix-community/NUR/archive/master.tar.gz") {
-        inherit pkgs;
-      };
-      openresty = pkgs.openresty.override {
-        configureFlags = [
-          "--with-http_postgres_module"
-          "--with-luajit"
-        ];
-      };
-    };
-
     environment.systemPackages = with pkgs // myNodePackages; [
-    # GUI Apps
-    # my.myobs-ndi
-    # adobe-reader
-    arandr
-    audacity
-    bc
-    bitwarden
-    blender
-    cabal2nix
-    chromium
-    coq
-    dfilemanager
-    discord-canary
-    etcher
-    firefox
-    fsuae
-    gcolor2
-    gcolor3
-    ghc
-    gimp
-    googleearth
-    google-drive-ocamlfuse
-    gparted
-    hexchat
-    ifuse
-    inkscape
-    inkscape
-    libimobiledevice
-    my.aseprite
-    my.bumblebee-status
-    #my.ndi
-    my.jflap
-    #obs-linuxbrowser
-    obs-v4l2sink
-    obs-studio
-    one_gadget
-    #obsndi
-    #rawtherapee
-    signal-desktop
-    skypeforlinux
-    slack
-    my.smartgit
-    #my.avrgcc-wrapper
-    reaper
-    qpaeq
-    spotify
-    steam
-    thunderbird
-    tikzit
-    twmn
-    unetbootin
-    vlc
-    wakelan
-    woeusb
-    zathura
-    gnome3.zenity
-    #xdot
-    dot2tex
-    zoom-us
-    rustc
-    rustup
+      # GUI Apps
+      arandr
+      audacity
+      bc
+      bitwarden
+      blender
+      cabal2nix
+      chromium
+      coq
+      dfilemanager
+      discord-canary
+      dot2tex
+      etcher
+      firefox
+      fsuae
+      gcolor2
+      gcolor3
+      ghc
+      gimp
+      gnome3.zenity
+      google-drive-ocamlfuse
+      googleearth
+      gparted
+      hexchat
+      ifuse
+      inkscape
+      inkscape
+      libimobiledevice
+      my.aseprite
+      my.bumblebee-status
+      my.jflap
+      my.smartgit
+      obs-studio
+      obs-v4l2sink
+      one_gadget
+      qpaeq
+      reaper
+      rustc
+      rustup
+      signal-desktop
+      skypeforlinux
+      slack
+      spotify
+      steam
+      thunderbird
+      tikzit
+      twmn
+      unetbootin
+      vlc
+      wakelan
+      woeusb
+      zathura
+      zoom-us
 
-    # Reversing tools
-    afl
-    appimagekit
-    gdb
-    ghidra-bin
-    my.binaryninja
-    exiftool
-    radare2
-    squashfsTools
-    #my.sage
-    wireshark
-    pypy3
-    gradle
+      # Reversing tools
+      afl
+      appimagekit
+      exiftool
+      gdb
+      ghidra-bin
+      gradle
+      my.binaryninja
+      pypy3
+      radare2
+      squashfsTools
+      wireshark
 
 
-    # Console Utilities
-    # sageWithDoc
-    # wineWowPackages.staging
-    appimage-run
-    bat
-    bind
-    coreutils
-    universal-ctags
-    curl
-    exa
-    feh
-    ffmpeg
-    file
-    gnupg
-    gotop
-    graphviz
-    htop
-    llvm
-    ltrace
-    lz4
-    my.nix-doc
-    my.ocra
-    my.wally-cli
-    nasm
-    ncdu
-    ncspot
-    nix-du
-    nix-index
-    nmap
-    nmap_graphical
-    nox
-    openjdk
-    jdk11
-    openvpn
-    parted
-    fzf
-    pdfgrep
-    pinentry-curses
-    pypi2nix
-    silver-searcher
-    sshfs
-    sshuttle
-    sqlite
-    texlive.combined.scheme-full
-    unzip
-    wget
-    whois
-    wine
-    winetricks
-    xclip
-    xxd
-    zip
+      # Console Utilities
+      appimage-run
+      bat
+      bind
+      coreutils
+      curl
+      exa
+      feh
+      ffmpeg
+      file
+      fzf
+      gnupg
+      gotop
+      graphviz
+      htop
+      jdk11
+      llvm
+      ltrace
+      lz4
+      my.nix-doc
+      my.ocra
+      my.wally-cli
+      nasm
+      ncdu
+      ncspot
+      nix-du
+      nix-index
+      nmap
+      nmap_graphical
+      nox
+      openjdk
+      openvpn
+      parted
+      pdfgrep
+      pinentry-curses
+      pypi2nix
+      silver-searcher
+      sqlite
+      sshfs
+      sshuttle
+      texlive.combined.scheme-full
+      universal-ctags
+      unzip
+      wget
+      whois
+      wine
+      winetricks
+      xclip
+      xxd
+      zip
 
-    # i3 Hotkey Commands
-    brightnessctl
-    clipmenu
-    maim
-    pavucontrol
-    noisetorch
+      # i3 Hotkey Commands
+      brightnessctl
+      clipmenu
+      maim
+      noisetorch
+      pavucontrol
 
-    # Development
-    arduino
-    ascii
-    avrdude
-    binutils
-    bison
-    cabal-install
-    ccls
-    colordiff
-    clang_11
-    clangMultiStdenv
-    cmake
-    docker-compose
-    doxygen
-    flex
-    gcc10
-    gcc_multi
-    gnumake
-    #gnuradio
-    lldb_11
-    manpages
-    meson
-    mgba
-    my.autopatchelf
-    my.buildShellShim
-    ninja
-    nodePackages.node2nix
-    nodejs
-    patchelf
-    pkg-config
-    postman
-    rgbds
-    sloccount
-    valgrind
+      # Development
+      arduino
+      ascii
+      avrdude
+      binutils
+      bison
+      cabal-install
+      ccls
+      clangMultiStdenv
+      clang_11
+      cmake
+      colordiff
+      docker-compose
+      doxygen
+      flex
+      gcc10
+      gcc_multi
+      gnumake
+      lldb_11
+      manpages
+      meson
+      mgba
+      my.autopatchelf
+      my.buildShellShim
+      ninja
+      nodePackages.node2nix
+      nodejs
+      patchelf
+      pkg-config
+      postman
+      rgbds
+      sloccount
+      valgrind
 
-    # Gnuradio needs
-    gsl
-    qt4
-    qwt
+      # Lua
+      luaWithPackages
 
-    # Lua
-    luaWithPackages
+      #Additional Lua Utilities
+      love
 
-    #Additional Lua Utilities
-    love
-    openresty
+      # Node packages (see readme!)
+      eslint
+      jsonlint
 
-    # Node packages (see readme!)
-    eslint
-    jsonlint
+      # Packages with configuration
+      kitty
+      neovim
+      rofi
+      rofi-emoji
 
-    # Packages with configuration
-    kitty
-    neovim
-    rofi
-    rofi-emoji
-
-    # Libraries
-    llvmPackages.libclang.lib
-    llvmPackages.libclang
-  ];
+      # Libraries
+      llvmPackages.libclang
+      llvmPackages.libclang.lib
+    ];
 
   # Dev manpages
   documentation.dev.enable = true;

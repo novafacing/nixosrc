@@ -79,7 +79,7 @@ let
         owner = "tc50cal";
         repo = "vim-terminal";
         rev = "977a60d1fb50fdcd87e2618eaad3e2e487ee3f44";
-        sha256 = "1m4yz2xnazqagmkcli2xvwidsgssy9p650ykgdybk7wwlrq2vvqi";
+        sha256 = "1hg1khxp9w1crnl6ggdhkhijp3k73y9ch4vm1vmbj0h2z0rriv8r";
       };
     };
   };
@@ -106,6 +106,7 @@ in
               "moonscript-vim"
               "nerdcommenter"
               "nerdtree"
+              "nvim-gdb"
               "supertab"
               "tabular"
               "tagbar"
@@ -133,9 +134,10 @@ in
               "vim-vue"
               "vimagit"
               "vista-vim"
+              "YouCompleteMe"
             ];
           };
-          customRC = (import ./vimrc.nix { inherit lib; }).customRC;
+          customRC = (import ./vimrc.nix { inherit pkgs lib; }).customRC;
           packages.myPlugins = with pkgs.vimPlugins // customPlugins; {
             start = [
             ];

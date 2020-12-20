@@ -19,13 +19,13 @@ in
       modifier = mod;
       bars = [
         {
-          position = "top";
+          position = "bottom";
           statusCommand = ''bumblebee-status -t gruvbox-powerline -m spacer spacer spacer git github pomodoro cpu memory disk:root disk:home traffic weather battery datetime -p interval=10 root.path=/ home.path=/home battery.showpowerconsumption=true battery.showremaining=true github.token=${github_token} weather.location=Cincinnati weather.showminmax=true pulseaudio.autostart=true pulseaudio.percent_change=5 pulseaudio.showbars=1 spacer.theme.bg=#504945 spacer.text="                                                                                                                                                                "'';
         }
       ];
       gaps = {
         inner = 5;
-        outer = 5;
+        outer = 15;
         smartGaps = true;
       };
       colors = {
@@ -89,6 +89,8 @@ in
           "${mod}+f" = "fullscreen toggle";
           "${mod}+Shift+space" = "floating toggle";
           "${mod}+space" = "focus mode_toggle";
+          "${mod}+Shift+minus" = "move scratchpad";
+          "${mod}+minus" = "scratchpad show";
           "${mod}+a" = "focus parent";
           "${mod}+1" = "workspace number 1";
           "${mod}+2" = "workspace number 2";

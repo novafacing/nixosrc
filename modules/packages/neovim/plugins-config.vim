@@ -10,6 +10,7 @@ let g:lightline.subseparator = { 'left': "\ue0b9", 'right': "\ue0b9" }
 let g:lightline.tabline_separator = { 'left': "\ue0bc", 'right': "\ue0ba" }
 let g:lightline.tabline_subseparator = { 'left': "\ue0bb", 'right': "\ue0bb" }
 let g:lightline#ale#indicator_checking = "\uf110"
+let g:lightline#ale#indicator_infos = "\uf129"
 let g:lightline#ale#indicator_warnings = "\uf529"
 let g:lightline#ale#indicator_errors = "\uf00d"
 let g:lightline#ale#indicator_ok = "\uf00c"
@@ -24,7 +25,7 @@ if g:lightlineArtify == 1
                 \ 'left': [ [ 'artify_mode', 'paste' ],
                 \           [ 'readonly', 'filename', 'modified', 'fileformat', 'devicons_filetype', 'tagbar'] ],
                 \ 'right': [ [ 'artify_lineinfo' ],
-                \            [ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok'],
+                \            [ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_infos', 'linter_ok'],
                 \           [ 'asyncrun_status', 'coc_status' ] ]
                 \ }
     let g:lightline.inactive = {
@@ -44,7 +45,7 @@ else
                 \ 'left': [ [ 'mode', 'paste' ],
                 \           [ 'readonly', 'filename', 'modified', 'fileformat', 'devicons_filetype' ] ],
                 \ 'right': [ [ 'lineinfo' ],
-                \            [ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok'],
+                \            [ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_infos', 'linter_ok'],
                 \           [ 'asyncrun_status', 'coc_status' ] ]
                 \ }
     let g:lightline.inactive = {
@@ -110,6 +111,7 @@ let g:lightline.component_function = {
             \ }
 let g:lightline.component_expand = {
             \ 'linter_checking': 'lightline#ale#checking',
+            \ 'linter_infos': 'lightline#ale#infos',
             \ 'linter_warnings': 'lightline#ale#warnings',
             \ 'linter_errors': 'lightline#ale#errors',
             \ 'linter_ok': 'lightline#ale#ok',
@@ -118,18 +120,16 @@ let g:lightline.component_expand = {
             \ 'gitdiff': 'lightline#gitdiff#get',
             \ }
 let g:lightline.component_type = {
+            \ 'linter_checking': 'right',
+            \ 'linter_infos': 'right',
             \ 'linter_warnings': 'warning',
             \ 'linter_errors': 'error',
+            \ 'linter_ok': 'right',
             \ 'buffers': 'tabsel',
             \ 'gitdiff': 'middle',
             \ }
 " Productivity & Enhancement
 let g:SuperTabDefaultCompletionType = '<C-n>'
-let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
-let g:ycm_add_preview_to_completeopt = 0
-let g:ycm_show_diagnostics_ui = 0 " make YCM compatible with UltiSnips (using supertab)
-let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 " Close window if only a nerdtree is left
 autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 map <Leader>t :NERDTreeToggle<CR>
@@ -215,7 +215,8 @@ autocmd BufNewFile,BufRead *.tsx,*.jsx filetype=typescript.tsx
 
 " Linters & Checkers
 let g:ale_completion_enabled = 0
-let g:ale_linters = {'cpp': ['clang', 'gcc', 'cpplint'], 'python': ['black', 'flake8', 'pylint', 'mypy'], 'json': ['jsonlint', 'fixjson']}
+let g:ale_c_parse_makefile = 1
+let g:ale_linters = {'cpp': ['clang'], 'c': ['clang'], 'python': ['black', 'flake8', 'pylint', 'mypy'], 'json': ['jsonlint', 'fixjson']}
 let g:ale_fixers = {'python': ['black'], 'json': ['fixjson'], 'javascript': ['eslint --fix']}
 let g:ale_fixers.javascript = ['eslint']
 let g:ale_fix_on_save = 1
@@ -226,6 +227,8 @@ let g:ale_sign_error = '|>'
 let g:ale_sign_warning = '!'
 highlight ALEErrorSign ctermbg=NONE ctermfg=red
 highlight ALEWarningSign ctermbg=NONE ctermfg=yellow
+
+""" Completion
 let python_highlight_all=1
 nmap <Leader>ue :UltiSnipsEdit<cr>
 set runtimepath+=~/.vim/bundle/UltiSnips/UltiSnips/

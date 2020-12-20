@@ -1,4 +1,4 @@
-{ lib }:
+{ lib, pkgs }:
 
 {
   customRC = (lib.strings.concatStringsSep "\n" [
@@ -103,6 +103,7 @@
       " set noeol
       set termguicolors
       set noshowmode
+      set mouse=a
     ''
 
     (builtins.readFile ./plugins-config.vim)

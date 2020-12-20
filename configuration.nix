@@ -76,17 +76,12 @@ in
   #security.pam.services.sudo.fprintAuth = true;
   # services.spotifyd.enable = true;
   # services.spotifyd.config = builtins.readFile /etc/nixos/nixos-private/spotifyd.config;
-  services.logind.lidSwitch = "ignore";
+  # SET THIS IF YOU WANT IT TO NEVER GO TO SLEEP!
+  services.logind.lidSwitch = "suspend";
   security.sudo.enable = true;
   security.sudo.extraConfig = ''
     %wheel ALL=(ALL) NOPASSWD: ALL
   '';
-  services.printing.enable = true;
-  services.printing.drivers = [
-    pkgs.gutenprint
-    pkgs.gutenprintBin
-    pkgs.canon-cups-ufr2
-  ];
 
   # Add ourselves to the home-manager config and use home manager to set up 
   # whatever we want to use home-manager for. Sometimes home-manager is helpful and
@@ -101,5 +96,10 @@ in
     dates = "weekly";
     options = "--delete-older-than 7d";
   };
+
+  nix.extraOptions = ''
+    keep-outputs = true
+    keep-derivations = true
+  '';
 }
 

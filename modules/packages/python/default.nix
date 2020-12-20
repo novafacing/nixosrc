@@ -26,6 +26,46 @@ in
         pygtk
       ]))
       (python37.withPackages(ps: with ps; [
+        ROPGadget
+        aiohttp
+        beautifulsoup4
+        binwalk
+        colour
+        cryptography
+        cssselect
+        feedparser
+        filebytes
+        flask
+        gmpy
+        gmpy2
+        i3ipc
+        ipython
+        jedi
+        libiio
+        lxml
+        netifaces
+        numpy
+        pillow
+        pip
+        power
+        psutil
+        pwntools
+        pwntools
+        pycrypto
+        pycryptodome
+        pygit2
+        pygments
+        python-socketio
+        requests
+        ropper
+        sagemath
+        scipy
+        setuptools
+        six
+        sympy
+        tkinter
+        urllib3
+        websockets
         # angrPackages.ailment
         # angrPackages.angr
         # angrPackages.archinfo
@@ -41,40 +81,6 @@ in
         # angrPackages.PySMT
         # angrPackages.unicorn
         # angrPackages.z3
-        ROPGadget
-        aiohttp
-        beautifulsoup4
-        binwalk
-        cryptography
-        feedparser
-        flask
-        gmpy
-        gmpy2
-        i3ipc
-        ipython
-        libiio
-        netifaces
-        numpy
-        pillow
-        pip
-        power
-        psutil
-        pwntools
-        pwntools
-        pycrypto
-        pycryptodome
-        pygit2
-        pygments
-        python-socketio
-        requests
-        sagemath
-        scipy
-        setuptools
-        six
-        sympy
-        tkinter
-        urllib3
-        websockets
       ]))
       jython
     ];

@@ -47,28 +47,37 @@ in
     # adobe-reader
     arandr
     audacity
+    bc
     bitwarden
     blender
+    cabal2nix
     chromium
     coq
     dfilemanager
-    discord
+    discord-canary
     etcher
     firefox
+    fsuae
+    gcolor2
     gcolor3
+    ghc
     gimp
     googleearth
+    google-drive-ocamlfuse
     gparted
     hexchat
+    ifuse
     inkscape
     inkscape
+    libimobiledevice
     my.aseprite
     my.bumblebee-status
     #my.ndi
     my.jflap
-    obs-linuxbrowser
+    #obs-linuxbrowser
     obs-v4l2sink
     obs-studio
+    one_gadget
     #obsndi
     #rawtherapee
     signal-desktop
@@ -76,6 +85,7 @@ in
     slack
     my.smartgit
     #my.avrgcc-wrapper
+    reaper
     qpaeq
     spotify
     steam
@@ -84,10 +94,15 @@ in
     twmn
     unetbootin
     vlc
+    wakelan
     woeusb
     zathura
     gnome3.zenity
+    #xdot
+    dot2tex
     zoom-us
+    rustc
+    rustup
 
     # Reversing tools
     afl
@@ -95,10 +110,13 @@ in
     gdb
     ghidra-bin
     my.binaryninja
+    exiftool
     radare2
     squashfsTools
     #my.sage
     wireshark
+    pypy3
+    gradle
 
 
     # Console Utilities
@@ -133,14 +151,17 @@ in
     nmap_graphical
     nox
     openjdk
+    jdk11
     openvpn
     parted
+    fzf
     pdfgrep
     pinentry-curses
     pypi2nix
     silver-searcher
     sshfs
     sshuttle
+    sqlite
     texlive.combined.scheme-full
     unzip
     wget
@@ -156,6 +177,7 @@ in
     clipmenu
     maim
     pavucontrol
+    noisetorch
 
     # Development
     arduino
@@ -164,16 +186,19 @@ in
     binutils
     bison
     cabal-install
-    clang
+    ccls
+    colordiff
+    clang_11
     clangMultiStdenv
     cmake
     docker-compose
     doxygen
     flex
-    gcc
+    gcc10
     gcc_multi
     gnumake
     #gnuradio
+    lldb_11
     manpages
     meson
     mgba
@@ -209,6 +234,11 @@ in
     kitty
     neovim
     rofi
+    rofi-emoji
+
+    # Libraries
+    llvmPackages.libclang.lib
+    llvmPackages.libclang
   ];
 
   # Dev manpages

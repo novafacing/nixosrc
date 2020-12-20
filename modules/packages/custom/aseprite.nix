@@ -1,13 +1,9 @@
 { stdenv, pkgs, lib, callPackage, fetchurl, libxcb, libGL, fontconfig, libX11, libXext, libXcursor, expat, freetype, giflib, libjpeg, libpng, libwebp, pixman, tinyxml, libXxf86vm, saneBackends }:
 stdenv.mkDerivation rec {
   name = "aseprite-${version}";
-  version = "1.2.21";
+  version = "1.2.25";
 
-  #src = fetchurl {
-  #  url = "http://rowanbhart.net/files/Aseprite_1.2.21-1_amd64.deb";
-  #  sha256 = "6442edbe6b448adc1eaa561e30f92154c2c420e6e65cec3d8ba59ee418aeb5e6";
-  #};
-  src = /etc/nixos/nixos-private/Aseprite_1.2.21-1_amd64.deb;
+  src = /etc/nixos/nixos-private/Aseprite_1.2.25-1_amd64.deb;
 
   sourceRoot = ".";
   unpackPhase = "dpkg-deb -x $src .";

@@ -202,3 +202,12 @@ NixOS is amazing but it blows up your hard drive a lot if you `--update` too muc
 1. `nix-env --delete-generations old`
 2. `nix-collect-garbage -d`
 2. `nix-store --optimize`
+
+## Haskelling
+
+To set up a new haskell project directory, do `cp ~/nixos/nix-shell-templates/haskell/* ./`.
+
+This copies in all the boilerplate .nix files we need. After that, run `nix-shell` to enter the shell and use `cabal init --interactive` to set up the project.
+
+Once the project is configured to your satisfaction, run `cabal2nix . > default.nix` to generate the build specification and `nix-build release.nix` to create the executable or library.
+

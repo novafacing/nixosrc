@@ -583,14 +583,34 @@ $(TARGET)	modules/packages/lua/lua-cjson-2.1.0/Makefile	/^$(TARGET): $(OBJS)$/;"
 98	modules/packages/custom/bumblebee-status/bumblebee/modules/data/country-by-currency-code.json	/^    {$/;"	o
 99	modules/packages/custom/bumblebee-status/bumblebee/modules/data/country-by-currency-code.json	/^    {$/;"	o
 :root	nixos-private/userChrome.css	/^:root {$/;"	s
+<C-,>	extras/vimrc	/^nnoremap <C-,> :bp<CR>$/;"	m
+<C-.>	extras/vimrc	/^nnoremap <C-.> :bn<CR>$/;"	m
+<Leader><Space>	extras/vimrc	/^nmap <Leader><Space> zz$/;"	m
+<Leader>b	extras/vimrc	/^map <Leader>b :TagbarToggle<CR>$/;"	m
 <Leader>b	modules/packages/neovim/plugins-config.vim	/^map <Leader>b :TagbarToggle<CR><CR>$/;"	m
+<Leader>he	extras/vimrc	/^nnoremap <Leader>he :HexokinaseToggle$/;"	m
 <Leader>he	modules/packages/neovim/plugins-config.vim	/^nnoremap <Leader>he :HexokinaseToggle$/;"	m
+<Leader>t	extras/vimrc	/^map <Leader>t :NERDTreeToggle<CR>$/;"	m
 <Leader>t	modules/packages/neovim/plugins-config.vim	/^map <Leader>t :NERDTreeToggle<CR>$/;"	m
+<Leader>ue	extras/vimrc	/^nmap <Leader>ue :UltiSnipsEdit<cr>$/;"	m
 <Leader>ue	modules/packages/neovim/plugins-config.vim	/^nmap <Leader>ue :UltiSnipsEdit<cr>$/;"	m
+<leader><space>f	extras/vimrc	/^nnoremap <silent> <leader><space>f :<C-u>Limelight!!<CR>$/;"	m
 <leader><space>f	modules/packages/neovim/plugins-config.vim	/^nnoremap <silent> <leader><space>f :<C-u>Limelight!!<CR>$/;"	m
+<leader><space>r	extras/vimrc	/^nnoremap <silent> <leader><space>r :<C-u>Goyo<CR>$/;"	m
 <leader><space>r	modules/packages/neovim/plugins-config.vim	/^nnoremap <silent> <leader><space>r :<C-u>Goyo<CR>$/;"	m
+<leader>bh	extras/vimrc	/^nnoremap <leader>bh :bp$/;"	m
+<leader>bl	extras/vimrc	/^nnoremap <leader>bl :bn$/;"	m
+<leader>bs	extras/vimrc	/^nnoremap <leader>bs :buffers$/;"	m
+<leader>fb	extras/vimrc	/^noremap <leader>fb :<C-U><C-R>=printf("Leaderf buffer %s", "")<CR><CR>$/;"	m
 <leader>fb	modules/packages/neovim/plugins-config.vim	/^noremap <leader>fb :<C-U><C-R>=printf("Leaderf buffer %s", "")<CR><CR>$/;"	m
+<leader>fl	extras/vimrc	/^noremap <leader>fl :<C-U><C-R>=printf("Leaderf line %s", "")<CR><CR>$/;"	m
 <leader>fl	modules/packages/neovim/plugins-config.vim	/^noremap <leader>fl :<C-U><C-R>=printf("Leaderf line %s", "")<CR><CR>$/;"	m
+<leader>h	extras/vimrc	/^nnoremap <leader>h <C-W>h$/;"	m
+<leader>j	extras/vimrc	/^nnoremap <leader>j <C-W>j$/;"	m
+<leader>k	extras/vimrc	/^nnoremap <leader>k <C-W>k$/;"	m
+<leader>l	extras/vimrc	/^nnoremap <leader>l <C-W>l$/;"	m
+<leader>n	extras/vimrc	/^nnoremap <leader>n :ALENext<CR>$/;"	m
+<leader>sw	extras/vimrc	/^nnoremap <leader>sw :let _s=@\/<Bar>:%s\/\\s\\+$\/\/e<Bar>:let @\/=_s<Bar><CR>$/;"	m
 > #urlbar-background	nixos-private/userChrome.css	/^  #urlbar[breakout][breakout-extend] > #urlbar-background {$/;"	i
 > #urlbar-input-container	nixos-private/userChrome.css	/^  #urlbar[breakout][breakout-extend] > #urlbar-input-container {$/;"	i
 ?	modules/packages/custom/bumblebee-status/bumblebee/themes/icons/awesome-fonts.json	/^    "?": { "prefix": "" }$/;"	o	object:bluetooth
@@ -653,12 +673,21 @@ Advanced Usage	modules/packages/custom/bumblebee-status/README.md	/^### Advanced
 AggregateDocSource	modules/packages/custom/manix/src/lib.rs	/^impl AggregateDocSource {$/;"	c
 AggregateDocSource	modules/packages/custom/manix/src/lib.rs	/^impl DocSource for AggregateDocSource {$/;"	c
 AggregateDocSource	modules/packages/custom/manix/src/lib.rs	/^pub struct AggregateDocSource {$/;"	s
+Artify_active_tab_num	extras/vimrc	/^function! Artify_active_tab_num(n) abort$/;"	f
+Artify_col_num	extras/vimrc	/^function! Artify_col_num() abort$/;"	f
+Artify_gitbranch	extras/vimrc	/^function! Artify_gitbranch() abort$/;"	f
+Artify_inactive_tab_num	extras/vimrc	/^function! Artify_inactive_tab_num(n) abort$/;"	f
+Artify_lightline_mode	extras/vimrc	/^function! Artify_lightline_mode() abort$/;"	f
+Artify_lightline_tab_filename	extras/vimrc	/^function! Artify_lightline_tab_filename(s) abort$/;"	f
+Artify_line_num	extras/vimrc	/^function! Artify_line_num() abort$/;"	f
+Artify_line_percent	extras/vimrc	/^function! Artify_line_percent() abort$/;"	f
 Attribution	modules/packages/custom/bumblebee-status/CODE_OF_CONDUCT.md	/^## Attribution$/;"	s
 Avoid_Underflow	modules/packages/lua/lua-cjson-2.1.0/dtoa.c	/^#define Avoid_Underflow$/;"	d	file:
 BCinfo	modules/packages/lua/lua-cjson-2.1.0/dtoa.c	/^BCinfo { int dp0, dp1, dplen, dsign, e0, inexact, nd, nd0, rounding, scale, uflchk; };$/;"	s	file:
 BCinfo	modules/packages/lua/lua-cjson-2.1.0/dtoa.c	/^typedef struct BCinfo BCinfo;$/;"	t	typeref:struct:BCinfo	file:
 BRAILLE	modules/packages/custom/bumblebee-status/bumblebee/output.py	/^BRAILLE = {$/;"	v
 BUILD_CFLAGS	modules/packages/lua/lua-cjson-2.1.0/Makefile	/^BUILD_CFLAGS =      -I$(LUA_INCLUDE_DIR) $(CJSON_CFLAGS)$/;"	m
+BackupDir	extras/vimrc	/^function! BackupDir()$/;"	f
 Balloc	modules/packages/lua/lua-cjson-2.1.0/dtoa.c	/^Balloc$/;"	f	file:
 BandwidthInfo	modules/packages/custom/bumblebee-status/bumblebee/modules/network_traffic.py	/^class BandwidthInfo(object):$/;"	c
 Bar	modules/packages/custom/bumblebee-status/bumblebee/output.py	/^class Bar(object):$/;"	c
@@ -670,6 +699,7 @@ Big0	modules/packages/lua/lua-cjson-2.1.0/dtoa.c	/^#define Big0 /;"	d	file:
 Big1	modules/packages/lua/lua-cjson-2.1.0/dtoa.c	/^#define Big1 /;"	d	file:
 Bigint	modules/packages/lua/lua-cjson-2.1.0/dtoa.c	/^ typedef struct Bigint Bigint;$/;"	t	typeref:struct:Bigint	file:
 Bigint	modules/packages/lua/lua-cjson-2.1.0/dtoa.c	/^Bigint {$/;"	s	file:
+Binary	extras/vimrc	/^augroup Binary$/;"	a
 Bincode	modules/packages/custom/manix/src/lib.rs	/^    Bincode(#[from] bincode::Error),$/;"	e	enum:Errors
 Bletch	modules/packages/lua/lua-cjson-2.1.0/dtoa.c	/^#define Bletch /;"	d	file:
 Bndry_mask	modules/packages/lua/lua-cjson-2.1.0/dtoa.c	/^#define Bndry_mask /;"	d	file:
@@ -696,6 +726,7 @@ CacheFileIo	modules/packages/custom/manix/src/lib.rs	/^    CacheFileIo(#[from] s
 Check_FLT_ROUNDS	modules/packages/lua/lua-cjson-2.1.0/dtoa.c	/^#define Check_FLT_ROUNDS$/;"	d	file:
 City	modules/packages/lua/lua-cjson-2.1.0/tests/rfc-example2.json	/^      "City":      "SAN FRANCISCO",$/;"	s	object:0
 City	modules/packages/lua/lua-cjson-2.1.0/tests/rfc-example2.json	/^      "City":      "SUNNYVALE",$/;"	s	object:1
+CocCurrentFunction	extras/vimrc	/^function! CocCurrentFunction()$/;"	f
 CommandSocket	modules/packages/custom/bumblebee-status/bumblebee/input.py	/^class CommandSocket(object):$/;"	c
 CommentDoc	modules/packages/custom/manix/src/lib.rs	/^    CommentDoc(CommentDocumentation),$/;"	e	enum:DocEntry
 CommentDocumentation	modules/packages/custom/manix/src/comments_docsource.rs	/^impl CommentDocumentation {$/;"	c
@@ -738,6 +769,8 @@ DEPENDENCIES_OK	modules/packages/custom/bumblebee-status/bumblebee/modules/rss.p
 DEPENDENCIES_OK	modules/packages/custom/bumblebee-status/bumblebee/modules/rss.py	/^    DEPENDENCIES_OK = True$/;"	v
 Dependencies	modules/packages/custom/bumblebee-status/README.md	/^# Dependencies$/;"	c
 Description:	modules/packages/custom/bumblebee-status/.github/ISSUE_TEMPLATE/Bug.md	/^#### Description:$/;"	t
+Devicons_Fileformat	extras/vimrc	/^function! Devicons_Fileformat()$/;"	f
+Devicons_Filetype	extras/vimrc	/^function! Devicons_Filetype()$/;"	f
 DocEntry	modules/packages/custom/manix/src/lib.rs	/^impl DocEntry {$/;"	c
 DocEntry	modules/packages/custom/manix/src/lib.rs	/^pub enum DocEntry {$/;"	g
 DocSource	modules/packages/custom/manix/src/lib.rs	/^pub trait DocSource {$/;"	i
@@ -783,6 +816,7 @@ Flt_Rounds	modules/packages/lua/lua-cjson-2.1.0/dtoa.c	/^#define Flt_Rounds /;"	
 Frac_mask	modules/packages/lua/lua-cjson-2.1.0/dtoa.c	/^#define Frac_mask /;"	d	file:
 Frac_mask1	modules/packages/lua/lua-cjson-2.1.0/dtoa.c	/^#define Frac_mask1 /;"	d	file:
 General <a name="general" />	README.md	/^## General <a name="general" \/>$/;"	s
+Gitbranch	extras/vimrc	/^function! Gitbranch() abort$/;"	f
 GlossDef	modules/packages/lua/lua-cjson-2.1.0/tests/example1.json	/^                                        "GlossDef": {$/;"	o	object:glossary.GlossDiv.GlossList.GlossEntry
 GlossDiv	modules/packages/lua/lua-cjson-2.1.0/tests/example1.json	/^                "GlossDiv": {$/;"	o	object:glossary
 GlossEntry	modules/packages/lua/lua-cjson-2.1.0/tests/example1.json	/^                "GlossEntry": {$/;"	o	object:glossary.GlossDiv.GlossList
@@ -798,6 +832,7 @@ HBar	modules/packages/custom/bumblebee-status/bumblebee/output.py	/^class HBar(B
 HISTORY_FILENAME	modules/packages/custom/bumblebee-status/bumblebee/modules/rss.py	/^    HISTORY_FILENAME = ".config\/i3\/rss.hist"$/;"	v	class:Module
 HOST	modules/packages/custom/bumblebee-status/bumblebee/modules/hddtemp.py	/^HOST = "localhost"$/;"	v
 HTML_TEMPLATE	modules/packages/custom/bumblebee-status/bumblebee/modules/rss.py	/^HTML_TEMPLATE = """<!DOCTYPE html>$/;"	v
+Haskelling	README.md	/^## Haskelling$/;"	s
 Height	modules/packages/lua/lua-cjson-2.1.0/tests/rfc-example1.json	/^           "Height": 125,$/;"	n	object:Image.Thumbnail
 Height	modules/packages/lua/lua-cjson-2.1.0/tests/rfc-example1.json	/^       "Height": 600,$/;"	n	object:Image
 HomeManager	modules/packages/custom/manix/src/options_docsource.rs	/^    HomeManager,$/;"	e	enum:OptionsDatabaseType
@@ -820,6 +855,7 @@ Improvement	modules/packages/custom/bumblebee-status/.github/PULL_REQUEST_TEMPLA
 Installation	modules/packages/custom/bumblebee-status/README.md	/^# Installation$/;"	c
 Installation <a name="installation" />	README.md	/^## Installation <a name="installation" \/>$/;"	s
 Int_max	modules/packages/lua/lua-cjson-2.1.0/dtoa.c	/^#define Int_max /;"	d	file:
+J	extras/vimrc	/^nnoremap J j$/;"	m
 Keys	modules/packages/custom/manix/src/nixpkgs_tree_docsource.rs	/^impl Into<Vec<String>> for Keys {$/;"	c
 Keys	modules/packages/custom/manix/src/nixpkgs_tree_docsource.rs	/^struct Keys(HashMap<String, Keys>);$/;"	s
 Kmax	modules/packages/lua/lua-cjson-2.1.0/dtoa.c	/^#define Kmax /;"	d	file:
@@ -944,8 +980,10 @@ Module	modules/packages/custom/bumblebee-status/bumblebee/modules/xkcd.py	/^clas
 Module	modules/packages/custom/bumblebee-status/bumblebee/modules/xrandr.py	/^class Module(bumblebee.engine.Module):$/;"	c
 Module	modules/packages/custom/bumblebee-status/bumblebee/modules/zpool.py	/^class Module(bumblebee.engine.Module):$/;"	c
 ModuleLoadError	modules/packages/custom/bumblebee-status/bumblebee/error.py	/^class ModuleLoadError(BaseError):$/;"	c
+N	extras/vimrc	/^nmap N Nzz$/;"	m
 NAN_WORD0	modules/packages/lua/lua-cjson-2.1.0/dtoa.c	/^#define NAN_WORD0 /;"	d	file:
 NAN_WORD1	modules/packages/lua/lua-cjson-2.1.0/dtoa.c	/^#define NAN_WORD1 /;"	d	file:
+NERDTreeStart	extras/vimrc	/^function! NERDTreeStart()$/;"	f
 NO_ERRNO	modules/packages/lua/lua-cjson-2.1.0/dtoa_config.h	/^#define NO_ERRNO$/;"	d
 NO_STRTOD_BIGCOMP	modules/packages/lua/lua-cjson-2.1.0/dtoa.c	/^#define NO_STRTOD_BIGCOMP$/;"	d	file:
 Name	modules/packages/lua/lua-cjson-2.1.0/lua-cjson.spec	/^Name:		lua-cjson$/;"	t
@@ -1004,9 +1042,11 @@ PREFIX	modules/packages/lua/lua-cjson-2.1.0/Makefile	/^PREFIX =            \/usr
 PRIVATE_MEM	modules/packages/lua/lua-cjson-2.1.0/dtoa.c	/^#define PRIVATE_MEM /;"	d	file:
 PRIVATE_mem	modules/packages/lua/lua-cjson-2.1.0/dtoa.c	/^#define PRIVATE_mem /;"	d	file:
 Pack_32	modules/packages/lua/lua-cjson-2.1.0/dtoa.c	/^#define Pack_32$/;"	d	file:
+PomodoroStatus	extras/vimrc	/^function! PomodoroStatus() abort$/;"	f
 PopupMenu	modules/packages/custom/bumblebee-status/bumblebee/popup.py	/^class PopupMenu:$/;"	c
 PopupMenu	modules/packages/custom/bumblebee-status/bumblebee/popup_v2.py	/^class PopupMenu(object):$/;"	c
 Proposing a sage patch	modules/packages/custom/sage/README.md	/^## Proposing a sage patch$/;"	s
+Q	extras/vimrc	/^cmap Q q$/;"	m
 Quick_max	modules/packages/lua/lua-cjson-2.1.0/dtoa.c	/^#define Quick_max /;"	d	file:
 RECORD_SIZE	modules/packages/custom/bumblebee-status/bumblebee/modules/hddtemp.py	/^RECORD_SIZE = 5$/;"	v
 REFRESH_DELAY	modules/packages/custom/bumblebee-status/bumblebee/modules/rss.py	/^    REFRESH_DELAY = 600$/;"	v	class:Module
@@ -1045,6 +1085,7 @@ Summary	modules/packages/custom/bumblebee-status/.github/ISSUE_TEMPLATE/Bug.md	/
 Summary	modules/packages/custom/bumblebee-status/.github/ISSUE_TEMPLATE/Feature.md	/^#### Summary$/;"	t
 Summary	modules/packages/custom/bumblebee-status/.github/PULL_REQUEST_TEMPLATE/Improvement.md	/^#### Summary$/;"	t
 Summary	modules/packages/lua/lua-cjson-2.1.0/lua-cjson.spec	/^Summary:	A fast JSON encoding\/parsing module for Lua$/;"	t
+Sw	extras/vimrc	/^command Sw w !sudo tee % > \/dev\/null$/;"	c
 TARGET	modules/packages/lua/lua-cjson-2.1.0/Makefile	/^TARGET =            cjson.so$/;"	m
 TEST_FILES	modules/packages/lua/lua-cjson-2.1.0/Makefile	/^TEST_FILES =        README bench.lua genutf8.pl test.lua octets-escaped.dat \\$/;"	m
 THEME_HELP	modules/packages/custom/bumblebee-status/bumblebee/config.py	/^THEME_HELP = "Specify the theme to use for drawing modules"$/;"	v
@@ -1062,6 +1103,7 @@ T_OBJ_END	modules/packages/lua/lua-cjson-2.1.0/lua_cjson.c	/^    T_OBJ_END,$/;"	
 T_STRING	modules/packages/lua/lua-cjson-2.1.0/lua_cjson.c	/^    T_STRING,$/;"	e	enum:__anon146b4af20103	file:
 T_UNKNOWN	modules/packages/lua/lua-cjson-2.1.0/lua_cjson.c	/^    T_UNKNOWN$/;"	e	enum:__anon146b4af20103	file:
 T_WHITESPACE	modules/packages/lua/lua-cjson-2.1.0/lua_cjson.c	/^    T_WHITESPACE,$/;"	e	enum:__anon146b4af20103	file:
+Tab_num	extras/vimrc	/^function! Tab_num(n) abort$/;"	f
 Table of Contents	README.md	/^# Table of Contents$/;"	c
 Table of modules	modules/packages/custom/bumblebee-status/Modules.md	/^# Table of modules$/;"	c
 Ten_pmax	modules/packages/lua/lua-cjson-2.1.0/dtoa.c	/^#define Ten_pmax /;"	d	file:
@@ -1104,6 +1146,8 @@ UPowerManager	modules/packages/custom/bumblebee-status/bumblebee/modules/battery
 URL	modules/packages/lua/lua-cjson-2.1.0/lua-cjson.spec	/^URL:		http:\/\/www.kyne.com.au\/~mark\/software\/lua-cjson\/$/;"	t
 USC	modules/packages/lua/lua-cjson-2.1.0/dtoa.c	/^#define USC /;"	d	file:
 USE_INTERNAL_FPCONV	modules/packages/lua/lua-cjson-2.1.0/CMakeLists.txt	/^option(USE_INTERNAL_FPCONV "Use internal strtod() \/ g_fmt() code for performance")$/;"	D
+UnMinify	extras/vimrc	/^command! UnMinify call UnMinify()$/;"	c
+UnMinify	extras/vimrc	/^function! UnMinify()$/;"	f
 Url	modules/packages/lua/lua-cjson-2.1.0/tests/rfc-example1.json	/^           "Url":    "http:\/\/www.example.com\/image\/481989943",$/;"	s	object:Image.Thumbnail
 Usage	modules/packages/custom/bumblebee-status/README.md	/^# Usage$/;"	c
 VBARS	modules/packages/custom/bumblebee-status/bumblebee/output.py	/^VBARS = [$/;"	v
@@ -1112,6 +1156,8 @@ Version	modules/packages/lua/lua-cjson-2.1.0/lua-cjson.spec	/^Version:	2.1.0$/;"
 VersioneerBadRootError	modules/packages/custom/bumblebee-status/versioneer.py	/^class VersioneerBadRootError(Exception):$/;"	c
 VersioneerConfig	modules/packages/custom/bumblebee-status/bumblebee/_version.py	/^class VersioneerConfig:$/;"	c
 VersioneerConfig	modules/packages/custom/bumblebee-status/versioneer.py	/^class VersioneerConfig:$/;"	c
+VimJsonFormat	extras/vimrc	/^function! VimJsonFormat()$/;"	f
+W	extras/vimrc	/^cmap W w$/;"	m
 WHEEL_DOWN	modules/packages/custom/bumblebee-status/bumblebee/input.py	/^WHEEL_DOWN = 5$/;"	v
 WHEEL_UP	modules/packages/custom/bumblebee-status/bumblebee/input.py	/^WHEEL_UP = 4$/;"	v
 WIDGET_NAME	modules/packages/custom/bumblebee-status/bumblebee/modules/network_traffic.py	/^WIDGET_NAME = 'network_traffic'$/;"	v
@@ -1128,6 +1174,7 @@ XmlFuncDocDatabase	modules/packages/custom/manix/src/xml_docsource.rs	/^pub stru
 XmlFuncDocumentation	modules/packages/custom/manix/src/xml_docsource.rs	/^impl XmlFuncDocumentation {$/;"	c
 XmlFuncDocumentation	modules/packages/custom/manix/src/xml_docsource.rs	/^pub struct XmlFuncDocumentation {$/;"	s
 XmlParse	modules/packages/custom/manix/src/lib.rs	/^    XmlParse {$/;"	e	enum:Errors
+Y	extras/vimrc	/^map Y y\$$/;"	m
 Zip	modules/packages/lua/lua-cjson-2.1.0/tests/rfc-example2.json	/^      "Zip":       "94085",$/;"	s	object:1
 Zip	modules/packages/lua/lua-cjson-2.1.0/tests/rfc-example2.json	/^      "Zip":       "94107",$/;"	s	object:0
 _DTOA_CONFIG_H	modules/packages/lua/lua-cjson-2.1.0/dtoa_config.h	/^#define _DTOA_CONFIG_H$/;"	d
@@ -3888,48 +3935,107 @@ freq	modules/packages/custom/bumblebee-status/themes/icons/awesome-fonts.json	/^
 from_function_section_node	modules/packages/custom/manix/src/xml_docsource.rs	/^    fn from_function_section_node(node: &roxmltree::Node) -> Option<Self> {$/;"	P	implementation:XmlFuncDocumentation
 full_text	modules/packages/custom/bumblebee-status/bumblebee/output.py	/^    def full_text(self, value=None):$/;"	m	class:Widget
 functions	modules/packages/custom/manix/src/xml_docsource.rs	/^    pub functions: HashMap<String, XmlFuncDocumentation>,$/;"	m	struct:XmlFuncDocDatabase
+g:Hexokinase_ftAutoload	extras/vimrc	/^let g:Hexokinase_ftAutoload = ['html', 'css']$/;"	v
 g:Hexokinase_ftAutoload	modules/packages/neovim/plugins-config.vim	/^let g:Hexokinase_ftAutoload = ['html', 'css']$/;"	v
+g:Hexokinase_ftEnabled	extras/vimrc	/^let g:Hexokinase_ftEnabled = ['css', 'html']$/;"	v
 g:Hexokinase_ftEnabled	modules/packages/neovim/plugins-config.vim	/^let g:Hexokinase_ftEnabled = ['css', 'html']$/;"	v
+g:Hexokinase_highlighters	extras/vimrc	/^let g:Hexokinase_highlighters = ['virtual']$/;"	v
 g:Hexokinase_highlighters	modules/packages/neovim/plugins-config.vim	/^let g:Hexokinase_highlighters = ['virtual']$/;"	v
+g:Hexokinase_optInPatterns	extras/vimrc	/^let g:Hexokinase_optInPatterns = [$/;"	v
 g:Hexokinase_optInPatterns	modules/packages/neovim/plugins-config.vim	/^let g:Hexokinase_optInPatterns = [$/;"	v
+g:Hexokinase_refreshEvents	extras/vimrc	/^let g:Hexokinase_refreshEvents = ['BufWritePost']$/;"	v
 g:Hexokinase_refreshEvents	modules/packages/neovim/plugins-config.vim	/^let g:Hexokinase_refreshEvents = ['BufWritePost']$/;"	v
+g:Lf_PreviewInPopup	extras/vimrc	/^let g:Lf_PreviewInPopup = 1$/;"	v
 g:Lf_PreviewInPopup	modules/packages/neovim/plugins-config.vim	/^let g:Lf_PreviewInPopup = 1$/;"	v
+g:Lf_ShortcutF	extras/vimrc	/^let g:Lf_ShortcutF = "<leader>ff"$/;"	v
 g:Lf_ShortcutF	modules/packages/neovim/plugins-config.vim	/^let g:Lf_ShortcutF = "<leader>ff"$/;"	v
+g:Lf_ShowDevIcons	extras/vimrc	/^let g:Lf_ShowDevIcons = 1$/;"	v
 g:Lf_ShowDevIcons	modules/packages/neovim/plugins-config.vim	/^let g:Lf_ShowDevIcons = 1$/;"	v
+g:NERDCommentEmptyLines	extras/vimrc	/^let g:NERDCommentEmptyLines = 1$/;"	v
 g:NERDCommentEmptyLines	modules/packages/neovim/plugins-config.vim	/^let g:NERDCommentEmptyLines = 1$/;"	v
+g:NERDCompactSexyComs	extras/vimrc	/^let g:NERDCompactSexyComs = 1$/;"	v
 g:NERDCompactSexyComs	modules/packages/neovim/plugins-config.vim	/^let g:NERDCompactSexyComs = 1$/;"	v
+g:NERDCustomDelimiters	extras/vimrc	/^let g:NERDCustomDelimiters = { 'c': { 'left': '\/*','right': '*\/' },'python': { 'left': "'''",'/;"	v
 g:NERDCustomDelimiters	modules/packages/neovim/plugins-config.vim	/^let g:NERDCustomDelimiters = { 'c': { 'left': '\/*','right': '*\/' },'python': { 'left': "'''",'/;"	v
+g:NERDSpaceDelims	extras/vimrc	/^let g:NERDSpaceDelims = 1$/;"	v
 g:NERDSpaceDelims	modules/packages/neovim/plugins-config.vim	/^let g:NERDSpaceDelims = 1$/;"	v
+g:NERDToggleCheckAllLines	extras/vimrc	/^let g:NERDToggleCheckAllLines = 1$/;"	v
 g:NERDToggleCheckAllLines	modules/packages/neovim/plugins-config.vim	/^let g:NERDToggleCheckAllLines = 1$/;"	v
+g:NERDTrimTrailingWhitespace	extras/vimrc	/^let g:NERDTrimTrailingWhitespace = 1$/;"	v
 g:NERDTrimTrailingWhitespace	modules/packages/neovim/plugins-config.vim	/^let g:NERDTrimTrailingWhitespace = 1$/;"	v
+g:SuperTabDefaultCompletionType	extras/vimrc	/^let g:SuperTabDefaultCompletionType = '<C-n>'$/;"	v
 g:SuperTabDefaultCompletionType	modules/packages/neovim/plugins-config.vim	/^let g:SuperTabDefaultCompletionType = '<C-n>'$/;"	v
+g:UltiSnipsEditSplit	extras/vimrc	/^let g:UltiSnipsEditSplit="vertical"$/;"	v
 g:UltiSnipsEditSplit	modules/packages/neovim/plugins-config.vim	/^let g:UltiSnipsEditSplit="vertical"$/;"	v
+g:UltiSnipsExpandTrigger	extras/vimrc	/^let g:UltiSnipsExpandTrigger="<s-tab>"$/;"	v
 g:UltiSnipsExpandTrigger	modules/packages/neovim/plugins-config.vim	/^let g:UltiSnipsExpandTrigger="<s-tab>"$/;"	v
+g:UltiSnipsJumpBackwardTrigger	extras/vimrc	/^let g:UltiSnipsJumpBackwardTrigger="<C-s-tab>"$/;"	v
 g:UltiSnipsJumpBackwardTrigger	modules/packages/neovim/plugins-config.vim	/^let g:UltiSnipsJumpBackwardTrigger="<C-s-tab>"$/;"	v
+g:UltiSnipsJumpForwardTrigger	extras/vimrc	/^let g:UltiSnipsJumpForwardTrigger="<s-tab>"$/;"	v
 g:UltiSnipsJumpForwardTrigger	modules/packages/neovim/plugins-config.vim	/^let g:UltiSnipsJumpForwardTrigger="<s-tab>"$/;"	v
+g:UltiSnipsSnippetDirectories	extras/vimrc	/^let g:UltiSnipsSnippetDirectories=['~\/.vim\/UltiSnips\/UltiSnips\/', 'UltiSnips']$/;"	v
 g:UltiSnipsSnippetDirectories	modules/packages/neovim/plugins-config.vim	/^let g:UltiSnipsSnippetDirectories=['~\/.vim\/UltiSnips\/UltiSnips\/', 'UltiSnips']$/;"	v
+g:ale_c_parse_makefile	modules/packages/neovim/plugins-config.vim	/^let g:ale_c_parse_makefile = 1$/;"	v
+g:ale_completion_enabled	extras/vimrc	/^let g:ale_completion_enabled = 0$/;"	v
 g:ale_completion_enabled	modules/packages/neovim/plugins-config.vim	/^let g:ale_completion_enabled = 0$/;"	v
+g:ale_cpp_clang_options	extras/vimrc	/^let g:ale_cpp_clang_options = '-std=c++17 -Wall -Wextra'$/;"	v
 g:ale_cpp_clang_options	modules/packages/neovim/plugins-config.vim	/^let g:ale_cpp_clang_options = '-std=c++17 -Wall -Wextra'$/;"	v
+g:ale_cpp_cplint_options	extras/vimrc	/^let g:ale_cpp_cplint_options='--headers=hpp'$/;"	v
 g:ale_cpp_cplint_options	modules/packages/neovim/plugins-config.vim	/^let g:ale_cpp_cplint_options='--headers=hpp'$/;"	v
+g:ale_cpp_gcc_options	extras/vimrc	/^let g:ale_cpp_gcc_options = '-std=c++17 -Wall -Wextra'$/;"	v
 g:ale_cpp_gcc_options	modules/packages/neovim/plugins-config.vim	/^let g:ale_cpp_gcc_options = '-std=c++17 -Wall -Wextra'$/;"	v
+g:ale_fix_on_save	extras/vimrc	/^let g:ale_fix_on_save = 1$/;"	v
 g:ale_fix_on_save	modules/packages/neovim/plugins-config.vim	/^let g:ale_fix_on_save = 1$/;"	v
+g:ale_fixers	extras/vimrc	/^let g:ale_fixers = {'python': ['black'], 'json': ['fixjson'], 'javascript': ['eslint --fix']}$/;"	v
+g:ale_fixers	extras/vimrc	/^let g:ale_fixers.javascript = ['eslint']$/;"	v
 g:ale_fixers	modules/packages/neovim/plugins-config.vim	/^let g:ale_fixers = {'python': ['black'], 'json': ['fixjson'], 'javascript': ['eslint --fix']}$/;"	v
 g:ale_fixers	modules/packages/neovim/plugins-config.vim	/^let g:ale_fixers.javascript = ['eslint']$/;"	v
-g:ale_linters	modules/packages/neovim/plugins-config.vim	/^let g:ale_linters = {'cpp': ['clang', 'gcc', 'cpplint'], 'python': ['black', 'flake8', 'pylint',/;"	v
+g:ale_linters	extras/vimrc	/^let g:ale_linters = {'cpp': ['clang', 'gcc', 'cpplint'], 'python': ['black', 'flake8', 'pylint',/;"	v
+g:ale_linters	modules/packages/neovim/plugins-config.vim	/^let g:ale_linters = {'cpp': ['clang'], 'c': ['clang'], 'python': ['black', 'flake8', 'pylint', '/;"	v
+g:ale_sign_error	extras/vimrc	/^let g:ale_sign_error = '|>'$/;"	v
 g:ale_sign_error	modules/packages/neovim/plugins-config.vim	/^let g:ale_sign_error = '|>'$/;"	v
+g:ale_sign_warning	extras/vimrc	/^let g:ale_sign_warning = '!'$/;"	v
 g:ale_sign_warning	modules/packages/neovim/plugins-config.vim	/^let g:ale_sign_warning = '!'$/;"	v
+g:black_virtualenv	extras/vimrc	/^let g:black_virtualenv="~\/.vim\/black"$/;"	v
 g:black_virtualenv	modules/packages/neovim/plugins-config.vim	/^let g:black_virtualenv="~\/.vim\/black"$/;"	v
+g:comfortable_motion_scroll_down_key	extras/vimrc	/^let g:comfortable_motion_scroll_down_key = "J"$/;"	v
 g:comfortable_motion_scroll_down_key	modules/packages/neovim/plugins-config.vim	/^let g:comfortable_motion_scroll_down_key = "J"$/;"	v
+g:comfortable_motion_scroll_up_key	extras/vimrc	/^let g:comfortable_motion_scroll_up_key = "K"$/;"	v
 g:comfortable_motion_scroll_up_key	modules/packages/neovim/plugins-config.vim	/^let g:comfortable_motion_scroll_up_key = "K"$/;"	v
+g:goyo_height	extras/vimrc	/^let g:goyo_height = 85$/;"	v
 g:goyo_height	modules/packages/neovim/plugins-config.vim	/^let g:goyo_height = 85$/;"	v
+g:goyo_linenr	extras/vimrc	/^let g:goyo_linenr = 0$/;"	v
 g:goyo_linenr	modules/packages/neovim/plugins-config.vim	/^let g:goyo_linenr = 0$/;"	v
+g:goyo_width	extras/vimrc	/^let g:goyo_width = 95$/;"	v
 g:goyo_width	modules/packages/neovim/plugins-config.vim	/^let g:goyo_width = 95$/;"	v
+g:gruvbox_material_background	extras/vimrc	/^let g:gruvbox_material_background = 'soft'$/;"	v
 g:gruvbox_material_background	modules/packages/neovim/plugins-config.vim	/^let g:gruvbox_material_background = 'soft'$/;"	v
+g:gruvbox_material_enable_italic	extras/vimrc	/^let g:gruvbox_material_enable_italic = 1$/;"	v
 g:gruvbox_material_enable_italic	modules/packages/neovim/plugins-config.vim	/^let g:gruvbox_material_enable_italic = 1$/;"	v
+g:indentLine_concealcursor	extras/vimrc	/^let g:indentLine_concealcursor = 'inc'$/;"	v
 g:indentLine_concealcursor	modules/packages/neovim/plugins-config.vim	/^let g:indentLine_concealcursor = 'inc'$/;"	v
+g:indentLine_enabled	extras/vimrc	/^let g:indentLine_enabled = 1$/;"	v
 g:indentLine_enabled	modules/packages/neovim/plugins-config.vim	/^let g:indentLine_enabled = 1$/;"	v
+g:indentLine_leadingSpaceEnabled	extras/vimrc	/^let g:indentLine_leadingSpaceEnabled = 0$/;"	v
 g:indentLine_leadingSpaceEnabled	modules/packages/neovim/plugins-config.vim	/^let g:indentLine_leadingSpaceEnabled = 0$/;"	v
+g:indentLine_setColors	extras/vimrc	/^let g:indentLine_setColors = 0$/;"	v
 g:indentLine_setColors	modules/packages/neovim/plugins-config.vim	/^let g:indentLine_setColors = 0$/;"	v
+g:lightline	extras/vimrc	/^    let g:lightline.active = {$/;"	v
+g:lightline	extras/vimrc	/^    let g:lightline.inactive = {$/;"	v
+g:lightline	extras/vimrc	/^    let g:lightline.tab = {$/;"	v
+g:lightline	extras/vimrc	/^    let g:lightline.tabline = {$/;"	v
+g:lightline	extras/vimrc	/^let g:lightline = {}$/;"	v
+g:lightline	extras/vimrc	/^let g:lightline.colorscheme = 'gruvbox_material'$/;"	v
+g:lightline	extras/vimrc	/^let g:lightline.component = {$/;"	v
+g:lightline	extras/vimrc	/^let g:lightline.component_expand = {$/;"	v
+g:lightline	extras/vimrc	/^let g:lightline.component_function = {$/;"	v
+g:lightline	extras/vimrc	/^let g:lightline.component_type = {$/;"	v
+g:lightline	extras/vimrc	/^let g:lightline.separator = { 'left': "\\ue0b8", 'right': "\\ue0be" }$/;"	v
+g:lightline	extras/vimrc	/^let g:lightline.subseparator = { 'left': "\\ue0b9", 'right': "\\ue0b9" }$/;"	v
+g:lightline	extras/vimrc	/^let g:lightline.tab_component = {$/;"	v
+g:lightline	extras/vimrc	/^let g:lightline.tab_component_function = {$/;"	v
+g:lightline	extras/vimrc	/^let g:lightline.tabline_separator = { 'left': "\\ue0bc", 'right': "\\ue0ba" }$/;"	v
+g:lightline	extras/vimrc	/^let g:lightline.tabline_subseparator = { 'left': "\\ue0bb", 'right': "\\ue0bb" }$/;"	v
 g:lightline	modules/packages/neovim/plugins-config.vim	/^    let g:lightline.active = {$/;"	v
 g:lightline	modules/packages/neovim/plugins-config.vim	/^    let g:lightline.inactive = {$/;"	v
 g:lightline	modules/packages/neovim/plugins-config.vim	/^    let g:lightline.tab = {$/;"	v
@@ -3945,41 +4051,79 @@ g:lightline	modules/packages/neovim/plugins-config.vim	/^let g:lightline.tab_com
 g:lightline	modules/packages/neovim/plugins-config.vim	/^let g:lightline.tab_component_function = {$/;"	v
 g:lightline	modules/packages/neovim/plugins-config.vim	/^let g:lightline.tabline_separator = { 'left': "\\ue0bc", 'right': "\\ue0ba" }$/;"	v
 g:lightline	modules/packages/neovim/plugins-config.vim	/^let g:lightline.tabline_subseparator = { 'left': "\\ue0bb", 'right': "\\ue0bb" }$/;"	v
+g:lightline#ale#indicator_checking	extras/vimrc	/^let g:lightline#ale#indicator_checking = "\\uf110"$/;"	v
 g:lightline#ale#indicator_checking	modules/packages/neovim/plugins-config.vim	/^let g:lightline#ale#indicator_checking = "\\uf110"$/;"	v
+g:lightline#ale#indicator_errors	extras/vimrc	/^let g:lightline#ale#indicator_errors = "\\uf00d"$/;"	v
 g:lightline#ale#indicator_errors	modules/packages/neovim/plugins-config.vim	/^let g:lightline#ale#indicator_errors = "\\uf00d"$/;"	v
+g:lightline#ale#indicator_infos	modules/packages/neovim/plugins-config.vim	/^let g:lightline#ale#indicator_infos = "\\uf129"$/;"	v
+g:lightline#ale#indicator_ok	extras/vimrc	/^let g:lightline#ale#indicator_ok = "\\uf00c"$/;"	v
 g:lightline#ale#indicator_ok	modules/packages/neovim/plugins-config.vim	/^let g:lightline#ale#indicator_ok = "\\uf00c"$/;"	v
+g:lightline#ale#indicator_warnings	extras/vimrc	/^let g:lightline#ale#indicator_warnings = "\\uf529"$/;"	v
 g:lightline#ale#indicator_warnings	modules/packages/neovim/plugins-config.vim	/^let g:lightline#ale#indicator_warnings = "\\uf529"$/;"	v
+g:lightline#asyncrun#indicator_none	extras/vimrc	/^let g:lightline#asyncrun#indicator_none = ''$/;"	v
 g:lightline#asyncrun#indicator_none	modules/packages/neovim/plugins-config.vim	/^let g:lightline#asyncrun#indicator_none = ''$/;"	v
+g:lightline#asyncrun#indicator_run	extras/vimrc	/^let g:lightline#asyncrun#indicator_run = 'Running...'$/;"	v
 g:lightline#asyncrun#indicator_run	modules/packages/neovim/plugins-config.vim	/^let g:lightline#asyncrun#indicator_run = 'Running...'$/;"	v
+g:lightlineArtify	extras/vimrc	/^let g:lightlineArtify = 1$/;"	v
+g:lightline_gitdiff#indicator_added	extras/vimrc	/^let g:lightline_gitdiff#indicator_added = '+'$/;"	v
 g:lightline_gitdiff#indicator_added	modules/packages/neovim/plugins-config.vim	/^let g:lightline_gitdiff#indicator_added = '+'$/;"	v
+g:lightline_gitdiff#indicator_deleted	extras/vimrc	/^let g:lightline_gitdiff#indicator_deleted = '-'$/;"	v
 g:lightline_gitdiff#indicator_deleted	modules/packages/neovim/plugins-config.vim	/^let g:lightline_gitdiff#indicator_deleted = '-'$/;"	v
+g:lightline_gitdiff#indicator_modified	extras/vimrc	/^let g:lightline_gitdiff#indicator_modified = '*'$/;"	v
 g:lightline_gitdiff#indicator_modified	modules/packages/neovim/plugins-config.vim	/^let g:lightline_gitdiff#indicator_modified = '*'$/;"	v
+g:lightline_gitdiff#min_winwidth	extras/vimrc	/^let g:lightline_gitdiff#min_winwidth = '70'$/;"	v
 g:lightline_gitdiff#min_winwidth	modules/packages/neovim/plugins-config.vim	/^let g:lightline_gitdiff#min_winwidth = '70'$/;"	v
+g:limelight_default_coefficient	extras/vimrc	/^let g:limelight_default_coefficient = 0.7$/;"	v
 g:limelight_default_coefficient	modules/packages/neovim/plugins-config.vim	/^let g:limelight_default_coefficient = 0.7$/;"	v
+g:loaded_matchit	extras/vimrc	/^let g:loaded_matchit = 1$/;"	v
 g:loaded_matchit	modules/packages/neovim/plugins-config.vim	/^let g:loaded_matchit = 1$/;"	v
+g:mergetool_layout	extras/vimrc	/^let g:mergetool_layout = 'mr'$/;"	v
 g:mergetool_layout	modules/packages/neovim/plugins-config.vim	/^let g:mergetool_layout = 'mr'$/;"	v
+g:mergetool_prefer_revision	extras/vimrc	/^let g:mergetool_prefer_revision = 'local'$/;"	v
 g:mergetool_prefer_revision	modules/packages/neovim/plugins-config.vim	/^let g:mergetool_prefer_revision = 'local'$/;"	v
+g:mkdp_auto_close	extras/vimrc	/^let g:mkdp_auto_close=1$/;"	v
 g:mkdp_auto_close	modules/packages/neovim/plugins-config.vim	/^let g:mkdp_auto_close=1$/;"	v
+g:mkdp_auto_start	extras/vimrc	/^let g:mkdp_auto_start=1$/;"	v
 g:mkdp_auto_start	modules/packages/neovim/plugins-config.vim	/^let g:mkdp_auto_start=1$/;"	v
+g:mkdp_browser	extras/vimrc	/^let g:mkdp_browser="chromium-browser"$/;"	v
 g:mkdp_browser	modules/packages/neovim/plugins-config.vim	/^let g:mkdp_browser="chromium-browser"$/;"	v
+g:rainbow_active	extras/vimrc	/^let g:rainbow_active = 1$/;"	v
 g:rainbow_active	modules/packages/neovim/plugins-config.vim	/^let g:rainbow_active = 1$/;"	v
 g:tagbar_compact	modules/packages/neovim/plugins-config.vim	/^let g:tagbar_compact = 1$/;"	v
 g:tagbar_show_linenumbers	modules/packages/neovim/plugins-config.vim	/^let g:tagbar_show_linenumbers = 1$/;"	v
+g:tagbar_type_moon	extras/vimrc	/^let g:tagbar_type_moon = {$/;"	v
 g:tagbar_type_moon	modules/packages/neovim/plugins-config.vim	/^let g:tagbar_type_moon = {$/;"	v
+g:vcool_ins_rgb_map	extras/vimrc	/^let g:vcool_ins_rgb_map = '<Leader>rgb'$/;"	v
 g:vcool_ins_rgb_map	modules/packages/neovim/plugins-config.vim	/^let g:vcool_ins_rgb_map = '<Leader>rgb'$/;"	v
+g:vcool_ins_rgba_map	extras/vimrc	/^let g:vcool_ins_rgba_map = '<Leader>rgba'$/;"	v
 g:vcool_ins_rgba_map	modules/packages/neovim/plugins-config.vim	/^let g:vcool_ins_rgba_map = '<Leader>rgba'$/;"	v
+g:vcoolor_custom_picker	extras/vimrc	/^let g:vcoolor_custom_picker = 'zenity --title "Picker" --color-selection'$/;"	v
 g:vcoolor_custom_picker	modules/packages/neovim/plugins-config.vim	/^let g:vcoolor_custom_picker = 'zenity --title "Picker" --color-selection'$/;"	v
+g:vcoolor_lowercase	extras/vimrc	/^let g:vcoolor_lowercase = 1$/;"	v
 g:vcoolor_lowercase	modules/packages/neovim/plugins-config.vim	/^let g:vcoolor_lowercase = 1$/;"	v
+g:vcoolor_map	extras/vimrc	/^let g:vcoolor_map = '<Leader>vcm'$/;"	v
 g:vcoolor_map	modules/packages/neovim/plugins-config.vim	/^let g:vcoolor_map = '<Leader>vcm'$/;"	v
+g:vim_json_syntax_conceal	extras/vimrc	/^    let g:vim_json_syntax_conceal = 0$/;"	v
+g:vista#renderer#enable_icon	extras/vimrc	/^let g:vista#renderer#enable_icon = 1$/;"	v
 g:vista#renderer#enable_icon	modules/packages/neovim/plugins-config.vim	/^let g:vista#renderer#enable_icon = 1$/;"	v
+g:vista#renderer#icons	extras/vimrc	/^let g:vista#renderer#icons = {$/;"	v
 g:vista#renderer#icons	modules/packages/neovim/plugins-config.vim	/^let g:vista#renderer#icons = {$/;"	v
+g:vista_default_executive	extras/vimrc	/^let g:vista_default_executive = 'ctags'$/;"	v
 g:vista_default_executive	modules/packages/neovim/plugins-config.vim	/^let g:vista_default_executive = 'ctags'$/;"	v
+g:vista_icon_indent	extras/vimrc	/^let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]$/;"	v
 g:vista_icon_indent	modules/packages/neovim/plugins-config.vim	/^let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]$/;"	v
-g:ycm_add_preview_to_completeopt	modules/packages/neovim/plugins-config.vim	/^let g:ycm_add_preview_to_completeopt = 0$/;"	v
-g:ycm_global_ycm_extra_conf	modules/packages/neovim/plugins-config.vim	/^let g:ycm_global_ycm_extra_conf = '~\/.vim\/.ycm_extra_conf.py'$/;"	v
-g:ycm_key_list_previous_completion	modules/packages/neovim/plugins-config.vim	/^let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']$/;"	v
-g:ycm_key_list_select_completion	modules/packages/neovim/plugins-config.vim	/^let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']$/;"	v
-g:ycm_show_diagnostics_ui	modules/packages/neovim/plugins-config.vim	/^let g:ycm_show_diagnostics_ui = 0 " make YCM compatible with UltiSnips (using supertab)$/;"	v
+g:which_key_map	extras/vimrc	/^let g:which_key_map = {}$/;"	v
+g:which_key_map	extras/vimrc	/^let g:which_key_map.b = {'name' : 'Buffers'}$/;"	v
+g:which_key_map	extras/vimrc	/^let g:which_key_map.b.h = 'Navigate buffer backward'$/;"	v
+g:which_key_map	extras/vimrc	/^let g:which_key_map.b.l = 'Navigate buffer forward'$/;"	v
+g:which_key_map	extras/vimrc	/^let g:which_key_map.b.s = 'Display buffers'$/;"	v
+g:which_key_map	extras/vimrc	/^let g:which_key_map.s = {'name': 'Sed\/Format Utilities'}$/;"	v
+g:which_key_map	extras/vimrc	/^let g:which_key_map.s.w = 'Strip Whitespace'$/;"	v
+g:ycm_add_preview_to_completeopt	extras/vimrc	/^let g:ycm_add_preview_to_completeopt = 0$/;"	v
+g:ycm_global_ycm_extra_conf	extras/vimrc	/^let g:ycm_global_ycm_extra_conf = '~\/.vim\/.ycm_extra_conf.py'$/;"	v
+g:ycm_key_list_previous_completion	extras/vimrc	/^let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']$/;"	v
+g:ycm_key_list_select_completion	extras/vimrc	/^let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']$/;"	v
+g:ycm_show_diagnostics_ui	extras/vimrc	/^let g:ycm_show_diagnostics_ui = 0 " make YCM compatible with UltiSnips (using supertab)$/;"	v
 gen_keys	modules/packages/custom/manix/src/nixpkgs_tree_docsource.rs	/^fn gen_keys() -> Result<Vec<String>, Errors> {$/;"	f
 gen_raw_octets	modules/packages/lua/lua-cjson-2.1.0/tests/test.lua	/^local function gen_raw_octets()$/;"	f
 gen_utf16_escaped	modules/packages/lua/lua-cjson-2.1.0/tests/test.lua	/^local function gen_utf16_escaped()$/;"	f
@@ -4165,6 +4309,7 @@ good	modules/packages/custom/bumblebee-status/themes/solarized.json	/^		"good": 
 good	modules/packages/custom/bumblebee-status/themes/solarized.json	/^		"good": {$/;"	o	object:dnf
 good	modules/packages/custom/bumblebee-status/themes/wal-powerline.json	/^		"good": {$/;"	o	object:apt
 good	modules/packages/custom/bumblebee-status/themes/wal-powerline.json	/^		"good": {$/;"	o	object:dnf
+goyoCustom	extras/vimrc	/^augroup goyoCustom$/;"	a
 goyoCustom	modules/packages/neovim/plugins-config.vim	/^augroup goyoCustom$/;"	a
 gpmdp	modules/packages/custom/bumblebee-status/bumblebee/themes/icons/awesome-fonts.json	/^  "gpmdp": {$/;"	o
 gpmdp	modules/packages/custom/bumblebee-status/bumblebee/themes/icons/ionicons.json	/^  "gpmdp": {$/;"	o
@@ -4277,7 +4422,9 @@ image	modules/packages/lua/lua-cjson-2.1.0/tests/example3.json	/^    "image": {$
 increase_volume	modules/packages/custom/bumblebee-status/bumblebee/modules/pulseaudio.py	/^    def increase_volume(self, event):$/;"	m	class:Module
 increment	modules/packages/lua/lua-cjson-2.1.0/dtoa.c	/^increment(b) Bigint *b;$/;"	f	file:
 increment	modules/packages/lua/lua-cjson-2.1.0/strbuf.h	/^    int increment;$/;"	m	struct:__anonb67b4c0f0108	typeref:typename:int
+indentLine_char	extras/vimrc	/^let indentLine_char = '|'$/;"	v
 indentLine_char	modules/packages/neovim/plugins-config.vim	/^let indentLine_char = '|'$/;"	v
+indentLine_color_term	extras/vimrc	/^let indentLine_color_term = 'lightgrey'$/;"	v
 indentLine_color_term	modules/packages/neovim/plugins-config.vim	/^let indentLine_color_term = 'lightgrey'$/;"	v
 index	modules/packages/lua/lua-cjson-2.1.0/lua_cjson.c	/^    int index;$/;"	m	struct:__anon146b4af20408	typeref:typename:int	file:
 inexact	modules/packages/lua/lua-cjson-2.1.0/dtoa.c	/^BCinfo { int dp0, dp1, dplen, dsign, e0, inexact, nd, nd0, rounding, scale, uflchk; };$/;"	m	struct:BCinfo	typeref:typename:int	file:
@@ -4308,6 +4455,7 @@ items	modules/packages/custom/bumblebee-status/themes/icons/awesome-fonts.json	/
 items	modules/packages/custom/bumblebee-status/themes/icons/awesome-fonts.json	/^    "items": { "prefix": "" },$/;"	o	object:todo
 items	modules/packages/custom/bumblebee-status/themes/icons/ionicons.json	/^    "items": { "prefix": "\\uf454" },$/;"	o	object:todo
 items	modules/packages/lua/lua-cjson-2.1.0/tests/example5.json	/^    "items": [$/;"	a	object:menu
+j	extras/vimrc	/^nnoremap j gj$/;"	m
 json_append_array	modules/packages/lua/lua-cjson-2.1.0/lua_cjson.c	/^static void json_append_array(lua_State *l, json_config_t *cfg, int current_depth,$/;"	f	typeref:typename:void	file:
 json_append_data	modules/packages/lua/lua-cjson-2.1.0/lua_cjson.c	/^static void json_append_data(lua_State *l, json_config_t *cfg,$/;"	f	typeref:typename:void	file:
 json_append_number	modules/packages/lua/lua-cjson-2.1.0/lua_cjson.c	/^static void json_append_number(lua_State *l, json_config_t *cfg,$/;"	f	typeref:typename:void	file:
@@ -4352,6 +4500,7 @@ json_verify_invalid_number_setting	modules/packages/lua/lua-cjson-2.1.0/lua_cjso
 json_verify_invalid_number_setting	modules/packages/lua/lua-cjson-2.1.0/lua_cjson.c	/^void json_verify_invalid_number_setting(lua_State *l, int *setting)$/;"	f	typeref:typename:void
 jspFileTemplate	modules/packages/lua/lua-cjson-2.1.0/tests/example4.json	/^        "jspFileTemplate": "articleTemplate.jsp",$/;"	s	object:web-app.servlet.0.init-param
 jspListTemplate	modules/packages/lua/lua-cjson-2.1.0/tests/example4.json	/^        "jspListTemplate": "listTemplate.jsp",$/;"	s	object:web-app.servlet.0.init-param
+k	extras/vimrc	/^nnoremap k gk$/;"	m
 k	modules/packages/lua/lua-cjson-2.1.0/dtoa.c	/^	int k, maxwds, sign, wds;$/;"	m	struct:Bigint	typeref:typename:int	file:
 kernel	modules/packages/custom/bumblebee-status/bumblebee/themes/icons/awesome-fonts.json	/^  "kernel": {$/;"	o
 kernel	modules/packages/custom/bumblebee-status/bumblebee/themes/icons/ionicons.json	/^  "kernel": {$/;"	o
@@ -4386,6 +4535,7 @@ layout-xkb	modules/packages/custom/bumblebee-status/themes/icons/ionicons.json	/
 layout-xkbswitch	modules/packages/custom/bumblebee-status/bumblebee/themes/icons/awesome-fonts.json	/^  "layout-xkbswitch": { "prefix": "" },$/;"	o
 layout-xkbswitch	modules/packages/custom/bumblebee-status/themes/icons/awesome-fonts.json	/^  "layout-xkbswitch": { "prefix": "" },$/;"	o
 length	modules/packages/lua/lua-cjson-2.1.0/strbuf.h	/^    int length;$/;"	m	struct:__anonb67b4c0f0108	typeref:typename:int
+lightlineCustom	extras/vimrc	/^augroup lightlineCustom$/;"	a
 link_module	modules/packages/custom/bumblebee-status/bumblebee/output.py	/^    def link_module(self, module):$/;"	m	class:Widget
 list_devices	modules/packages/custom/bumblebee-status/bumblebee/modules/smartstatus.py	/^    def list_devices(self):$/;"	m	class:Module
 lo0bits	modules/packages/lua/lua-cjson-2.1.0/dtoa.c	/^lo0bits$/;"	f	file:
@@ -4447,6 +4597,8 @@ main	modules/packages/custom/manix/src/bin/manix.rs	/^fn main() -> Result<()> {$
 make_release_tree	modules/packages/custom/bumblebee-status/versioneer.py	/^        def make_release_tree(self, base_dir, files):$/;"	m	class:get_cmdclass.cmd_sdist
 manager	modules/packages/custom/bumblebee-status/bumblebee/modules/bluetooth.py	/^    def manager(self, widget):$/;"	m	class:Module
 manager	modules/packages/custom/bumblebee-status/bumblebee/modules/bluetooth2.py	/^    def manager(self, widget):$/;"	m	class:Module
+mapleader	extras/vimrc	/^let mapleader = ","$/;"	v
+maplocalleader	extras/vimrc	/^let maplocalleader = ","$/;"	v
 markup	modules/packages/custom/bumblebee-status/bumblebee/config.py	/^    def markup(self):$/;"	m	class:Config
 match	modules/packages/lua/lua-cjson-2.1.0/dtoa.c	/^match$/;"	f	file:
 maxUrlLength	modules/packages/lua/lua-cjson-2.1.0/tests/example4.json	/^        "maxUrlLength": 500}},$/;"	n	object:web-app.servlet.0.init-param
@@ -4542,6 +4694,8 @@ muted	modules/packages/custom/bumblebee-status/themes/icons/ionicons.json	/^    
 muted	modules/packages/custom/bumblebee-status/themes/icons/ionicons.json	/^    "muted": { "prefix": "\\uf39a" },$/;"	o	object:dunst
 muted	modules/packages/custom/bumblebee-status/themes/icons/ionicons.json	/^    "muted": { "prefix": "\\uf3b9" },$/;"	o	object:amixer
 muted	modules/packages/custom/bumblebee-status/themes/icons/ionicons.json	/^    "muted": { "prefix": "\\uf3b9" },$/;"	o	object:pasink
+myUndoDir	extras/vimrc	/^    let myUndoDir = expand(vimDir . '\/undodir')$/;"	v
+n	extras/vimrc	/^nmap n nzz$/;"	m
 n_bigtens	modules/packages/lua/lua-cjson-2.1.0/dtoa.c	/^#define n_bigtens /;"	d	file:
 naersk	modules/packages/custom/manix/nix/sources.json	/^    "naersk": {$/;"	o
 name	modules/packages/custom/manix/src/comments_docsource.rs	/^    pub fn name(&self) -> String {$/;"	P	implementation:CommentDocumentation
@@ -5641,6 +5795,7 @@ publicip	modules/packages/custom/bumblebee-status/themes/icons/awesome-fonts.jso
 publicip	modules/packages/custom/bumblebee-status/themes/icons/ionicons.json	/^  "publicip": {$/;"	o
 pulseaudio	modules/packages/custom/bumblebee-status/bumblebee/themes/gruvbox-powerline.json	/^    "pulseaudio": {$/;"	o
 pulseaudio	modules/packages/custom/bumblebee-status/themes/gruvbox-powerline.json	/^    "pulseaudio": {$/;"	o
+python_highlight_all	extras/vimrc	/^let python_highlight_all=1$/;"	v
 python_highlight_all	modules/packages/neovim/plugins-config.vim	/^let python_highlight_all=1$/;"	v
 query	modules/packages/custom/bumblebee-status/bumblebee/modules/prime.py	/^    def query(self, widget):$/;"	m	class:Module
 query	modules/packages/custom/manix/src/bin/manix.rs	/^    query: String,$/;"	m	struct:Opt
@@ -6821,6 +6976,7 @@ vbar	modules/packages/custom/bumblebee-status/bumblebee/output.py	/^def vbar(val
 versions_from_file	modules/packages/custom/bumblebee-status/versioneer.py	/^def versions_from_file(filename):$/;"	f
 versions_from_parentdir	modules/packages/custom/bumblebee-status/bumblebee/_version.py	/^def versions_from_parentdir(parentdir_prefix, root, verbose):$/;"	f
 versions_from_parentdir	modules/packages/custom/bumblebee-status/versioneer.py	/^def versions_from_parentdir(parentdir_prefix, root, verbose):$/;"	f
+vimDir	extras/vimrc	/^let vimDir = '$HOME\/.vim'$/;"	v
 visit_attr_entry	modules/packages/custom/manix/src/comments_docsource.rs	/^fn visit_attr_entry(entry: KeyValue) -> Option<CommentDocumentation> {$/;"	f
 visit_attrset	modules/packages/custom/manix/src/comments_docsource.rs	/^fn visit_attrset(set: &AttrSet) -> Vec<CommentDocumentation> {$/;"	f
 volume	modules/packages/custom/bumblebee-status/bumblebee/modules/amixer.py	/^    def volume(self, widget):$/;"	m	class:Module
@@ -6828,6 +6984,7 @@ volume	modules/packages/custom/bumblebee-status/bumblebee/modules/pulseaudio.py	
 vpn	modules/packages/custom/bumblebee-status/bumblebee/themes/icons/awesome-fonts.json	/^  "vpn": {$/;"	o
 vpn	modules/packages/custom/bumblebee-status/themes/icons/awesome-fonts.json	/^  "vpn": {$/;"	o
 vpn_status	modules/packages/custom/bumblebee-status/bumblebee/modules/vpn.py	/^    def vpn_status(self, widget):$/;"	m	class:Module
+w	extras/vimrc	/^nmap w <Plug>(easymotion-bd-w)$/;"	m
 wait	modules/packages/custom/bumblebee-status/bumblebee/input.py	/^    def wait(self, timeout):$/;"	m	class:I3BarInput
 walk_ast	modules/packages/custom/manix/src/comments_docsource.rs	/^fn walk_ast(ast: rnix::AST) -> Vec<CommentDocumentation> {$/;"	f
 warning	modules/packages/custom/bumblebee-status/bumblebee/themes/dracula-powerline.json	/^		"warning": {$/;"	o	object:defaults

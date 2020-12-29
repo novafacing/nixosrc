@@ -1,12 +1,9 @@
 [
   (self: super: with super; {
     my = {
-      fira-code-icursive = (callPackage ./fira-code-icursive.nix {});
-      bumblebee-status = (callPackage ./bumblebee-status {});
-      nix-npm-install = (callPackage ./nix-npm-install.nix {});
-      wally-cli = (callPackage ./wally-cli.nix {});
-      binaryninja = (callPackage ./binaryninja.nix {});
       autopatchelf = (callPackage ./autopatchelf.nix {});
+      aseprite = (callPackage ./aseprite.nix {});
+      binaryninja = (callPackage ./binaryninja.nix {});
       buildShellShim = pkgs.writeScriptBin "buildShellShim.zsh" ''
         #! /usr/bin/env sh
 
@@ -22,11 +19,14 @@
           bash "$@"
             fi
       '';
-      aseprite = (callPackage ./aseprite.nix {});
-      ocra = (callPackage ./ocra.nix {});
-      nix-doc = (callPackage ./nix-doc.nix {});
-      smartgit = (callPackage ./smartgit.nix {});
+      bumblebee-status = (callPackage ./bumblebee-status {});
+      fira-code-icursive = (callPackage ./fira-code-icursive.nix {});
+      imhex = (callPackage ./imhex {});
       jflap = (callPackage ./jflap.nix {});
+      nix-doc = (callPackage ./nix-doc.nix {});
+      nix-npm-install = (callPackage ./nix-npm-install.nix {});
+      ocra = (callPackage ./ocra.nix {});
+      wally-cli = (callPackage ./wally-cli.nix {});
     };
   })
 ]

@@ -24,6 +24,7 @@ in
 
     environment.systemPackages = with pkgs // myNodePackages; [
       # GUI Apps
+
       arandr
       audacity
       bc
@@ -31,6 +32,7 @@ in
       blender
       cabal2nix
       chromium
+      chuck
       coq
       dfilemanager
       discord-canary
@@ -53,8 +55,8 @@ in
       libimobiledevice
       my.aseprite
       my.bumblebee-status
+      my.imhex
       my.jflap
-      my.smartgit
       obs-studio
       obs-v4l2sink
       one_gadget
@@ -67,6 +69,7 @@ in
       slack
       spotify
       steam
+      testdisk
       thunderbird
       tikzit
       twmn
@@ -76,7 +79,6 @@ in
       woeusb
       zathura
       zoom-us
-
       # Reversing tools
       afl
       appimagekit
@@ -166,6 +168,7 @@ in
       flex
       gcc10
       gcc_multi
+      godot
       gnumake
       lldb_11
       manpages
@@ -187,7 +190,7 @@ in
       luaWithPackages
 
       #Additional Lua Utilities
-      love
+      love_11
 
       # Node packages (see readme!)
       eslint

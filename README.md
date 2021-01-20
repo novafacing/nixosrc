@@ -39,6 +39,7 @@ sudo pvcreate /dev/nvme0n1p3
 sudo vgcreate pool /dev/nvme0n1p3
 sudo lvcreate -L 96G -n root pool # 96G should just be however big you want your root partition
 sudo lvcreate -L 133G -n home pool # 133G should just be however big you want your home partition
+sudo mkfs.fat /dev/nvme0n1p1
 sudo mkfs.ext4 -L root /dev/pool/root # You can choose another FS if you hate yourself...
 sudo mkfs.ext4 -L home /dev/pool/home
 sudo mount /dev/disk/by-label/root /mnt

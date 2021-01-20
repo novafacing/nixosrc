@@ -28,7 +28,7 @@ wpa_supplicant -B -i <WIRELESS_INTERFACE> \
 ```sh
 # I assume an install drive called nvme0. You can find your current parts with ""sudo parted -l" and list drives with "sudo fdisk -l"
 
-sudo parted /dev/nvme0n1 -- mklabel gpt
+sudo parted /dev/nvme0n1 -- mklabel gpt # If this is a BIOS only system, you need to do `mklabel msdos` instead
 sudo parted /dev/nvme0n1 -- mkpart ESP fat32 1MiB 512MiB
 sudo parted /dev/nvme0n1 -- set 1 boot on
 sudo parted /dev/nvme0n1 -- mkpart primary linux-swap 512MiB 8512MiB

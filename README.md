@@ -92,7 +92,8 @@ This will get us an extremely basic config with just a command line. That's fine
 - Run the following to delete the nixos directory, clone our new configuration, symlink it to our home directory, and enable:
 
 ```sh
-nix-channel --add https://github.com/rycee/home-manager/archive/master.tar.gz home-manager
+nix-channel --add https://github.com/rycee/home-manager/archive/master.tar.gz home-manager # If installing from 20.09, use release-20.09.tar.gz instead
+# and you need to edit configuration.nix and change master.tar.gz to release-20.09.tar.gz
 nix-channel --update
 sudo rm -rf /etc/nixos
 sudo git clone https://github.com/novafacing/nixosrc /etc/nixos

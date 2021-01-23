@@ -27,6 +27,7 @@ in
 
       arandr
       audacity
+      bashSnippets
       bc
       bitwarden
       blender
@@ -52,6 +53,8 @@ in
       ifuse
       inkscape
       inkscape
+      keybase
+      keybase-gui
       libimobiledevice
       my.aseprite
       my.bumblebee-status
@@ -60,6 +63,7 @@ in
       obs-studio
       obs-v4l2sink
       one_gadget
+      openssl
       qpaeq
       reaper
       rustc
@@ -120,6 +124,7 @@ in
       ncspot
       nix-du
       nix-index
+      nix-prefetch-git
       nmap
       nmap_graphical
       nox
@@ -142,6 +147,7 @@ in
       winetricks
       xclip
       xxd
+      z3 # includes python bindings
       zip
 
       # i3 Hotkey Commands
@@ -157,8 +163,11 @@ in
       avrdude
       binutils
       bison
+      bundix
+      bundler
       cabal-install
       ccls
+      cdrtools
       clangMultiStdenv
       clang_11
       cmake
@@ -168,12 +177,17 @@ in
       flex
       gcc10
       gcc_multi
-      godot
       gnumake
+      gnupg
+      godot
+      grub2
+      libnotify
       lldb_11
       manpages
       meson
       mgba
+      mono
+      musl
       my.autopatchelf
       my.buildShellShim
       ninja
@@ -182,9 +196,14 @@ in
       patchelf
       pkg-config
       postman
+      qemu
       rgbds
+      ruby
       sloccount
       valgrind
+      vimpager
+      w3m
+      xorriso
 
       # Lua
       luaWithPackages
@@ -205,6 +224,10 @@ in
       # Libraries
       llvmPackages.libclang
       llvmPackages.libclang.lib
+
+      # PHP
+      php74
+      php74Packages.composer2
     ];
 
   # Dev manpages

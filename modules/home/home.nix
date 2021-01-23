@@ -31,6 +31,10 @@ with pkgs.lib; {
     # Identity
     userName = settings.username; 
     userEmail = settings.email; 
+    signing = {
+      signByDefault = true;
+      key = "2166 6411 6223 98E4 D604  1C4A C7DA B792 C0E0 80F4";
+    };
     # Global git aliases
     aliases = {
       co = "checkout";

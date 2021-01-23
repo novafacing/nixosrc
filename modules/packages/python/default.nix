@@ -23,6 +23,7 @@ in
   with (import <nixpkgs> {}); {
     environment.systemPackages = with pkgs; [
       (python27.withPackages(ps: with ps; [
+        pyelftools
         pygtk
       ]))
       (python37.withPackages(ps: with ps; [
@@ -31,6 +32,7 @@ in
         beautifulsoup4
         binwalk
         colour
+        construct
         cryptography
         cssselect
         feedparser
@@ -41,6 +43,7 @@ in
         i3ipc
         ipython
         jedi
+        keyring
         libiio
         lxml
         netifaces
@@ -50,9 +53,10 @@ in
         power
         psutil
         pwntools
-        pwntools
+        py3to2
         pycrypto
         pycryptodome
+        pyelftools
         pygit2
         pygments
         python-socketio
@@ -66,6 +70,7 @@ in
         tkinter
         urllib3
         websockets
+        z3
         # angrPackages.ailment
         # angrPackages.angr
         # angrPackages.archinfo

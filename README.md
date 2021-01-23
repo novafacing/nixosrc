@@ -28,7 +28,7 @@ wpa_supplicant -B -i <WIRELESS_INTERFACE> \
 ```sh
 # I assume an install drive called nvme0. You can find your current parts with ""sudo parted -l" and list drives with "sudo fdisk -l"
 
-sudo parted /dev/nvme0n1 -- mklabel gpt
+sudo parted /dev/nvme0n1 -- mklabel gpt # If this is a BIOS only system, you need to do `mklabel msdos` instead
 sudo parted /dev/nvme0n1 -- mkpart ESP fat32 1MiB 512MiB
 sudo parted /dev/nvme0n1 -- set 1 boot on
 sudo parted /dev/nvme0n1 -- mkpart primary linux-swap 512MiB 8512MiB
@@ -39,6 +39,7 @@ sudo pvcreate /dev/nvme0n1p3
 sudo vgcreate pool /dev/nvme0n1p3
 sudo lvcreate -L 96G -n root pool # 96G should just be however big you want your root partition
 sudo lvcreate -L 133G -n home pool # 133G should just be however big you want your home partition
+sudo mkfs.fat /dev/nvme0n1p1
 sudo mkfs.ext4 -L root /dev/pool/root # You can choose another FS if you hate yourself...
 sudo mkfs.ext4 -L home /dev/pool/home
 sudo mount /dev/disk/by-label/root /mnt
@@ -91,7 +92,8 @@ This will get us an extremely basic config with just a command line. That's fine
 - Run the following to delete the nixos directory, clone our new configuration, symlink it to our home directory, and enable:
 
 ```sh
-nix-channel --add https://github.com/rycee/home-manager/archive/master.tar.gz home-manager
+nix-channel --add https://github.com/rycee/home-manager/archive/master.tar.gz home-manager # If installing from 20.09, use release-20.09.tar.gz instead
+# and you need to edit configuration.nix and change master.tar.gz to release-20.09.tar.gz
 nix-channel --update
 sudo rm -rf /etc/nixos
 sudo git clone https://github.com/novafacing/nixosrc /etc/nixos

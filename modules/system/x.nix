@@ -16,9 +16,8 @@
     # Enable my trackpad settings
     libinput = {
       enable = true;
-      disableWhileTyping = true;
-      naturalScrolling = true;
-      tapping = false;
+      touchpad.naturalScrolling = true;
+      mouse.naturalScrolling = true;
     };
   };
 }

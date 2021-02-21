@@ -19,6 +19,36 @@ let
     unicorn = pkgs.python37.pkgs.callPackage ./angr/pkgs/python-modules/unicorn { };
     z3 = pkgs.python37.pkgs.callPackage ./angr/pkgs/python-modules/z3-solver { };
   };
+  pygubu = pkgs.python37Packages.buildPythonPackage rec {
+    pname = "pygubu";
+    version = "0.10.4";
+    src = pkgs.python37Packages.fetchPypi {
+      inherit version;
+      inherit pname;
+      sha256 = "02wm5d6xan7rfdgdnjfk5yamf8shjry28sz13vd9h109v0wfn7vz";
+    };
+    buildInputs = [
+      pkgs.python37Packages.tkinter
+    ];
+  };
+  pygubu-designer = pkgs.python37Packages.buildPythonPackage rec {
+    pname = "pygubu-designer";
+    version = "0.12";
+    src = pkgs.python37Packages.fetchPypi {
+      inherit version;
+      inherit pname;
+      sha256 = "1z4d0nwbp8ch5yzhcvj5v09s89c6fga604n7qiyjwikqj0g2ifph";
+    };
+    doCheck = false;
+    preConfigure = ''
+      mv ./pygubudesigner/images/mglass_.gif ./pygubudesigner/images/mglass.gif
+    '';
+    buildInputs = [
+      pkgs.python37Packages.tkinter
+      pkgs.python37Packages.appdirs
+      pygubu
+    ];
+  };
 in
   with (import <nixpkgs> {}); {
     environment.systemPackages = with pkgs; [
@@ -31,6 +61,7 @@ in
         aiohttp
         beautifulsoup4
         binwalk
+        black
         colour
         construct
         cryptography
@@ -48,6 +79,7 @@ in
         lxml
         netifaces
         numpy
+        pdf2image
         pillow
         pip
         power
@@ -57,9 +89,13 @@ in
         pycrypto
         pycryptodome
         pyelftools
+        pyfiglet
         pygit2
         pygments
+        pygubu
+        pygubu-designer
         python-socketio
+        rarfile
         requests
         ropper
         sagemath

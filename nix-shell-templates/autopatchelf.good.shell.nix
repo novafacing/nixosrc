@@ -1,6 +1,6 @@
 with import <nixpkgs> {};
 let
-  libs = stdenv.lib.makeLibraryPath [ glibc ];
+  libs = lib.makeLibraryPath [ glibc ];
 in
 mkShell {
   hardeningDisable = [

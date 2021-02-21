@@ -24,6 +24,14 @@ with pkgs.lib; {
     allowUnfree = settings.allowUnfree;
   };
 
+  /*
+  nixpkgs.overlays = [
+    (self: super: {
+      xdg-utils = pkgs.xdg_utils;
+    })
+  ];
+  */
+
   # TODO: Pass settings.username and settings.email as args to a git.nix file
   # Configure git with aliases and such
   programs.git = {
@@ -54,5 +62,6 @@ with pkgs.lib; {
       "*.a"
     ];
   };
+  programs.go.enable = true;
 }
 

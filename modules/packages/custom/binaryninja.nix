@@ -7,6 +7,7 @@ stdenv.mkDerivation rec {
   #  sha256 = "5dae72ad0d31f7439cf4232a5324a31857ce4e0e593c85c62520c94ff171b4a2";
   #};
   src = /etc/nixos/nixos-private/BinaryNinja-personal-dev.zip;
+  dontWrapQtApps = true;
 
   buildPhase = ":";
   installPhase = ''

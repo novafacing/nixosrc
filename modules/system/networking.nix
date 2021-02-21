@@ -12,5 +12,12 @@
   networking.firewall.allowedUDPPorts = [ ];
   networking.firewall.enable = true;
   programs.nm-applet.enable = true;
+  networking.iproute2.enable = true;
+  services.mullvad-vpn = {
+    enable = true;
+  };
+  networking.wireguard = {
+    enable = true;
+  };
 }
 

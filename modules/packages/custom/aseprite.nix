@@ -52,7 +52,7 @@ stdenv.mkDerivation rec {
       $out/usr/bin/aseprite
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     homepage = "https://aseprite.org";
     description = "Animated Sprite Editor & Pixel Art Tool";
     license = licenses.unfree;

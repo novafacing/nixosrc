@@ -15,8 +15,8 @@ with pkgs.lib; {
       enable_audio_bell = false;
     };
     extraConfig = ''
-      font_family      Fira Code Retina
-      bold_font        Fira Code Bold
+      font_family      Fira Code
+      bold_font        Fira Code Bold Nerd Font Complete Mono Windows Compatible
       italic_font      Fira Code iCursive S12 Italic Nerd Font Complete Mono Windows Compatible
       bold_italic_font Fira Code iCursive S12 Italic Nerd Font Complete Mono Windows Compatible
 

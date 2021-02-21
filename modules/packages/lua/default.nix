@@ -1,4 +1,4 @@
-{ pkgs, stdenv, fetchurl, fetchgit, fetchzip, lua52Packages, ... }:
+{pkgs, lib, stdenv, fetchurl, fetchgit, fetchzip, lua52Packages, ... }:
 let
   date = lua52Packages.buildLuarocksPackage {
     pname = "date";
@@ -10,7 +10,7 @@ let
     };
     propagatedBuildInputs = with pkgs; [ lua ];
 
-    meta = with stdenv.lib; {
+    meta = with lib; {
       homepage = "https://github.com/Tieske/date";
       description = "Date & Time module for Lua 5.x";
       license.fullName = "MIT";
@@ -26,7 +26,7 @@ let
     };
     propagatedBuildInputs = with pkgs; [ lua ];
 
-    meta = with stdenv.lib; {
+    meta = with lib; {
       homepage = "https://github.com/leafo/etlua";
       description = "Embedded templates for Lua";
       license.fullName = "MIT";
@@ -42,7 +42,7 @@ let
     };
     propagatedBuildInputs = with pkgs; [ lua ];
 
-    meta = with stdenv.lib; {
+    meta = with lib; {
       homepage = "https://github.com/leafo/loadkit";
       description = "Loadkit allows you to load arbitrary files within the Lua package path";
       license.fullName = "MIT";
@@ -58,7 +58,7 @@ let
     };
     propagatedBuildInputs = with pkgs; [ lua ];
 
-    meta = with stdenv.lib; {
+    meta = with lib; {
       homepage = "http://www.inf.puc-rio.br/~roberto/lpeg.html";
       description = "Parsing Expression Grammars For Lua";
       license.fullName = "MIT/X11";
@@ -85,7 +85,7 @@ let
     dontStrip = true;
     propagatedBuildInputs = with pkgs; [ lua ];
 
-    meta = with stdenv.lib; {
+    meta = with lib; {
       homepage = "http://www.kyne.com.au/~mark/software/lua-cjson.php";
       description = "A fast JSON encoding/parsing module";
       license.fullName = "MIT";
@@ -111,7 +111,7 @@ let
       OPENSSL_LIBDIR = "${pkgs.openssl.dev.out}/lib";
     };
 
-    meta = with stdenv.lib; {
+    meta = with lib; {
       homepage = "http://25thandclement.com/~william/projects/luaossl.html";
       description = "Most comprehensive OpenSSL module in the Lua universe.";
       license.fullName = "MIT/X11";
@@ -128,7 +128,7 @@ let
     propagatedBuildInputs = with pkgs; [ lua ];
     dontStrip = true;
 
-    meta = with stdenv.lib; {
+    meta = with lib; {
       homepage = "https://bitbucket.org/leafstorm/lua-mimetypes/";
       description = "A simple library for looking up the MIME types of files.";
       license.fullName = "MIT/X11";
@@ -155,7 +155,7 @@ let
 
     propagatedBuildInputs = with pkgs; [ lua ];
 
-    meta = with stdenv.lib; {
+    meta = with lib; {
       homepage = "http://bitop.luajit.org/";
       description = "Lua Bit Operations Module";
       license.fullName = "MIT/X license";
@@ -173,7 +173,7 @@ let
     };
     propagatedBuildInputs = with pkgs; [ lua luabitop lpeg openssl.dev ];
 
-    meta = with stdenv.lib; {
+    meta = with lib; {
       homepage = "https://github.com/leafo/pgmoon";
       description = "Postgres driver for OpenResty and Lua";
       license.fullName = "MIT";
@@ -193,7 +193,7 @@ in
 
       propagatedBuildInputs = with pkgs; with lua52Packages; [ lua ansicolors date etlua loadkit lpeg lua-cjson luaossl luafilesystem luasocket mimetypes pgmoon ];
 
-      meta = with stdenv.lib; {
+      meta = with lib; {
         homepage = "http://leafo.net/lapis";
         description = "A web framework for MoonScript & Lua";
         license.fullName = "MIT";

@@ -1,4 +1,4 @@
-{ stdenv, rustPlatform, fetchFromGitHub, pkgs, ... }:
+{ stdenv, lib, rustPlatform, fetchFromGitHub, pkgs, ... }:
 
 rustPlatform.buildRustPackage rec {
   pname = "nix-doc";
@@ -17,7 +17,7 @@ rustPlatform.buildRustPackage rec {
 
   cargoSha256 = "06b36jv8hk4gqqm4nbh9gfszncvixs3zcjph45wlx7z5m61y9sdg";
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     homepage = url;
     license = licenses.lgpl3;
     description = "A Nix documentation lookup tool that quickly dumps the docs of the library function";

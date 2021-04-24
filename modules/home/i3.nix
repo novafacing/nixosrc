@@ -13,6 +13,13 @@ in
     enable = true;
     package = pkgs.i3-gaps; ## (callPackage ./i3-round.nix {}); for rounded
     config = {
+      assigns = {
+        "20: discord" = [{ class="^discord$"; }];
+        "19: slack" = [{ class="^slack$"; }];
+        "18: email" = [{ class="^Thunderbird$"; }];
+        "17: music" = [{ class="^spotify$"; }];
+        "16: obsidian" = [{ class="^obsidian$"; }];
+      };
       fonts = [
          "Fira Code Medium 12" 
       ];
@@ -20,12 +27,12 @@ in
       bars = [
         {
           position = "bottom";
-          statusCommand = ''bumblebee-status -t gruvbox-powerline -m spacer spacer spacer git github pomodoro cpu memory disk:root disk:home traffic weather battery datetime -p interval=10 root.path=/ home.path=/home battery.showpowerconsumption=true battery.showremaining=true github.token=${github_token} weather.location=Lafayette weather.showminmax=true pulseaudio.autostart=true pulseaudio.percent_change=5 pulseaudio.showbars=1 spacer.theme.bg=#504945 spacer.text="                                                                                                                                                                "'';
+          statusCommand = ''bumblebee-status -t gruvbox-powerline -m spacer spacer spacer git github pomodoro cpu memory disk:root disk:home weather battery datetime -p interval=10 root.path=/ home.path=/home battery.showpowerconsumption=true battery.showremaining=true github.token=${github_token} weather.location=Lafayette weather.showminmax=true pulseaudio.autostart=true pulseaudio.percent_change=5 pulseaudio.showbars=1 spacer.theme.bg=#504945 spacer.text="                                                                                                                                                                "'';
         }
       ];
       gaps = {
         inner = 5;
-        outer = 15;
+        outer = 0;
         smartGaps = true;
       };
       colors = {
@@ -107,11 +114,11 @@ in
           "${sup}+3" = "workspace number 13";
           "${sup}+4" = "workspace number 14";
           "${sup}+5" = "workspace number 15";
-          "${sup}+6" = "workspace number 16";
-          "${sup}+7" = "workspace number 17";
-          "${sup}+8" = "workspace number 18";
-          "${sup}+9" = "workspace number 19";
-          "${sup}+0" = "workspace number 20";
+          "${sup}+6" = "workspace number 16 obsidian";
+          "${sup}+7" = "workspace number 17 music";
+          "${sup}+8" = "workspace number 18 email";
+          "${sup}+9" = "workspace number 19 slack";
+          "${sup}+0" = "workspace number 20 discord";
           "${mod}+Shift+1" = "move container to workspace number 1 ";
           "${mod}+Shift+2" = "move container to workspace number 2 ";
           "${mod}+Shift+3" = "move container to workspace number 3";
@@ -127,11 +134,11 @@ in
           "${sup}+Shift+3" = "move container to workspace number 13";
           "${sup}+Shift+4" = "move container to workspace number 14";
           "${sup}+Shift+5" = "move container to workspace number 15";
-          "${sup}+Shift+6" = "move container to workspace number 16";
-          "${sup}+Shift+7" = "move container to workspace number 17";
-          "${sup}+Shift+8" = "move container to workspace number 18";
-          "${sup}+Shift+9" = "move container to workspace number 19";
-          "${sup}+Shift+0" = "move container to workspace number 20";
+          "${sup}+Shift+6" = "move container to workspace number 16 obsidian";
+          "${sup}+Shift+7" = "move container to workspace number 17 music";
+          "${sup}+Shift+8" = "move container to workspace number 18 email";
+          "${sup}+Shift+9" = "move container to workspace number 19 slack";
+          "${sup}+Shift+0" = "move container to workspace number 20 discord";
           "${mod}+Shift+c" = "reload";
           "${mod}+Shift+r" = "restart";
           "${mod}+Shift+e" = "exit";

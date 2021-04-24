@@ -49,64 +49,61 @@ let
       pygubu
     ];
   };
-in
-  with (import <nixpkgs> {}); {
-    environment.systemPackages = with pkgs; [
-      (python27.withPackages(ps: with ps; [
-        pyelftools
-        pygtk
-      ]))
-      (python37.withPackages(ps: with ps; [
-        ROPGadget
-        aiohttp
-        beautifulsoup4
-        binwalk
-        black
-        colour
-        construct
-        cryptography
-        cssselect
-        feedparser
-        filebytes
-        flask
-        gmpy
-        gmpy2
-        i3ipc
-        ipython
-        jedi
-        keyring
-        libiio
-        lxml
-        netifaces
-        numpy
-        pdf2image
-        pillow
-        pip
-        power
-        psutil
-        pwntools
-        py3to2
-        pycrypto
-        pycryptodome
-        pyelftools
-        pyfiglet
-        pygit2
-        pygments
-        pygubu
-        pygubu-designer
-        python-socketio
-        rarfile
-        requests
-        ropper
-        sagemath
-        scipy
-        setuptools
-        six
-        sympy
-        tkinter
-        urllib3
-        websockets
-        z3
+  python = (pkgs.python37.withPackages(ps: with ps; [
+    ROPGadget
+    aiohttp
+    beautifulsoup4
+    binwalk
+    black
+    colour
+    construct
+    cryptography
+    cssselect
+    feedparser
+    filebytes
+    flake8
+    flask
+    gmpy
+    gmpy2
+    i3ipc
+    ipython
+    jedi
+    keyring
+    libiio
+    lxml
+    mypy
+    netifaces
+    numpy
+    pdf2image
+    pillow
+    pip
+    poetry
+    power
+    psutil
+    pwntools
+    py3to2
+    pycryptodome
+    pyelftools
+    pyfiglet
+    pygit2
+    pygments
+    pygubu
+    pygubu-designer
+    python-socketio
+    pyqt5
+    rarfile
+    requests
+    ropper
+    pkgs.sagemath
+    scipy
+    setuptools
+    six
+    spotipy
+    sympy
+    tkinter
+    urllib3
+    websockets
+    z3
         # angrPackages.ailment
         # angrPackages.angr
         # angrPackages.archinfo
@@ -122,7 +119,17 @@ in
         # angrPackages.PySMT
         # angrPackages.unicorn
         # angrPackages.z3
+      ])).override(args: {
+        ignoreCollisions = true;
+      });
+in
+  with (import <nixpkgs> {}); {
+    environment.systemPackages = with pkgs; [
+      (python27.withPackages(ps: with ps; [
+        pyelftools
+        pygtk
       ]))
+      python
       jython
     ];
   }

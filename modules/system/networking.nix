@@ -19,5 +19,9 @@
   networking.wireguard = {
     enable = true;
   };
+  services.openssh = {
+    enable = true;
+    permitRootLogin = "no";
+  };
 }
 

@@ -16,7 +16,7 @@ with pkgs.lib; {
     ./zsh.nix
     ./kitty.nix
     ./binaryninja.nix
-    ./gdb.nix
+    # ./gdb.nix
   ];
 
   # Make sure we obey the nixpkgs free/nonfree rules
@@ -42,6 +42,12 @@ with pkgs.lib; {
     signing = {
       signByDefault = true;
       key = "2166 6411 6223 98E4 D604  1C4A C7DA B792 C0E0 80F4";
+    };
+
+    extraConfig = {
+      init = {
+        defaultBranch = "main";
+      };
     };
     # Global git aliases
     aliases = {

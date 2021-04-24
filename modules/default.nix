@@ -1,4 +1,4 @@
-{ pkgs, options, config, lib, ... }:
+{ pkgs, options, config, stdenv, lib, ... }:
 
 {
   # Go down through each submodule (EXCEPT home, home is managed by home-manager)

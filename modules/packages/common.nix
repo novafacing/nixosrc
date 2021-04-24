@@ -113,16 +113,109 @@ let
     sha256 = "057szin28d4sz18b1232xjhf5jjnw2574q34vs3npblhc1jb5y3p";
   }
   {
-    name = "vscode-icons";
-    publisher = "vscode-icons-team";
-    version = "11.1.0";
-    sha256 = "1xrz9f0nckx29wxpmlj1dqqiaal3002xwgzz5p9iss119sxgpwrx";
+    name = "material-icon-theme";
+    publisher = "PKief";
+    version = "4.5.0";
+    sha256 = "1mp069j9262ds7f9rx05lhvm85072bx4lyj5nicplmjwwwhf6jwl";
+  }
+  {
+    name = "lua";
+    publisher = "sumneko";
+    version = "1.16.1";
+    sha256 = "0n3jg0igzyfnzgkvbsg4kw57hh6qypakv77vsgirf4h7iwhny4qx";
+  }
+  {
+    publisher = "vsciot-vscode";
+    name = "vscode-arduino";
+    version = "0.3.5";
+    sha256 = "0gfcyac0jc0lrq3iq2p009a8awaxdl91vcdnnkggqw4f8mjvkgdz";
+  }
+  {
+    publisher="james-yu";
+    name = "latex-workshop";
+    version = "8.16.0";
+    sha256 = "0jjqxr20c7zzvxypwp553gwwxz0rzcz6g4gg7gg5kvvx08nfxc3g";
+  }
+  {
+    publisher = "eamodio";
+    name = "gitlens";
+    version = "11.2.1";
+    sha256 = "1ba72sr7mv9c0xzlqlxbv1x8p6jjvdjkkf7dn174v8b8345164v6";
+  }
+  {
+    publisher = "daohong-emilio";
+    name = "yash";
+    version = "0.2.6";
+    sha256 = "1hpg15nr12zr6h09g9f0mal3c6a67rihs2hmzz5mppgbxjqrr60l";
+  }
+  /*
+  {
+    publisher = "SonarSource";
+    name = "sonarlint-vscode";
+    version = "1.20.1";
+    sha256 = "0gx3sz94lkqy5fgfxrmq63qkcf8yxm6048jw868bgf2497l40kjd";
+  }
+  */
+  {
+    publisher = "hediet";
+    name = "vscode-drawio";
+    version = "1.4.0";
+    sha256 = "14x204gypaqwayxd0y8gd4cf0xw4f131fagjn17f1hxkzpd8wd60";
+  }
+  /*
+  {
+    publisher = "Gruntfuggly";
+    name = "todo-tree";
+    version = "0.0.205";
+    sha256 = "0s7bmnsx40lz9wiijrh7cnazwqvmkhsbnidl832qx27pzk0977ix";
+  }
+  */
+  {
+    publisher = "aaron-bond";
+    name = "better-comments";
+    version = "2.1.0";
+    sha256 = "0kmmk6bpsdrvbb7dqf0d3annpg41n9g6ljzc1dh0akjzpbchdcwp";
+  }
+  {
+    publisher = "haskell";
+    name = "haskell";
+    version = "1.2.0";
+    sha256 = "0vxsn4s27n1aqp5pp4cipv804c9cwd7d9677chxl0v18j8bf7zly";
+  }
+  {
+    publisher = "justusadam";
+    name = "language-haskell";
+    version = "3.4.0";
+    sha256 = "0ab7m5jzxakjxaiwmg0jcck53vnn183589bbxh3iiylkpicrv67y";
 
   }
-  ];
-  vscode-with-extensions = pkgs.vscode-with-extensions.override {
-    vscodeExtensions = extensions;
-  };
+
+  {
+    publisher = "njpwerner";
+    name = "autodocstring";
+    version = "0.5.4";
+    sha256 = "0a2krzgljkz02flps1yj048xq3xcwm26lqa42nq4b0r4l50hnis9";
+  }
+  {
+    publisher = "arrterian";
+    name = "nix-env-selector";
+    version = "1.0.6";
+    sha256 = "19k60nrhimwf61ybnn1qqb0n0zh2wdr8pp1x5bla9r76hz5srqdl";
+  }
+  {
+    publisher = "jeff-hykin";
+    name = "polacode-2019";
+    version = "0.5.2";
+    sha256 = "1aszpnxjg44q3s4glh5rwfz0spd92p672ic3mll6mnskqk1ilwz1";
+  }
+
+
+
+
+];
+vscode-with-extensions = pkgs.vscode-with-extensions.override {
+  vscodeExtensions = extensions;
+};
 in
   let
     luaWithPackages = (pkgs.lua5_2_compat.withPackages(ps: with ps // luaPkgs; [
@@ -146,6 +239,10 @@ in
     environment.systemPackages = with pkgs // myNodePackages; [
       # GUI Apps
 
+      # discord-canary
+      # my.cemu
+      # my.imhex
+      a2ps
       arandr
       audacity
       bashSnippets
@@ -154,12 +251,10 @@ in
       blender
       cabal2nix
       calibre
-      # cemu
       chromium
       chuck
       coq
       dfilemanager
-      # discord-canary
       discord
       dot2tex
       etcher
@@ -181,11 +276,11 @@ in
       keybase-gui
       libimobiledevice
       libreoffice
+      mullvad-vpn
       my.aseprite
       my.bumblebee-status
-      # my.imhex
       my.jflap
-      mullvad-vpn
+      obsidian
       obs-studio
       obs-v4l2sink
       one_gadget
@@ -213,16 +308,21 @@ in
       woeusb
       zathura
       zoom-us
+      zotero
+
+      haskellPackages.haskell-language-server
 
       # Reversing tools
       afl
       appimagekit
       exiftool
       gdb
-      ghidra-bin
       gradle
       my.binaryninja
+      my.ghidra
       pypy3
+      pwndbg
+      pandoc
       radare2
       squashfsTools
       wireshark
@@ -240,10 +340,13 @@ in
       font-awesome
       file
       fzf
+      gitAndTools.gh
       gnupg
       gotop
       graphviz
       htop
+      imagemagick
+      isabelle
       jdk11
       llvm
       ltrace
@@ -261,6 +364,8 @@ in
       nmap
       nmap_graphical
       nox
+      opam
+      ocaml
       openjdk
       openvpn
       parted
@@ -280,6 +385,7 @@ in
       wineWowPackages.stable
       winetricks
       xclip
+      youtube-dl
       xxd
       z3 # includes python bindings
       zip
@@ -307,6 +413,7 @@ in
       cmake
       colordiff
       docker-compose
+      dos2unix
       doxygen
       flex
       gcc10
@@ -335,6 +442,7 @@ in
       ruby
       sloccount
       valgrind
+      vice
       vimpager
       w3m
       xorriso
@@ -361,7 +469,7 @@ in
 
       # PHP
       php74
-      php74Packages.composer2
+      #php74Packages.composer2
     ];
 
   # Dev manpages

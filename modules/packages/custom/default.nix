@@ -20,6 +20,7 @@
             fi
       '';
       bumblebee-status = (callPackage ./bumblebee-status {});
+      cemu = (pkgs.qt5.callPackage ./cemu.nix {});
       fira-code-icursive = (callPackage ./fira-code-icursive.nix {});
       imhex = (callPackage ./imhex {});
       jflap = (callPackage ./jflap.nix {});
@@ -27,6 +28,7 @@
       nix-npm-install = (callPackage ./nix-npm-install.nix {});
       ocra = (callPackage ./ocra.nix {});
       wally-cli = (callPackage ./wally-cli.nix {});
+      ghidra = (callPackage ./ghidra.nix {});
     };
   })
 ]

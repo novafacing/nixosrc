@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, stdenv, ... }:
 let
   settings = import ./config/settings.nix;
 in

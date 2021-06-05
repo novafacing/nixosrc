@@ -59,12 +59,6 @@ let
     sha256 = "0qzh7fwgadcahxx8hz1sbfz9lzi81iv4xiidvfm3sahyl9s6pyg1";
   }
   {
-    name = "jupyter";
-    publisher = "ms-toolsai";
-    version = "2021.2.576440691";
-    sha256 = "0dia2qbvmfc1ijswng39ni3imqssib2bnclwk3lr8bmkl31xg5sh";
-  }
-  {
     name = "liveserver";
     publisher = "ritwickdey";
     version = "5.6.1";
@@ -208,14 +202,10 @@ let
     version = "0.5.2";
     sha256 = "1aszpnxjg44q3s4glh5rwfz0spd92p672ic3mll6mnskqk1ilwz1";
   }
-
-
-
-
 ];
-vscode-with-extensions = pkgs.vscode-with-extensions.override {
+vscode-with-extensions = (pkgs.vscode-with-extensions.override {
   vscodeExtensions = extensions;
-};
+});
 in
   let
     luaWithPackages = (pkgs.lua5_2_compat.withPackages(ps: with ps // luaPkgs; [
@@ -256,8 +246,10 @@ in
       coq
       dfilemanager
       discord
+      discord-canary
       dot2tex
       etcher
+      filezilla
       firefox
       fsuae
       gcolor2
@@ -283,9 +275,11 @@ in
       obsidian
       obs-studio
       obs-v4l2sink
+      okular
       one_gadget
       openssl
       poppler_utils
+      powertop
       qbittorrent
       qpaeq
       rawtherapee
@@ -371,7 +365,7 @@ in
       parted
       pdfgrep
       pinentry-curses
-      pypi2nix
+      # pypi2nix
       silver-searcher
       sqlite
       sshfs

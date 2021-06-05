@@ -47,10 +47,18 @@ in
   };
 
   # Enable docker
-  virtualisation.docker.enable = true;
+  # virtualisation.docker.enable = true;
   #virtualisation.virtualbox.host.enable = true;
   #virtualisation.virtualbox.guest.enable = true;
   #virtualisation.virtualbox.host.enableExtensionPack = true;
+  virtualisation = {
+    podman = {
+      enable = true;
+
+      # Create a `docker` alias for podman, to use it as a drop-in replacement
+      dockerCompat = true;
+    };
+  };
 
   # This is needed for steam
   hardware.opengl.driSupport32Bit = true;

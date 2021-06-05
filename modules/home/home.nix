@@ -16,6 +16,7 @@ with pkgs.lib; {
     ./zsh.nix
     ./kitty.nix
     ./binaryninja.nix
+    ./emacs.nix
     # ./gdb.nix
   ];
 

@@ -7,7 +7,7 @@ let
           "activeContent": false
       },
       "python": {
-        "interpreter": "${pkgs.python37Full}/lib/libpython3.7m.so"
+        "interpreter": "${pkgs.python38Full}/lib/libpython3.7m.so"
       },
       "arch": {
         "x86": {
